@@ -1,0 +1,10 @@
+{
+  "name": "nameproof",
+  "image": "mcr.microsoft.com/devcontainers/python:3.13",
+  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && ~/.local/bin/uv sync && ~/.local/bin/uv run pre-commit install",
+  "customizations": {
+    "vscode": {
+      "extensions": ["charliermarsh.ruff", "ms-python.python", "ms-python.mypy-type-checker"]
+    }
+  }
+}

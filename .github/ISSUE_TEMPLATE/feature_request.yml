@@ -1,0 +1,19 @@
+name: Feature request
+description: A new script, country preset, rule or integration
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: Example inputs and the verdict you'd expect. Cite any standard (e.g. ICAO 9303, ELOT 743, EPC guidance).
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context

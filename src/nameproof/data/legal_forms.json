@@ -1,0 +1,5505 @@
+{
+ "source": "GLEIF ISO 20275 Entity Legal Forms code list v1.6 (CC0 1.0), SEPA countries",
+ "forms": {
+  "12MV": [
+   "kommanditaktiengesellschaft"
+  ],
+  "135L": [
+   "societa costituita in base a leggi di altro stato"
+  ],
+  "13AV": [
+   "versicherungsverein auf gegenseitigkeit",
+   "vvag"
+  ],
+  "13T9": [
+   "europos bendroves"
+  ],
+  "13ZV": [
+   "samodzielny publiczny zaklad opieki zdrowotnej"
+  ],
+  "149O": [
+   "komanditno drushtvo so aktsii",
+   "komanditno drustvo so akcii",
+   "komandytno drushtvo so aktsyy"
+  ],
+  "14AT": [
+   "javna agencija"
+  ],
+  "14NU": [
+   "rozpoctove a prispevkove organizacie"
+  ],
+  "157O": [
+   "regie dune collectivite locale a caractere administratif"
+  ],
+  "17R0": [
+   "community interest company"
+  ],
+  "189Q": [
+   "spec org jednotka csd",
+   "specializovana organizacna jednotka csd"
+  ],
+  "1AFG": [
+   "annat bolag",
+   "muu yhtio",
+   "muu yhtioe"
+  ],
+  "1B88": [
+   "scp de medecins"
+  ],
+  "1BL5": [
+   "ausl gen gmbh",
+   "auslaendische niederlassung nicht im handelsregister eingetragen",
+   "auslandische niederlassung nicht im handelsregister eingetragen",
+   "coop sagl estero",
+   "coop sarl etranger",
+   "foreign coop ltd co",
+   "succursale suisse dune entreprise domiciliee a letranger non inscrite au registre de commerce",
+   "succursali svizzere di una impresa domiciliata allestero non iscritta al registro di commercio",
+   "swiss branch of an enterprise domiciled abroad not registered in the commercial register"
+  ],
+  "1CDX": [
+   "se",
+   "societate europeana"
+  ],
+  "1CSW": [
+   "obecny podnik"
+  ],
+  "1DGT": [
+   "treuunternehmen",
+   "trust reg"
+  ],
+  "1G29": [
+   "s l l",
+   "s r l l",
+   "sociedad limitada laboral o sociedad de responsabilidad limitada laboral"
+  ],
+  "1GLU": [
+   "jednot zel sprav uradu",
+   "jednotka zeleznicneho spravneho uradu"
+  ],
+  "1GNM": [
+   "syndicat de salaries"
+  ],
+  "1HEP": [
+   "rozpoctova organizacia"
+  ],
+  "1HGD": [
+   "cooperativa"
+  ],
+  "1IPK": [
+   "komanditsabiedriba"
+  ],
+  "1JK6": [
+   "svepomocne zemedelske druzstvo"
+  ],
+  "1K73": [
+   "zahranic osoba pravnicka",
+   "zahranicna osoba pravnicka osoba so sidlom mimo uzemia sr"
+  ],
+  "1L24": [
+   "autre societe civile"
+  ],
+  "1MBR": [
+   "alli nomiki morfi"
+  ],
+  "1NF1": [
+   "sa nationale a conseil dadministration"
+  ],
+  "1NKP": [
+   "sihtasutus"
+  ],
+  "1NOX": [
+   "sonstiger rechtstraeger",
+   "sonstiger rechtstrager"
+  ],
+  "1OR3": [
+   "d d",
+   "delniska druzba"
+  ],
+  "1Q16": [
+   "societe creee de fait entre personnes physiques"
+  ],
+  "1Q2B": [
+   "company limited by guarantee"
+  ],
+  "1QU8": [
+   "s coop",
+   "sociedad cooperativa"
+  ],
+  "1RI9": [
+   "ente ecclesiastico civilmente riconosciuto"
+  ],
+  "1RKS": [
+   "administration publique etrangere ex ambassade",
+   "ambasciate",
+   "ambassade",
+   "amministrazione pubblica estera ex ambasciata",
+   "auslaendische oeffentliche verwaltung",
+   "auslandische offentliche verwaltung",
+   "botschaft",
+   "embassy",
+   "foreign public administration e g embassy"
+  ],
+  "1SL4": [
+   "empresario individual"
+  ],
+  "1SOY": [
+   "europaeische genossenschaft",
+   "europaische genossenschaft"
+  ],
+  "1TN0": [
+   "ideell foerening som bedriver naeringsverksamhet",
+   "ideell forening som bedriver naringsverksamhet"
+  ],
+  "1TON": [
+   "associazione"
+  ],
+  "1TX8": [
+   "commanditaire vennootschap op aandelen met een sociaal oogmerk",
+   "cva so",
+   "kgaamsz",
+   "kommanditgesellschaft auf aktien mit sozialer zielsetzung",
+   "sca fs",
+   "societe en commandite par actions a finalite sociale"
+  ],
+  "1W62": [
+   "oversea company"
+  ],
+  "1W8B": [
+   "zahranicna osoba"
+  ],
+  "1Y0C": [
+   "sarl dattribution"
+  ],
+  "1YIR": [
+   "metsaenhoitoyhdistys",
+   "metsanhoitoyhdistys",
+   "skogsvaardsfoerening",
+   "skogsvardsforening"
+  ],
+  "1ZHJ": [
+   "s c p",
+   "s r c p",
+   "sociedad colectiva profesional o sociedad regular colectiva profesional"
+  ],
+  "211B": [
+   "societe cooperative agricole"
+  ],
+  "21F4": [
+   "s l p",
+   "separate limited partnership",
+   "separate limited partnerships"
+  ],
+  "233U": [
+   "synetairismos"
+  ],
+  "24EG": [
+   "kreditna unija"
+  ],
+  "274G": [
+   "udruga"
+  ],
+  "27AW": [
+   "offentlig enhet"
+  ],
+  "28FE": [
+   "cooeperatieve vennootschap",
+   "cooperatieve vennootschap",
+   "genossenschaft",
+   "societe cooperative"
+  ],
+  "29FA": [
+   "institution interregionale ou entente"
+  ],
+  "2A44": [
+   "egyeni ceg"
+  ],
+  "2AUN": [
+   "incorporated cell"
+  ],
+  "2B81": [
+   "einfache gesellsch",
+   "einfache gesellschaft",
+   "simple co",
+   "simple partnership",
+   "societa semplice",
+   "societe simple"
+  ],
+  "2CTG": [
+   "zadruga"
+  ],
+  "2DK3": [
+   "podnik nebo hospodarske zarizeni politicke strany"
+  ],
+  "2EEG": [
+   "akc spol",
+   "akciova spolocnost"
+  ],
+  "2FED": [
+   "gospodarsko interesno udruzenje"
+  ],
+  "2GV9": [
+   "icav",
+   "irish collective asset management vehicle",
+   "irish collective assetmanagement vehicle"
+  ],
+  "2HBR": [
+   "gesellschaft mit beschraenkter haftung",
+   "gesellschaft mit beschrankter haftung",
+   "gmbh"
+  ],
+  "2HC6": [
+   "pubblica amministrazione"
+  ],
+  "2IGL": [
+   "entreprise individuelle"
+  ],
+  "2J7Z": [
+   "consorzio con attivita esterna"
+  ],
+  "2JEI": [
+   "asbl",
+   "association sans but lucratif"
+  ],
+  "2JZ4": [
+   "fondation",
+   "fondazione",
+   "foundation",
+   "stiftung"
+  ],
+  "2KMA": [
+   "statny podnik v oddieli psn"
+  ],
+  "2LB5": [
+   "munkavallaloi resztulajdonosi program szervezet"
+  ],
+  "2N4L": [
+   "autre collectivite territoriale"
+  ],
+  "2N9X": [
+   "ceska konsolidacni agentura"
+  ],
+  "2NL6": [
+   "etat collectivite ou etablissement public etranger"
+  ],
+  "2OJP": [
+   "samlagshlutafelag",
+   "slhf"
+  ],
+  "2ONM": [
+   "sa dattribution a directoire"
+  ],
+  "2QSA": [
+   "cooeperatieve vennootschap met beperkte aansprakelijkheid met een sociaal oogmerk",
+   "cooperatieve vennootschap met beperkte aansprakelijkheid met een sociaal oogmerk",
+   "cvba so",
+   "gbhsz",
+   "genossenschaft mit beschraenkter haftung mit sozialer zielsetzung",
+   "genossenschaft mit beschrankter haftung mit sozialer zielsetzung",
+   "scrl fs",
+   "societe cooperative a responsabilite limitee a finalite sociale"
+  ],
+  "2RK5": [
+   "kommun"
+  ],
+  "2S2U": [
+   "assep",
+   "association depargne pension"
+  ],
+  "2SZI": [
+   "ente sociale"
+  ],
+  "2UAX": [
+   "trossamfund som bedriver naeringsverksamhet",
+   "trossamfund som bedriver naringsverksamhet"
+  ],
+  "2W1A": [
+   "sociedad civil"
+  ],
+  "2WFG": [
+   "ausl rechtsform",
+   "auslaendisches oeffentliches unternehmen",
+   "auslandisches offentliches unternehmen",
+   "entreprise publique etrangere",
+   "foreign legal nature",
+   "foreign public company",
+   "impresa pubblica estera",
+   "natura guiri estera",
+   "nature jur etran"
+  ],
+  "2WMP": [
+   "autre personne morale de droit administratif"
+  ],
+  "2XIK": [
+   "mutuelle"
+  ],
+  "2XJA": [
+   "administration de la confederation",
+   "amministrazione della confederazione",
+   "confederation",
+   "confederazione",
+   "federal administration",
+   "verwaltung des bundes"
+  ],
+  "2XNE": [
+   "komoditna burza"
+  ],
+  "2XXH": [
+   "s s",
+   "societa semplice"
+  ],
+  "2YZO": [
+   "partg mbb",
+   "partnerschaftsgesellschaft mit beschraenkter berufshaftung",
+   "partnerschaftsgesellschaft mit beschrankter berufshaftung"
+  ],
+  "326Y": [
+   "ansvarlig selskap"
+  ],
+  "32HC": [
+   "e v",
+   "verein"
+  ],
+  "33IP": [
+   "i l p",
+   "inc",
+   "incorporated limited partnership",
+   "incorporated limited partnerships",
+   "l p"
+  ],
+  "33MN": [
+   "vereniging met volledige rechtsbevoegdheid"
+  ],
+  "34PA": [
+   "centralna banka"
+  ],
+  "34QS": [
+   "autre personne morale de droit prive"
+  ],
+  "363J": [
+   "eeig",
+   "european economic interest grouping",
+   "gele",
+   "grupail eorpach um leas eacnamaioch"
+  ],
+  "36KV": [
+   "europaeische gesellschaft societas europaea",
+   "europaische gesellschaft societas europaea",
+   "europese vennootschap societas europaea",
+   "se",
+   "societe europeenne societas europaea"
+  ],
+  "37GR": [
+   "elinkeinoyhtyma",
+   "elinkeinoyhtymae",
+   "naeringssammanslutning",
+   "naringssammanslutning"
+  ],
+  "37II": [
+   "cooperativa mestesugareasca"
+  ],
+  "37UT": [
+   "region"
+  ],
+  "381R": [
+   "medlemsbank"
+  ],
+  "3AZY": [
+   "cooperative dutilisation de materiel agricole en commun cuma"
+  ],
+  "3BJG": [
+   "sp p",
+   "spolka partnerska"
+  ],
+  "3BX3": [
+   "evropske seskupeni pro uzemni spolupraci"
+  ],
+  "3C7U": [
+   "stiftelse"
+  ],
+  "3EKS": [
+   "gesellschaft mit beschraenkter haftung",
+   "gesellschaft mit beschrankter haftung",
+   "gmbh",
+   "limited",
+   "limited liability company",
+   "ltd",
+   "sagl",
+   "sarl",
+   "societa a garanzia limitata",
+   "societe a responsabilite limitee"
+  ],
+  "3FCU": [
+   "societe dexercice liberal par action simplifiee"
+  ],
+  "3FUP": [
+   "evropeisko kooperativno druzhestvo s ogranichena otgovornost",
+   "evropeisko kooperatyvno druzhestvo s ohranychena othovornost",
+   "evropeysko kooperativno druzhestvo s ogranichena otgovornost",
+   "yevropeysko kooperativno druzhestvo s ogranichena otgovornost"
+  ],
+  "3G3D": [
+   "nadace"
+  ],
+  "3HLJ": [
+   "podelenie na evropeisko obedinenie po ikonomicheski interesi",
+   "podelenie na evropeysko obedinenie po ikonomicheski interesi",
+   "podeleniye na evropeysko obedineniye po ikonomicheski interesi",
+   "podelenye na evropeisko obedynenye po ykonomychesky ynteresy"
+  ],
+  "3L58": [
+   "kommunalt foretak"
+  ],
+  "3LCY": [
+   "pilnsabiedriba"
+  ],
+  "3LMA": [
+   "ages",
+   "auslaendische gesellschaft",
+   "auslandische gesellschaft",
+   "buitenlandse onderneming",
+   "ent e",
+   "entreprise etrangere"
+  ],
+  "3N94": [
+   "entreprise personne physique",
+   "onderneming natuurlijk persoon",
+   "ondernemingnatuurlijk persoon",
+   "unternehmen natuerliche person",
+   "unternehmen naturliche person"
+  ],
+  "3NJL": [
+   "autre personne de droit prive inscrite au registre du commerce et des societes"
+  ],
+  "3OK3": [
+   "scp de notaires"
+  ],
+  "3OW3": [
+   "egiu",
+   "europsko gospodarsko interesno udruzenje skraceno egiu"
+  ],
+  "3P3W": [
+   "druzstevny podnik s jednym zakladatelom"
+  ],
+  "3RHO": [
+   "naftiki etairia",
+   "naftiki eteria"
+  ],
+  "3RMA": [
+   "statni fond ze zakona"
+  ],
+  "3S6E": [
+   "service departemental dincendie et de secours sdis"
+  ],
+  "3SHX": [
+   "sdruzhenie v obshchestvena polza",
+   "sdruzhenie v obshtestvena polza",
+   "sdruzheniye v obshchestvena polza",
+   "sdruzhenye v obshchestvena polza"
+  ],
+  "3U3Y": [
+   "foundation"
+  ],
+  "3UPJ": [
+   "fueuesilisest isikust ettevotja",
+   "fuusilisest isikust ettevotja"
+  ],
+  "3W7E": [
+   "besloten vennootschap",
+   "gesellschaft mit beschraenkter haftung",
+   "gesellschaft mit beschrankter haftung",
+   "gmbh",
+   "societe a responsabilite limitee"
+  ],
+  "3XTE": [
+   "sarl cooperative de consommation"
+  ],
+  "40A7": [
+   "foundation"
+  ],
+  "40DB": [
+   "ag co ohg",
+   "gmbh co ohg",
+   "offene handelsgesellschaft",
+   "ohg",
+   "ohg mbh"
+  ],
+  "40R4": [
+   "forening"
+  ],
+  "43MZ": [
+   "prispevkova organizacia"
+  ],
+  "44CQ": [
+   "samfallighetsfoerening",
+   "samfallighetsforening"
+  ],
+  "45D7": [
+   "klon na chuzhdestranen targovets",
+   "klon na chuzhdestranen tiergovets",
+   "klon na chuzhdestranen tierhovets",
+   "klon na chuzhdestranen trgovets"
+  ],
+  "468Q": [
+   "united kingdom societas"
+  ],
+  "46CD": [
+   "pobocka sporitelne"
+  ],
+  "487E": [
+   "etablissement public local denseignement"
+  ],
+  "491H": [
+   "association non declaree"
+  ],
+  "4A26": [
+   "zajmova organizace druzstev"
+  ],
+  "4A3J": [
+   "northern ireland company"
+  ],
+  "4A8T": [
+   "evropska delniska druzba",
+   "se"
+  ],
+  "4C0J": [
+   "protected cell company"
+  ],
+  "4C5L": [
+   "uegyvedi iroda",
+   "ugyvedi iroda"
+  ],
+  "4CKX": [
+   "krajsky urad"
+  ],
+  "4DZU": [
+   "autre sarl cooperative"
+  ],
+  "4E5P": [
+   "cooeperatieve vennootschap met onbeperkte aansprakelijkheid met een sociaal oogmerk",
+   "cooperatieve vennootschap met onbeperkte aansprakelijkheid met een sociaal oogmerk",
+   "cvoa so",
+   "genossenschaft mit unbeschraenkter haftung mit sozialer zielsetzung",
+   "genossenschaft mit unbeschrankter haftung mit sozialer zielsetzung",
+   "guhsz",
+   "scri fs",
+   "societe cooperative a responsabilite illimitee a finalite sociale"
+  ],
+  "4GJI": [
+   "limited",
+   "ltd",
+   "private limited by guarantee"
+  ],
+  "4GX1": [
+   "narodny vybor"
+  ],
+  "4H0F": [
+   "autre etablissement public local de cooperation non specialise ou entente"
+  ],
+  "4H61": [
+   "keskinaeinen vakuutusyhtioe",
+   "keskinainen vakuutusyhtio",
+   "oemsesidigt foersaekringsbolag",
+   "omsesidigt forsakringsbolag"
+  ],
+  "4HTX": [
+   "pflp",
+   "private fund limited partnership"
+  ],
+  "4JS0": [
+   "association syndicale autorisee"
+  ],
+  "4L1X": [
+   "autonome gemeinderegie",
+   "autonoom gemeentebedrijf",
+   "regie communale autonome"
+  ],
+  "4OTK": [
+   "regionalni rada regionu soudrznosti"
+  ],
+  "4QRE": [
+   "oenkormanyzat",
+   "onkormanyzat"
+  ],
+  "4QXM": [
+   "eenmanszaak"
+  ],
+  "4RPP": [
+   "kollektivgesellschaft mit beschraenkter haftung",
+   "kollektivgesellschaft mit beschrankter haftung"
+  ],
+  "4RT7": [
+   "sa de hlm a conseil dadministration"
+  ],
+  "4S57": [
+   "caja de ahorros"
+  ],
+  "4SJR": [
+   "s a t",
+   "sociedad agraria de trasformacion"
+  ],
+  "4TNX": [
+   "profession liberale"
+  ],
+  "4UB2": [
+   "garancni fond obchodniku s cennymi papiry"
+  ],
+  "4V0A": [
+   "geie",
+   "grupul european de interes economic"
+  ],
+  "4VD7": [
+   "pole dequilibre territorial et rural petr"
+  ],
+  "4WV7": [
+   "egyeb koeztestuelet",
+   "egyeb koztestulet"
+  ],
+  "4YAK": [
+   "staly rozhodci soud"
+  ],
+  "4ZF3": [
+   "valstybes imones"
+  ],
+  "4ZRR": [
+   "norskregistrert utenlandsk foretak"
+  ],
+  "50TD": [
+   "statsforetak"
+  ],
+  "528Z": [
+   "societe en commandite simple"
+  ],
+  "53QF": [
+   "treuhaenderschaft",
+   "treuhanderschaft"
+  ],
+  "54AL": [
+   "eterorithmi eteria",
+   "eterorrythmi etairia"
+  ],
+  "54M6": [
+   "b v",
+   "besloten vennootschap met beperkte aansprakelijkheid"
+  ],
+  "54P7": [
+   "europabolag",
+   "s e",
+   "se"
+  ],
+  "54SK": [
+   "friendly society"
+  ],
+  "54WI": [
+   "investment company with fixed capital",
+   "investmentgesellschaft mit festem kapital sicaf",
+   "societa di investimento a capitale fisso sicaf",
+   "societe dinvestissement a capital fixe sicaf"
+  ],
+  "55MA": [
+   "c c c",
+   "cwmni cyfyngedig cyhoeddus"
+  ],
+  "57V7": [
+   "private unlimited"
+  ],
+  "599X": [
+   "fonde og andre selvejende institutioner"
+  ],
+  "59F9": [
+   "groupement foncier agricole"
+  ],
+  "5AJO": [
+   "caisse depargne et de prevoyance"
+  ],
+  "5AM3": [
+   "zastup org inych statov",
+   "zastupitelske organy inych statov"
+  ],
+  "5AP3": [
+   "pobocna mezinarodni organizace zamestnavatelu"
+  ],
+  "5AX8": [
+   "cuideachta ghniomhaiochta ainmnithe",
+   "dac limited by guarantee",
+   "designated activity company limited by guarantee"
+  ],
+  "5BEZ": [
+   "besondere rechtsform",
+   "forme juridique particuliere",
+   "natura giuridica particolare",
+   "special legal form"
+  ],
+  "5BY2": [
+   "europos kooperatines bendroves"
+  ],
+  "5CIE": [
+   "advokatu profesines bendrijos"
+  ],
+  "5DWL": [
+   "association momentanee"
+  ],
+  "5F76": [
+   "cechy i izby rzemieslnicze izby gospodarcze"
+  ],
+  "5FRT": [
+   "other type of company in northern ireland"
+  ],
+  "5GGB": [
+   "societe anonyme"
+  ],
+  "5H68": [
+   "commercant"
+  ],
+  "5J5Y": [
+   "ver obch spol",
+   "verejna obchodna spolocnost"
+  ],
+  "5K0Q": [
+   "etablissement public local social et medico social",
+   "etablissement public local social et medicosocial"
+  ],
+  "5KU5": [
+   "verejna obchodni spolecnost"
+  ],
+  "5KVH": [
+   "cooperativa de 2o grau"
+  ],
+  "5LXY": [
+   "verska skupnost in podobne verske organizacije"
+  ],
+  "5NCK": [
+   "organizatie non guvernamentala",
+   "organizatie nonguvernamentala"
+  ],
+  "5ODO": [
+   "ente diritto pubblico"
+  ],
+  "5QS7": [
+   "ivaerksaetterselskab",
+   "ivs"
+  ],
+  "5RDO": [
+   "s a",
+   "sociedad anonima"
+  ],
+  "5TA8": [
+   "seimynos"
+  ],
+  "5ULL": [
+   "eeig",
+   "eiropas ekonomisko interesu grupa"
+  ],
+  "5V5S": [
+   "kommune"
+  ],
+  "5VCF": [
+   "sa a directoire s a i"
+  ],
+  "5WI2": [
+   "elaekesaeaetioe",
+   "elakesaatio",
+   "pensionsstiftelse"
+  ],
+  "5WU6": [
+   "e e s v",
+   "eesv",
+   "europees economisch samenwerkingsverband"
+  ],
+  "5WWO": [
+   "privatstiftung"
+  ],
+  "5YBL": [
+   "stavovska organizacia profesna komora"
+  ],
+  "5Z8W": [
+   "samostatne hospodariaci rolnik zapisany v obchodnom registri",
+   "shr rolnik v or"
+  ],
+  "5ZTZ": [
+   "fylkeskommunalt foretak"
+  ],
+  "60BG": [
+   "organy wladzy administracji rzadowej kontroli panstwowej i ochrony prawa oraz sady i trybunaly"
+  ],
+  "60IF": [
+   "private unlimited no share capital"
+  ],
+  "61WE": [
+   "institution de retraite supplementaire"
+  ],
+  "629I": [
+   "s j",
+   "sp j",
+   "spolka jawna"
+  ],
+  "62Y3": [
+   "v o f",
+   "vennootschap onder firma"
+  ],
+  "634M": [
+   "geie",
+   "gruppo europeo di interesse economico"
+  ],
+  "63KS": [
+   "gmbh ug",
+   "ug haftungsbeschraenkt",
+   "ug haftungsbeschrankt",
+   "unternehmergesellschaft"
+  ],
+  "63P9": [
+   "secs",
+   "societe en commandite simple"
+  ],
+  "66JQ": [
+   "syndicat de copropriete"
+  ],
+  "68J6": [
+   "association agricole"
+  ],
+  "68PD": [
+   "representacao permanente"
+  ],
+  "69H1": [
+   "europaeische genossenschaft sce",
+   "europaische genossenschaft sce"
+  ],
+  "6CHY": [
+   "societe par actions simplifiee"
+  ],
+  "6CJJ": [
+   "scp de geometres experts"
+  ],
+  "6CQN": [
+   "akciova spolecnost"
+  ],
+  "6D9L": [
+   "sverensky fond"
+  ],
+  "6DGX": [
+   "association prestataire de services region flamande",
+   "dienstleistungsvereinigung flaemische region",
+   "dienstleistungsvereinigung flamische region",
+   "dienstverlenende vereniging vlaams gewest"
+  ],
+  "6DYI": [
+   "societe de participations financieres de profession liberale societe a responsabilite limitee spfpl sarl"
+  ],
+  "6FAI": [
+   "statni podnik"
+  ],
+  "6I0P": [
+   "hooneuehistu",
+   "hooneuhistu"
+  ],
+  "6IIE": [
+   "sa cooperative dinteret maritime a conseil dadministration"
+  ],
+  "6IK8": [
+   "entidade empresarial intermunicipal"
+  ],
+  "6JDN": [
+   "profesines sajungos ir ju susivienijimai"
+  ],
+  "6JS5": [
+   "societa a responsabilita limitata"
+  ],
+  "6KWU": [
+   "societe dexercice liberal en commandite par actions"
+  ],
+  "6LUM": [
+   "glowny oddzial zagranicznego zakladu reasekuracji"
+  ],
+  "6MPY": [
+   "ustanova"
+  ],
+  "6OMW": [
+   "organizacni jednotka obcanskeho sdruzeni"
+  ],
+  "6OYI": [
+   "zrzeszenie"
+  ],
+  "6PEQ": [
+   "lokalsamfund",
+   "paikallisyhteiso",
+   "paikallisyhteisoe"
+  ],
+  "6Q6D": [
+   "pravna osoba katolicke crkve"
+  ],
+  "6QQB": [
+   "ag",
+   "aktiengesellschaft"
+  ],
+  "6R72": [
+   "samostatne hospodariaci rolnik nezapisany v obchodnom registri",
+   "shr rolnik"
+  ],
+  "6RD2": [
+   "agencije i druge samostalne pravne osobe s javnim ovlastima"
+  ],
+  "6RUE": [
+   "geie",
+   "groupement europeen dinteret economique geie"
+  ],
+  "6SYJ": [
+   "sa de hlm a directoire"
+  ],
+  "6UPM": [
+   "zadruzhni savez",
+   "zadruzhny savez",
+   "zadruzni savez"
+  ],
+  "6WQ5": [
+   "organismos de investimento colectivo em valores mobiliarios",
+   "ucits"
+  ],
+  "6YHU": [
+   "sa dinteret collectif agricole sica a conseil dadministration"
+  ],
+  "70X0": [
+   "fondazione impresa"
+  ],
+  "72R7": [
+   "stredna skola"
+  ],
+  "73MQ": [
+   "samospravny kraj urad samospravneho kraja"
+  ],
+  "73PZ": [
+   "k d",
+   "komanditno drushtvo",
+   "komanditno drustvo",
+   "komandytno drushtvo"
+  ],
+  "747U": [
+   "spolecnost komanditni na akcie"
+  ],
+  "74HH": [
+   "scp de veterinaires"
+  ],
+  "74W6": [
+   "statni prispevkova organizace ostatni"
+  ],
+  "752Q": [
+   "euroopa aeriuehing",
+   "euroopa ariuhing",
+   "se"
+  ],
+  "75WC": [
+   "fondazione"
+  ],
+  "75XK": [
+   "limited partnership without separate legal personality"
+  ],
+  "760X": [
+   "annan foerening",
+   "annan forening",
+   "muu yhdistys"
+  ],
+  "79H0": [
+   "nicht eingetragener verein"
+  ],
+  "7B9H": [
+   "societate cooperativa"
+  ],
+  "7CKN": [
+   "societa in nome collettivo"
+  ],
+  "7J3S": [
+   "wirtschaftlicher verein"
+  ],
+  "7MNN": [
+   "inst droit public",
+   "inst oeff recht",
+   "inst off recht",
+   "institut de droit public",
+   "institut des oeffentlichen rechts",
+   "institut des offentlichen rechts",
+   "ist dir pubblico",
+   "istituti di diritto pubblico",
+   "pub sec inst",
+   "public sector institution"
+  ],
+  "7O89": [
+   "europske druzstvo"
+  ],
+  "7O94": [
+   "groupement forestier"
+  ],
+  "7OZQ": [
+   "zajmove sdruzeni"
+  ],
+  "7QSE": [
+   "zastup zahr prav osoby",
+   "zastupenie zahranicnej pravnickej osoby"
+  ],
+  "7RRP": [
+   "ag",
+   "aktiengesellschaft"
+  ],
+  "7RZH": [
+   "l l p",
+   "limited liability partnership",
+   "llp"
+  ],
+  "7SIZ": [
+   "mutuelle"
+  ],
+  "7SJP": [
+   "eesv",
+   "europaeische wirtschaftliche interessenvereinigung",
+   "europaische wirtschaftliche interessenvereinigung",
+   "europees economisch samenwerkingsverband",
+   "ewiv",
+   "geie",
+   "groupement europeen dinteret economique"
+  ],
+  "7SZH": [
+   "autre groupement de droit prive non dote de la personnalite morale"
+  ],
+  "7T8N": [
+   "charitable incorporated organisation"
+  ],
+  "7U4R": [
+   "e e i g",
+   "european economic interest groupings"
+  ],
+  "7U8O": [
+   "s i i",
+   "sociedades de inversion inmobiliaria"
+  ],
+  "7UHA": [
+   "collectivite et territoire doutre mer"
+  ],
+  "7VVZ": [
+   "co op",
+   "co operative society northern ireland",
+   "cooperative society northern ireland"
+  ],
+  "7W9B": [
+   "organizatii cooperatiste de credit si casele centrale ale acestora"
+  ],
+  "7WRN": [
+   "i s",
+   "interessentskab"
+  ],
+  "7XPP": [
+   "fundo de investimento alternativo"
+  ],
+  "81G5": [
+   "seca",
+   "societe en commandite par actions"
+  ],
+  "81KA": [
+   "ab",
+   "akcines bendroves"
+  ],
+  "82QO": [
+   "service deconcentre de letat a competence inter departementale"
+  ],
+  "84J8": [
+   "statni hospodarska organizace rizena okresnim uradem"
+  ],
+  "85K5": [
+   "reprezentanta"
+  ],
+  "85PM": [
+   "europejskie zgrupowanie interesow gospodarczych",
+   "ezig"
+  ],
+  "876R": [
+   "egyeb egyesuelet",
+   "egyeb egyesulet"
+  ],
+  "87VO": [
+   "safer anonyme a directoire"
+  ],
+  "883O": [
+   "filial",
+   "sivuliike"
+  ],
+  "88TX": [
+   "drushtveno preduzece",
+   "drustveno preduzece"
+  ],
+  "8AXV": [
+   "societa consortile cooperativa a responsabilita limitata"
+  ],
+  "8BL9": [
+   "evropaiki dimosia etaireia periorismenis efthynis"
+  ],
+  "8CF0": [
+   "assurance company"
+  ],
+  "8CM0": [
+   "partg",
+   "partnerschaftsgesellschaft"
+  ],
+  "8E2A": [
+   "cooeperatieve vennootschap met beperkte aansprakelijkheid",
+   "cooperatieve vennootschap met beperkte aansprakelijkheid",
+   "cvba",
+   "gen mbh",
+   "genossenschaft mit beschraenkter haftung",
+   "genossenschaft mit beschrankter haftung",
+   "scrl",
+   "societe cooperative a responsabilite limitee"
+  ],
+  "8EHB": [
+   "sicav",
+   "sociedad de inversion de capital variable"
+  ],
+  "8ER6": [
+   "stanovanjska zadruga"
+  ],
+  "8FD2": [
+   "cooperativa de consum"
+  ],
+  "8FZW": [
+   "scp de conseils juridiques"
+  ],
+  "8G07": [
+   "autre personne physique"
+  ],
+  "8GTU": [
+   "autre service deconcentre de letat a competence territoriale"
+  ],
+  "8GU1": [
+   "s r l s",
+   "s r l semplificata",
+   "societa a responsabilita limitata semplificata"
+  ],
+  "8HGS": [
+   "erityislainsaadantoon perustuva yhdistys",
+   "erityislainsaeaedaentoeoen perustuva yhdistys",
+   "foerening som grundar sig paa speciallagstiftning",
+   "forening som grundar sig pa speciallagstiftning"
+  ],
+  "8II5": [
+   "autre sa cooperative a conseil dadministration"
+  ],
+  "8IWA": [
+   "commune associee et commune deleguee"
+  ],
+  "8K5T": [
+   "spotrebni druzstvo"
+  ],
+  "8KHD": [
+   "jed zboru ochrany zel",
+   "jednotka zboru ozbrojenej ochrany zeleznic"
+  ],
+  "8LX5": [
+   "autre regime de prevoyance sociale"
+  ],
+  "8OKM": [
+   "service deconcentre a competence nationale dun ministere hors defense"
+  ],
+  "8R2G": [
+   "societe civile immobiliere de construction vente",
+   "societe civile immobiliere de constructionvente"
+  ],
+  "8RE3": [
+   "druzstevny podnik pol",
+   "druzstevny podnik polnohospodarsky"
+  ],
+  "8S9H": [
+   "gjensidig forsikringsselskap"
+  ],
+  "8T79": [
+   "samlagsfelag"
+  ],
+  "8TOF": [
+   "spoldzielnia"
+  ],
+  "8TYA": [
+   "autre sa cooperative a directoire"
+  ],
+  "8UE6": [
+   "org jedn pol strany hn",
+   "organizacna jednotka politickej strany politickeho hnutia"
+  ],
+  "8UEG": [
+   "nyilvanosan mukodo reszvenytarsasag",
+   "nyilvanosan mukoedo reszvenytarsasag",
+   "nyrt"
+  ],
+  "8UMK": [
+   "europai gazdasagi egyesueles",
+   "europai gazdasagi egyesules"
+  ],
+  "8VDW": [
+   "societe dassurance a forme mutuelle"
+  ],
+  "8VFX": [
+   "vereniging met beperkte rechtsbevoegdheid"
+  ],
+  "8VH3": [
+   "befektetesi alap"
+  ],
+  "8VRU": [
+   "europska zadruga societas cooperativa europaea skraceno sce"
+  ],
+  "8VWR": [
+   "sa deconomie mixte a conseil dadministration"
+  ],
+  "8WH8": [
+   "autre personne morale de droit etranger"
+  ],
+  "8WJ7": [
+   "keskinaeinen kiinteistoeosakeyhtioe",
+   "keskinainen kiinteistoosakeyhtio",
+   "oemsesidigt fastighetsaktiebolag",
+   "omsesidigt fastighetsaktiebolag"
+  ],
+  "8XDK": [
+   "sa damenagement foncier et dequipement rural safer a conseil dadministration"
+  ],
+  "8XDW": [
+   "genossenschaft"
+  ],
+  "8YLB": [
+   "einrichtung ohne gewinnerzielungsabsicht",
+   "instelling zonder winstoogmerk",
+   "institution sans but lucratif",
+   "isbl"
+  ],
+  "8Z6G": [
+   "gmbh co kg",
+   "kg",
+   "kgaa co kg",
+   "kommanditgesellschaft",
+   "stiftung co kg",
+   "ug haftungsbeschraenkt co kg ag co kg",
+   "ug haftungsbeschrankt co kg ag co kg"
+  ],
+  "8ZQE": [
+   "korteriuehistu",
+   "korteriuhistu"
+  ],
+  "90YN": [
+   "social zdrav poistovna",
+   "socialna a zdravotne poistovne"
+  ],
+  "917C": [
+   "ceska tiskova kancelar"
+  ],
+  "93WZ": [
+   "podnikatel fyzicka osoba zapis v or podnikajuca sucasne ako sam hosp rolnik",
+   "podnikatelfyzicka osobazapis v orpodnikajuca sucasne ako sam hosp rolnik",
+   "ziv a shr rolnik v or"
+  ],
+  "946C": [
+   "ednolichen targovets",
+   "ednolichen tiergovets",
+   "ednolychen tierhovets",
+   "yednolichen trgovets"
+  ],
+  "94WO": [
+   "district urbain"
+  ],
+  "956I": [
+   "s l n e",
+   "sociedad limitada de nueva empresa"
+  ],
+  "95G8": [
+   "podnikajici fyzicka osoba tuzemska"
+  ],
+  "95MS": [
+   "fo slob povolanie",
+   "foslob povolanie",
+   "slobodne povolanie fyzicka osoba podnikajuca na zaklade ineho ako zivnostenskeho zakona",
+   "slobodne povolaniefyzicka osoba podnikajuca na zaklade ineho ako zivnostenskeho zakona"
+  ],
+  "96XK": [
+   "fundacja"
+  ],
+  "971Y": [
+   "podnik nebo hospodarske zarizeni sdruzeni"
+  ],
+  "97PB": [
+   "foersaekringskassa",
+   "forsakringskassa",
+   "vakuutuskassa"
+  ],
+  "97PZ": [
+   "sarl cooperative dinteret maritime"
+  ],
+  "995K": [
+   "magannyugdijpenztar"
+  ],
+  "99JD": [
+   "aeie",
+   "agrupamento europeu de interesse economico"
+  ],
+  "9AAK": [
+   "maatschap"
+  ],
+  "9AUC": [
+   "foersaekringsfoerening",
+   "forsakringsforening",
+   "vakuutusyhdistys"
+  ],
+  "9B78": [
+   "royal charter company"
+  ],
+  "9BPE": [
+   "credit union"
+  ],
+  "9C91": [
+   "sepcav",
+   "societe depargne pension a capital variable",
+   "societe depargnepension a capital variable"
+  ],
+  "9D9U": [
+   "t p",
+   "trgovac pojedinac"
+  ],
+  "9DI1": [
+   "boligbyggelag"
+  ],
+  "9F78": [
+   "chuzhdestranno druzhestvo fizichesko litse",
+   "chuzhdestranno druzhestvo fyzychesko lytse"
+  ],
+  "9FPZ": [
+   "s e",
+   "sociedad anonima europea"
+  ],
+  "9HC8": [
+   "societe en participation entre personnes physiques"
+  ],
+  "9HLU": [
+   "spolecnost s rucenim omezenym"
+  ],
+  "9JGX": [
+   "landesinnungsverband"
+  ],
+  "9KGS": [
+   "societa cooperativa europea"
+  ],
+  "9KSX": [
+   "p s",
+   "partnerselskab"
+  ],
+  "9KU7": [
+   "union de societes cooperatives agricoles"
+  ],
+  "9L9V": [
+   "polnohospodar druzstvo",
+   "polnohospodarske druzstvo"
+  ],
+  "9LJA": [
+   "aktsiaselts"
+  ],
+  "9N1F": [
+   "sa dinteret collectif agricole sica"
+  ],
+  "9NSV": [
+   "neinvesticny fond"
+  ],
+  "9O0S": [
+   "association fonciere urbaine"
+  ],
+  "9O67": [
+   "preduzetnik",
+   "preduzetnyk"
+  ],
+  "9PZC": [
+   "fundacija"
+  ],
+  "9QHJ": [
+   "government entity"
+  ],
+  "9RVC": [
+   "druzstvo"
+  ],
+  "9T5S": [
+   "fondation"
+  ],
+  "9XDB": [
+   "obcanske sdruzeni"
+  ],
+  "9XFK": [
+   "foundation"
+  ],
+  "9YIP": [
+   "europakooperativ",
+   "s c e"
+  ],
+  "A0J6": [
+   "asociacion"
+  ],
+  "A0VZ": [
+   "scp darchitectes"
+  ],
+  "A0W7": [
+   "publiekrechtelijke rechtspersoon"
+  ],
+  "A2GC": [
+   "religines bendruomenes bendrijos ir centrai"
+  ],
+  "A2X8": [
+   "unregistered company"
+  ],
+  "A338": [
+   "individualios imones"
+  ],
+  "A8CT": [
+   "entidade publica empresarial"
+  ],
+  "A97B": [
+   "m p s",
+   "mutualidad de prevision social"
+  ],
+  "AAL7": [
+   "kommandit erwerbsgesellschaft",
+   "kommanditerwerbsgesellschaft"
+  ],
+  "ADAZ": [
+   "istituto religioso"
+  ],
+  "AEV1": [
+   "partrederi"
+  ],
+  "AGSR": [
+   "jedn stat zel tech ins",
+   "jednotka statnej zeleznicno technickej inspekcie"
+  ],
+  "AHBR": [
+   "sa a participation ouvriere a directoire"
+  ],
+  "AI01": [
+   "persoana fizica independenta"
+  ],
+  "AIR5": [
+   "fond commun de placement"
+  ],
+  "AJ9U": [
+   "s a p",
+   "sociedad anonima profesional"
+  ],
+  "AL9T": [
+   "samorzadowe jednostki organizacyjne"
+  ],
+  "ALPT": [
+   "associacao"
+  ],
+  "AM3T": [
+   "statni fond ze zakona nezapisujici se do obchodniho rejstriku"
+  ],
+  "AMFI": [
+   "autorite constitutionnelle"
+  ],
+  "AMKW": [
+   "reit ag",
+   "reit aktiengesellschaft",
+   "reitag",
+   "reitaktiengesellschaft"
+  ],
+  "ANDT": [
+   "societate pe actiuni"
+  ],
+  "ANSR": [
+   "kg",
+   "kommanditgesellschaft"
+  ],
+  "APEN": [
+   "sprava zeleznicni dopravni cesty statni organizace"
+  ],
+  "ARDP": [
+   "sociedad civil profesional"
+  ],
+  "ARJF": [
+   "ente morale"
+  ],
+  "ATQY": [
+   "senc",
+   "societe en nom collectif"
+  ],
+  "AUPV": [
+   "annat fastighetsaktiebolag",
+   "muu kiinteistoeosakeyhtioe",
+   "muu kiinteistoosakeyhtio"
+  ],
+  "AVYY": [
+   "government entity"
+  ],
+  "AXS5": [
+   "sociedad de capital riesgo",
+   "sociedad de capitalriesgo"
+  ],
+  "AXSB": [
+   "ges m b h",
+   "gesellschaft mit beschraenkter haftung",
+   "gesellschaft mit beschrankter haftung",
+   "gmbh"
+  ],
+  "AZ8V": [
+   "societa per azioni"
+  ],
+  "AZA0": [
+   "ditta individuale",
+   "einzelfirma",
+   "einzelunternehmen",
+   "entreprise individuelle",
+   "individually owned co",
+   "ragione individuale",
+   "raison individuelle",
+   "sole proprietorship"
+  ],
+  "AZFE": [
+   "eingetragene genossenschaft"
+  ],
+  "AZTM": [
+   "eiropas komercsabiedriba",
+   "se"
+  ],
+  "AZTO": [
+   "sambruksfoerening",
+   "sambruksforening"
+  ],
+  "B0V5": [
+   "s coop p",
+   "sociedad cooperativa profesional"
+  ],
+  "B21W": [
+   "prosta spolka akcyjna"
+  ],
+  "B5PM": [
+   "n v",
+   "naamloze vennootschap"
+  ],
+  "B5TO": [
+   "societa a responsabilita limitata con unico socio"
+  ],
+  "B645": [
+   "sa dattribution a conseil dadministration"
+  ],
+  "B6ES": [
+   "c c c",
+   "cwmni cyfyngedig cyhoeddus",
+   "p l c",
+   "plc",
+   "public limited company"
+  ],
+  "B7I7": [
+   "sa cooperative artisanale a conseil dadministration"
+  ],
+  "B910": [
+   "offene handelsgesellschaft mit sozialer zielsetzung",
+   "ohgmsz",
+   "snc fs",
+   "societe en nom collectif a finalite sociale",
+   "vennootschap onder firma met een sociaal oogmerk",
+   "vof so"
+  ],
+  "BAK2": [
+   "exploitation agricole a responsabilite limitee"
+  ],
+  "BAUQ": [
+   "sa de credit immobilier a conseil dadministration"
+  ],
+  "BBB8": [
+   "kommanditaerengesellschaft",
+   "kommanditarengesellschaft"
+  ],
+  "BBEB": [
+   "europese naamloze vennootschap societas europaea",
+   "s e",
+   "se"
+  ],
+  "BCF5": [
+   "dimosia etaireia periorismenis efthynis me metoches"
+  ],
+  "BCSV": [
+   "flexible kapitalgesellschaft",
+   "flexkapg"
+  ],
+  "BDDP": [
+   "scp dinfirmiers"
+  ],
+  "BE56": [
+   "avalik oiguslik juriidiline isik",
+   "avalikoiguslik juriidiline isik"
+  ],
+  "BEAN": [
+   "sicaf",
+   "societe dinvestissement a capital fixe"
+  ],
+  "BEAY": [
+   "handelsbolag",
+   "hb"
+  ],
+  "BEWI": [
+   "association declaree"
+  ],
+  "BF9N": [
+   "ent pub federale",
+   "entreprise publique federale",
+   "fed publ co",
+   "federal public company",
+   "imp pubb federale",
+   "impresa pubblica federale",
+   "oeff unt bund",
+   "off unt bund",
+   "unternehmen des bundes"
+  ],
+  "BGPJ": [
+   "eeig",
+   "europos ekonominiu interesu grupes"
+  ],
+  "BI3B": [
+   "a e i e",
+   "agrupacion europea de interes economico"
+  ],
+  "BJ65": [
+   "pensjonskasse"
+  ],
+  "BJ8Q": [
+   "egyeni vallalkozas"
+  ],
+  "BKAB": [
+   "association dassurances mutuelles"
+  ],
+  "BKEB": [
+   "oblast zavod poistovne",
+   "oblastny zavod poistovne"
+  ],
+  "BKQO": [
+   "staten och dess inraettningar",
+   "staten och dess inrattningar",
+   "valtio ja sen laitokset"
+  ],
+  "BKUX": [
+   "zartkoeruen mukoedo reszvenytarsasag",
+   "zartkoruen mukodo reszvenytarsasag",
+   "zrt"
+  ],
+  "BKVI": [
+   "hypoteekkiyhdistys",
+   "hypoteksfoerening",
+   "hypoteksforening"
+  ],
+  "BL4B": [
+   "obecne prospesna spolecnost"
+  ],
+  "BL52": [
+   "s c a r l",
+   "s c r l",
+   "societa consortile a responsabilita limitata"
+  ],
+  "BMYJ": [
+   "egyeb alapitvany"
+  ],
+  "BPLS": [
+   "uab",
+   "uzdarosios akcines bendroves"
+  ],
+  "BQ19": [
+   "laivanisaennistoeyhtioe",
+   "laivanisannistoyhtio",
+   "rederibolag"
+  ],
+  "BRGA": [
+   "sa immobiliere dinvestissement a conseil dadministration"
+  ],
+  "BS22": [
+   "individualais komersants"
+  ],
+  "BSJT": [
+   "sp k",
+   "spolka komandytowa"
+  ],
+  "BSK1": [
+   "oktatasi intezmenyek"
+  ],
+  "BSZ8": [
+   "stiftung"
+  ],
+  "BUMI": [
+   "europska spolocnost",
+   "se"
+  ],
+  "BVJ0": [
+   "l p",
+   "limited partnership",
+   "partnership en commendite or limited partnership",
+   "socjeta in akkomandita jew socjeta limitata"
+  ],
+  "BVOE": [
+   "limited",
+   "limited company",
+   "ltd"
+  ],
+  "BX6Y": [
+   "friendly society"
+  ],
+  "BYQJ": [
+   "bankaktiebolag"
+  ],
+  "BYZF": [
+   "paroisse hors zone concordataire"
+  ],
+  "C061": [
+   "kumpanija pubblika",
+   "p l c",
+   "plc",
+   "public limited liability company"
+  ],
+  "C1IC": [
+   "societa cooperativa consortile"
+  ],
+  "C42J": [
+   "sarl immobiliere de gestion"
+  ],
+  "C4D7": [
+   "ensemble urbain"
+  ],
+  "C4PZ": [
+   "podnikatel fyzicka osoba nezapisany v obchodnom registri",
+   "podnikatelfyzicka osobanezapisany v obchodnom registri",
+   "zivnostnik"
+  ],
+  "C4Q2": [
+   "vseobecna zdravotni pojistovna"
+  ],
+  "C51L": [
+   "eurooppalainen taloudellinen etuyhtyma sivutoimipaikka",
+   "eurooppalainen taloudellinen etuyhtymae sivutoimipaikka",
+   "filial foer en europeisk ekonomisk intressegrupp",
+   "filial for en europeisk ekonomisk intressegrupp"
+  ],
+  "C58S": [
+   "company limited by guarantee",
+   "cuideachta faoi theorainn rathaiochta"
+  ],
+  "C5FE": [
+   "samostatna drobna provozovna obecniho uradu"
+  ],
+  "C609": [
+   "ebvba",
+   "eenpersoons besloten vennootschap met beperkte aansprakelijkheid",
+   "pgmbhma",
+   "privatgesellschaft mit beschraenkter haftung mit einem alleingesellschafter",
+   "privatgesellschaft mit beschrankter haftung mit einem alleingesellschafter",
+   "societe privee a responsabilite limitee unipersonnelle",
+   "sprlu"
+  ],
+  "C61P": [
+   "ek foer",
+   "ek for",
+   "ekonomisk foerening",
+   "ekonomisk forening"
+  ],
+  "C7GZ": [
+   "vyrobni druzstvo"
+  ],
+  "CAQ1": [
+   "versicherungsverein auf gegenseitigkeit"
+  ],
+  "CATU": [
+   "spolek"
+  ],
+  "CAX5": [
+   "regime general de la securite sociale"
+  ],
+  "CB98": [
+   "foundations"
+  ],
+  "CBO2": [
+   "service du ministere de la defense"
+  ],
+  "CD28": [
+   "spolecnost komanditni"
+  ],
+  "CDOT": [
+   "uk establishment"
+  ],
+  "CDXK": [
+   "limited liability company"
+  ],
+  "CF56": [
+   "mutualite sociale agricole"
+  ],
+  "CF5L": [
+   "ansvarlig selskap delt ansvar"
+  ],
+  "CFH5": [
+   "gesellschaften oder vereinigungen ohne rechtspersoenlichkeit",
+   "gesellschaften oder vereinigungen ohne rechtspersonlichkeit",
+   "gvorp",
+   "saspj",
+   "societe ou association sans personnalite juridique",
+   "vennootschap of vereniging zonder rechtspersoonlijkheid",
+   "vvzrl"
+  ],
+  "CGSO": [
+   "societa in accomandita semplice"
+  ],
+  "CHJR": [
+   "podnik se zahranicni majetkovou ucasti"
+  ],
+  "CIO8": [
+   "verejna vyzkumna instituce"
+  ],
+  "CKOS": [
+   "usuline uehendus",
+   "usuline uhendus"
+  ],
+  "CMHQ": [
+   "evropufelag",
+   "se"
+  ],
+  "CNSS": [
+   "societe en participation de professions liberales"
+  ],
+  "CNXL": [
+   "artisan commercant",
+   "artisancommercant"
+  ],
+  "CODH": [
+   "c v",
+   "commanditaire vennootschap"
+  ],
+  "CQ5X": [
+   "evropaiki etaireia",
+   "se"
+  ],
+  "CQJI": [
+   "region"
+  ],
+  "CQMY": [
+   "kommanditgesellschaft",
+   "limited partnership",
+   "ltd partnership",
+   "societa in accomandita",
+   "societe en commandite"
+  ],
+  "CR7N": [
+   "european company",
+   "se",
+   "societas europaea"
+  ],
+  "CS8B": [
+   "stat hosp org riad okr",
+   "statna hospodarska organizacia riadena okresnym uradom"
+  ],
+  "CTBD": [
+   "alte forme de proprietate"
+  ],
+  "CTCH": [
+   "kooperatsia",
+   "kooperatsiia",
+   "kooperatsiya",
+   "kooperatsyia"
+  ],
+  "CTNS": [
+   "societa cooperativa a responsabilita limitata"
+  ],
+  "CUGP": [
+   "regie autonoma"
+  ],
+  "CUKQ": [
+   "mezinarodni organizace zamestnavatelu"
+  ],
+  "CVH6": [
+   "sarl damenagement foncier et dequipement rural safer"
+  ],
+  "CWTQ": [
+   "societe anonyme monegasque"
+  ],
+  "CX05": [
+   "kb",
+   "kommanditbolag"
+  ],
+  "CY1M": [
+   "instytucje gospodarki budzetowej"
+  ],
+  "CZUA": [
+   "zahranicni fyzicka osoba"
+  ],
+  "D18J": [
+   "jednoducha spol na akcie",
+   "jednoducha spolocnost na akcie"
+  ],
+  "D1VK": [
+   "skolska pravnicka osoba"
+  ],
+  "D2I2": [
+   "syndicat intercommunal a vocation multiple sivom"
+  ],
+  "D35X": [
+   "zahranicni spolek"
+  ],
+  "D40E": [
+   "verein alten rechts"
+  ],
+  "D4PU": [
+   "frivillig forening"
+  ],
+  "D64E": [
+   "gospodarska zbornica"
+  ],
+  "D7OA": [
+   "entidade empresarial municipal"
+  ],
+  "DA06": [
+   "sarl",
+   "societe a responsabilite limitee"
+  ],
+  "DAFV": [
+   "foersaekringsaktiebolag",
+   "forsakringsaktiebolag",
+   "vakuutusosakeyhtio",
+   "vakuutusosakeyhtioe"
+  ],
+  "DAQC": [
+   "zakladna skola"
+  ],
+  "DCRK": [
+   "consorzio fidi"
+  ],
+  "DDES": [
+   "scr pyme",
+   "scrpyme",
+   "sociedad de capital riesgo pyme",
+   "sociedad de capitalriesgopyme"
+  ],
+  "DEF6": [
+   "javno preduzece"
+  ],
+  "DEG4": [
+   "societe en commandite par actions"
+  ],
+  "DEO1": [
+   "o w m",
+   "onderlinge waarborgmaatschappij"
+  ],
+  "DFE5": [
+   "sociedade anonima"
+  ],
+  "DJ2D": [
+   "sole trader"
+  ],
+  "DKUW": [
+   "ab",
+   "aktiebolag",
+   "osakeyhtio",
+   "osakeyhtioe",
+   "oy"
+  ],
+  "DL9Z": [
+   "ulkomainen yhteiso",
+   "ulkomainen yhteisoe",
+   "utlaendskt samfund",
+   "utlandskt samfund"
+  ],
+  "DLCX": [
+   "tikrosios ukines bendrijos"
+  ],
+  "DLS4": [
+   "societa in accomandita per azioni"
+  ],
+  "DM88": [
+   "europaeische wirtschaftliche interessenvereinigung",
+   "europaische wirtschaftliche interessenvereinigung"
+  ],
+  "DMT8": [
+   "arbetspensionskassa",
+   "tyoeelaekekassa",
+   "tyoelakekassa"
+  ],
+  "DN6F": [
+   "koelcsoenoes biztosito egyesuelet",
+   "kolcsonos biztosito egyesulet"
+  ],
+  "DP2E": [
+   "int organisation",
+   "internat org",
+   "international organisation",
+   "internationale organisation",
+   "org internationales",
+   "org internazionali",
+   "organisation internationale",
+   "organizazioni internazionali"
+  ],
+  "DP3Q": [
+   "s l",
+   "s r l",
+   "sociedad de responsabilidad limitada"
+  ],
+  "DPY1": [
+   "egyeb szoevetkezet",
+   "egyeb szovetkezet"
+  ],
+  "DRPL": [
+   "eoefg",
+   "eofg",
+   "europeisk oekonomisk foretaksgruppe",
+   "europeisk okonomisk foretaksgruppe"
+  ],
+  "DRQM": [
+   "sa cooperative de construction a conseil dadministration"
+  ],
+  "DSSD": [
+   "azienda autonoma statale"
+  ],
+  "DTAX": [
+   "autre organisme mutualiste"
+  ],
+  "DTIU": [
+   "akcionersko drustvo",
+   "aktsionersko drushtvo",
+   "aktsyonersko drushtvo"
+  ],
+  "DUGD": [
+   "intreprindere individuala"
+  ],
+  "DVXS": [
+   "sarl",
+   "societe a responsabilite limitee"
+  ],
+  "DWS3": [
+   "general partnership"
+  ],
+  "DWYD": [
+   "association declaree dinsertion par leconomique"
+  ],
+  "DX6Z": [
+   "verein"
+  ],
+  "DXQH": [
+   "societe civile fonciere"
+  ],
+  "E01X": [
+   "zadruga v zasebni lasti"
+  ],
+  "E0NE": [
+   "amm corporazioni consorzi patriziati di diritto pubblico",
+   "corp diritto pubb",
+   "corp droit public",
+   "corporation de droit public",
+   "oeff rechtl koerp",
+   "oeffentlich rechtliche koerperschaft verwaltung",
+   "oeffentlichrechtliche koerperschaft verwaltung",
+   "off rechtl korp",
+   "offentlich rechtliche korperschaft verwaltung",
+   "offentlichrechtliche korperschaft verwaltung",
+   "public corporation"
+  ],
+  "E0YF": [
+   "sa cooperative dinteret maritime a directoire"
+  ],
+  "E12O": [
+   "building society"
+  ],
+  "E1VK": [
+   "medzinar org a zdruz",
+   "medzinarodne organizacie a zdruzenia"
+  ],
+  "E4CI": [
+   "bytove druzstvo"
+  ],
+  "E4HU": [
+   "lietuvos prekybos pramones ir amatu rumu asociacija",
+   "lpra"
+  ],
+  "E4KB": [
+   "hlutafelag"
+  ],
+  "E6J3": [
+   "company limited by shares",
+   "ltd"
+  ],
+  "E6YB": [
+   "caisse federale de credit mutuel"
+  ],
+  "E7W8": [
+   "zadruga",
+   "zadruha"
+  ],
+  "E9BI": [
+   "stiftelse"
+  ],
+  "E9CM": [
+   "europsko drustvo societas europaea skraceno se",
+   "se"
+  ],
+  "E9OX": [
+   "gemeinnuetzige stiftung",
+   "gemeinnutzige stiftung"
+  ],
+  "E9SH": [
+   "zahranic osoba fyzicka",
+   "zahranicna osoba fyzicka osoba s bydliskom mimo uzemia sr"
+  ],
+  "EABD": [
+   "societe civile cooperative entre medecins"
+  ],
+  "EAC8": [
+   "societe cooperative de production de hlm anonyme a directoire"
+  ],
+  "ECUL": [
+   "secteur de commune"
+  ],
+  "ECWU": [
+   "einzelunternehmer"
+  ],
+  "ED84": [
+   "poistovaci spolok"
+  ],
+  "EDMK": [
+   "asbl dpu",
+   "association sans but lucratif de droit public",
+   "oeffentlich rechtliche vereinigung ohne gewinnerzielungsabsicht",
+   "oeffentlichrechtliche vereinigung ohne gewinnerzielungsabsicht",
+   "oervohgza",
+   "offentlich rechtliche vereinigung ohne gewinnerzielungsabsicht",
+   "offentlichrechtliche vereinigung ohne gewinnerzielungsabsicht",
+   "orvohgza",
+   "vereniging zonder winstoogmerk van publiek recht",
+   "vzw pr"
+  ],
+  "EDN7": [
+   "ekonomisk foerening",
+   "ekonomisk forening",
+   "taloudellinen yhdistys"
+  ],
+  "EDZP": [
+   "studentkaar eller studentnation",
+   "studentkar eller studentnation",
+   "ylioppilaskunta tai osakunta"
+  ],
+  "EE90": [
+   "andelslag",
+   "osuuskunta"
+  ],
+  "EFBR": [
+   "grupul de interes economic"
+  ],
+  "EJ06": [
+   "ead",
+   "ednolichno aktsionerno druzhestvo",
+   "ednolychno aktsyonerno druzhestvo",
+   "yead",
+   "yednolichno aktsionerno druzhestvo"
+  ],
+  "EMC8": [
+   "annan ekonomisk foerening",
+   "annan ekonomisk forening",
+   "muu taloudellinen yhdistys"
+  ],
+  "EMLA": [
+   "limited partnership without legal personality"
+  ],
+  "EO9F": [
+   "reszvenytarsasag"
+  ],
+  "EQOV": [
+   "ag",
+   "aktiengesellschaft"
+  ],
+  "ER02": [
+   "org jednotka zdruzenia",
+   "organizacna jednotka zdruzenia"
+  ],
+  "ES2D": [
+   "sabiedriba ar ierobezotu atbildibu",
+   "sia"
+  ],
+  "ESTU": [
+   "tarsashaz"
+  ],
+  "ET6Z": [
+   "svazy cirkvi a nabozenskych spolecnosti"
+  ],
+  "EU0T": [
+   "towarzystwo reasekuracji wzajemnej"
+  ],
+  "EUT4": [
+   "s a r l s",
+   "societe a responsabilite limitee simplifiee"
+  ],
+  "EV7F": [
+   "einzelfirma"
+  ],
+  "EVYY": [
+   "caisse de credit maritime mutuel"
+  ],
+  "EXD7": [
+   "enkeltpersonforetak"
+  ],
+  "EXY8": [
+   "cooeperatieve vennootschap met onbeperkte aansprakelijkheid bij wijze van deelneming van publiek recht",
+   "cooperatieve vennootschap met onbeperkte aansprakelijkheid bij wijze van deelneming van publiek recht",
+   "cooperative a responsabilite illimitee cooperative de participation de droit public",
+   "cvoa cd",
+   "gmuhgb",
+   "oeffentlich rechtliche genossenschaft mit unbeschraenkter haftung genossenschaft auf beteiligung",
+   "oeffentlichrechtliche genossenschaft mit unbeschraenkter haftung genossenschaft auf beteiligung",
+   "offentlich rechtliche genossenschaft mit unbeschrankter haftung genossenschaft auf beteiligung",
+   "offentlichrechtliche genossenschaft mit unbeschrankter haftung genossenschaft auf beteiligung",
+   "scri cp"
+  ],
+  "EYKU": [
+   "stecajna masa"
+  ],
+  "EYRI": [
+   "centre technique industriel ou comite professionnel du developpement economique"
+  ],
+  "EZQW": [
+   "r p io",
+   "rechtspersoon in oprichting",
+   "rp io"
+  ],
+  "F0B6": [
+   "societe en commandite simple cooperative"
+  ],
+  "F0BK": [
+   "societate agricola"
+  ],
+  "F21U": [
+   "skarb panstwa"
+  ],
+  "F2TQ": [
+   "tradicines religines bendruomenes ar bendrijos"
+  ],
+  "F2ZF": [
+   "asociacijos"
+  ],
+  "F560": [
+   "spolocna zauj org druz",
+   "spolocna zaujmova organizacia druzstiev"
+  ],
+  "F5X7": [
+   "cooperative"
+  ],
+  "F68H": [
+   "societate in nume colectiv"
+  ],
+  "F6SZ": [
+   "sa cooperative de production scop a directoire"
+  ],
+  "F72Z": [
+   "etablissement public national a caractere industriel ou commercial dote dun comptable public"
+  ],
+  "F7JY": [
+   "saerlig finansiel virksomhed"
+  ],
+  "F8UD": [
+   "scp davoues dappel"
+  ],
+  "F93F": [
+   "sa immobiliere pour le commerce et lindustrie sicomi a conseil dadministration"
+  ],
+  "FANM": [
+   "kolka rolnicze"
+  ],
+  "FBYB": [
+   "representation ou agence commerciale detat ou organisme public etranger immatricule au rcs"
+  ],
+  "FCJF": [
+   "f i a m m",
+   "fondo de inversion en activos del mercado monetario"
+  ],
+  "FDVU": [
+   "fo v rdis",
+   "fyzicka osoba prilezitostne cinna zapisana v registri danoveho informacneho systemu",
+   "fyzicka osobaprilezitostne cinnazapisana v registri danoveho informacneho systemu"
+  ],
+  "FEBD": [
+   "stiftung des oeffentlichen rechts",
+   "stiftung des offentlichen rechts"
+  ],
+  "FEEA": [
+   "etablissement public national ayant fonction dadministration centrale"
+  ],
+  "FF1D": [
+   "cuideachta neamhtheoranta",
+   "public unlimited company that has no share capital",
+   "pulc uc"
+  ],
+  "FFQL": [
+   "commune et commune nouvelle"
+  ],
+  "FFTN": [
+   "administration du canton",
+   "amministrazione del cantone",
+   "canton",
+   "cantonal administration",
+   "cantone",
+   "kanton",
+   "verwaltung des kantons"
+  ],
+  "FG84": [
+   "societas cooperativa europaea"
+  ],
+  "FH4R": [
+   "f p",
+   "fondo de pensiones"
+  ],
+  "FI4M": [
+   "industrial and building society"
+  ],
+  "FIPS": [
+   "banka statni penezni ustav",
+   "bankastatni penezni ustav"
+  ],
+  "FJ0E": [
+   "s a",
+   "spolka akcyjna"
+  ],
+  "FJQ8": [
+   "persoana fizica autorizata",
+   "pfa"
+  ],
+  "FKG2": [
+   "organisation internationale"
+  ],
+  "FMUC": [
+   "ine prac vysokej skoly",
+   "ine pracovisko vysokej skoly fakulty"
+  ],
+  "FOUY": [
+   "scp de commissaires aux comptes"
+  ],
+  "FPP2": [
+   "s ie",
+   "s iye",
+   "s ye",
+   "sabiratelno druzhestvo sd sadruzhie",
+   "sbiratelno druzhestvo sd sdruzhiye",
+   "sd s ie",
+   "sd sie",
+   "siebiratelno druzhestvo sd siedruzhie",
+   "siebyratelno druzhestvo sd siedruzhye",
+   "siye"
+  ],
+  "FQ5Y": [
+   "organizacje spoleczne i zawodowe"
+  ],
+  "FQRE": [
+   "ucelova zahr obch org",
+   "ucelova zahranicno obchodna organizacia"
+  ],
+  "FR3V": [
+   "gbr",
+   "gesellschaft buergerlichen rechts",
+   "gesellschaft burgerlichen rechts"
+  ],
+  "FSBD": [
+   "forening"
+  ],
+  "FUKI": [
+   "enkeltmandsvirksomhed"
+  ],
+  "FV0K": [
+   "emporiki eponymia"
+  ],
+  "FVGZ": [
+   "industrial and provident society"
+  ],
+  "FW7S": [
+   "europaeisk andelsselskab",
+   "sce selskab",
+   "sceselskab"
+  ],
+  "FY0F": [
+   "societe civile immobiliere"
+  ],
+  "FY1B": [
+   "cirkve a nabozenske spolecnosti"
+  ],
+  "FYBN": [
+   "sarl mixte dinteret agricole smia"
+  ],
+  "G04R": [
+   "sparbank"
+  ],
+  "G12F": [
+   "private limited by guarantee no share capital"
+  ],
+  "G2I3": [
+   "pobocny spolek"
+  ],
+  "G3R6": [
+   "einzelkaufmann"
+  ],
+  "G5RH": [
+   "zadruge"
+  ],
+  "G7Z2": [
+   "sarl cooperative de construction"
+  ],
+  "G8LP": [
+   "societes interprofessionnelles de soins ambulatoires"
+  ],
+  "G98S": [
+   "ordre professionnel ou assimile"
+  ],
+  "GA3A": [
+   "erakond"
+  ],
+  "GCCT": [
+   "limited liability partnerships",
+   "llp"
+  ],
+  "GFN6": [
+   "sa cooperative de commercants detaillants a conseil dadministration",
+   "sa cooperative de commercantsdetaillants a conseil dadministration"
+  ],
+  "GFXN": [
+   "primaerkommune"
+  ],
+  "GJJJ": [
+   "societe dexercice liberal a responsabilite limitee a associe unique"
+  ],
+  "GJL1": [
+   "s com p a",
+   "sociedad comanditaria por acciones"
+  ],
+  "GJTL": [
+   "s com p a p",
+   "sociedad comanditaria por acciones profesional"
+  ],
+  "GL07": [
+   "poistovna a s",
+   "poistovna akciova spolocnost"
+  ],
+  "GLCH": [
+   "somateia kai idrymata"
+  ],
+  "GLN8": [
+   "centre intercommunal daction sociale cias"
+  ],
+  "GNXT": [
+   "v v e",
+   "vereniging van eigenaars"
+  ],
+  "GP8M": [
+   "administration communale",
+   "amministrazione comunale",
+   "commune",
+   "comune",
+   "gemeinde",
+   "local administration",
+   "verwaltung der gemeinde"
+  ],
+  "GQV4": [
+   "sa immobiliere pour le commerce et lindustrie sicomi a directoire"
+  ],
+  "GT4V": [
+   "cooperativa de credit"
+  ],
+  "GULL": [
+   "selskab med begraenset ansvar",
+   "smba"
+  ],
+  "GVPD": [
+   "offene handelsgesellschaft",
+   "ohg"
+  ],
+  "GWZF": [
+   "societe civile particuliere"
+  ],
+  "GXL6": [
+   "autre etablissement public national denseignement"
+  ],
+  "GY5R": [
+   "cirkevna organizacia"
+  ],
+  "GYY6": [
+   "annen juridisk person"
+  ],
+  "GZCQ": [
+   "scp de greffiers de tribunal de commerce"
+  ],
+  "GZE5": [
+   "wspolnota mieszkaniowa"
+  ],
+  "GZN4": [
+   "anteilsgesellschaft"
+  ],
+  "H0PO": [
+   "cyfyngedig",
+   "limited",
+   "ltd",
+   "private limited company"
+  ],
+  "H1U2": [
+   "societe en nom collectif"
+  ],
+  "H3Z4": [
+   "sa cooperative de transport a directoire"
+  ],
+  "H3ZD": [
+   "sarl dinteret collectif agricole sica"
+  ],
+  "H4VR": [
+   "societe civile cooperative de consommation"
+  ],
+  "H4XQ": [
+   "verejne neziskove ustavni zdravotnicke zarizeni"
+  ],
+  "H6OR": [
+   "etairia periorismenis efthynis",
+   "eteria periorismenis euthinis"
+  ],
+  "H6WW": [
+   "statni prispevkova organizace"
+  ],
+  "H781": [
+   "association",
+   "association politique religieuse scientifique etc",
+   "associazione politico religioso scientifico ecc",
+   "verein"
+  ],
+  "H7D4": [
+   "soggetto estero"
+  ],
+  "H7OD": [
+   "spoldzielcza kasa oszczednosciowo kredytowa",
+   "spoldzielcza kasa oszczednosciowokredytowa"
+  ],
+  "H8VP": [
+   "anpartsselskab",
+   "aps"
+  ],
+  "HA3N": [
+   "caisse de credit municipal"
+  ],
+  "HATI": [
+   "association intermediaire"
+  ],
+  "HBR3": [
+   "julkinen keskinaeinen vakuutusyhtioe",
+   "julkinen keskinainen vakuutusyhtio",
+   "publikt oemsesidigt foersaekringsaktiebolag",
+   "publikt omsesidigt forsakringsaktiebolag"
+  ],
+  "HC8N": [
+   "sarl union de societes cooperatives"
+  ],
+  "HEOB": [
+   "kb",
+   "kommandiittiyhtio",
+   "kommandiittiyhtioe",
+   "kommanditbolag"
+  ],
+  "HEXO": [
+   "javno trgovsko drushtvo",
+   "javno trgovsko drustvo"
+  ],
+  "HF2L": [
+   "association de droit local bas rhin haut rhin et moselle",
+   "association de droit local basrhin hautrhin et moselle"
+  ],
+  "HGMH": [
+   "labdaros ir paramos fondai"
+  ],
+  "HHR4": [
+   "s a s",
+   "societe par actions simplifiee"
+  ],
+  "HHYT": [
+   "european public limited liability company societas europaea",
+   "european public limitedliability company societas europaea",
+   "s e",
+   "se"
+  ],
+  "HIL6": [
+   "allodapi etaireia"
+  ],
+  "HJ1Y": [
+   "bendrijos"
+  ],
+  "HJCS": [
+   "drustvo zveza drustev"
+  ],
+  "HKVP": [
+   "astiki prosopiki etairia",
+   "astiki proswpiki eteria"
+  ],
+  "HMEI": [
+   "autre societe civile cooperative"
+  ],
+  "HN63": [
+   "komanditno druzhestvo s aktsii",
+   "komandytno druzhestvo s aktsyy"
+  ],
+  "HN75": [
+   "consorzio",
+   "societa cooperativa"
+  ],
+  "HNJK": [
+   "limited partnership"
+  ],
+  "HNWB": [
+   "eeig",
+   "etey",
+   "eurooppalainen taloudellinen etuyhtyma",
+   "eurooppalainen taloudellinen etuyhtymae",
+   "europeisk ekonomisk intresseguppering"
+  ],
+  "HOT8": [
+   "partie polityczne"
+  ],
+  "HQPK": [
+   "komora hospodarska agrarni"
+  ],
+  "HRQA": [
+   "s coop e",
+   "sociedad cooperativa europea"
+  ],
+  "HS5W": [
+   "vnitrni organizacni jednotka organizacni slozky statu"
+  ],
+  "HSNC": [
+   "podnik zahranicniho obchodu"
+  ],
+  "HSYZ": [
+   "autre societe civile professionnelle"
+  ],
+  "HTJD": [
+   "koezhasznu tarsasag",
+   "kozhasznu tarsasag"
+  ],
+  "HTT9": [
+   "erillishallinnollinen valtion laitos",
+   "statlig inraettning med separat foervaltning",
+   "statlig inrattning med separat forvaltning"
+  ],
+  "HX6D": [
+   "private limited"
+  ],
+  "HX77": [
+   "cant publ co",
+   "cantonal public company",
+   "ent pub cantonale",
+   "entreprise publique cantonale",
+   "imp pubb cantonale",
+   "impresa pubblica cantonale",
+   "oeff unt kanton",
+   "off unt kanton",
+   "unternehmen des kantons"
+  ],
+  "HY6K": [
+   "organizacni slozka zahranicniho nadacniho fondu"
+  ],
+  "HZG7": [
+   "vysoka skola"
+  ],
+  "HZI2": [
+   "banka stat penaz ustav",
+   "banka statny penazny ustav",
+   "bankastat penaz ustav",
+   "bankastatny penazny ustav"
+  ],
+  "I0MH": [
+   "societe civile cooperative de construction"
+  ],
+  "I15K": [
+   "cooperativa agricola"
+  ],
+  "I1UP": [
+   "taeisuehing",
+   "taisuhing"
+  ],
+  "I2WU": [
+   "a i e",
+   "agrupacion de interes economico"
+  ],
+  "I32F": [
+   "sdruzeni mezinarodniho obchodu"
+  ],
+  "I68R": [
+   "organizacni jednotka zvlastni organizace pro zastoupeni ceskych zajmu v mezinarodnich nevladnich organizacich"
+  ],
+  "I7AS": [
+   "druzstvo"
+  ],
+  "I7MN": [
+   "javno podjetje"
+  ],
+  "I8RE": [
+   "aftotelos ergazomenos"
+  ],
+  "I8TE": [
+   "sa mixte dinteret agricole smia"
+  ],
+  "I9BB": [
+   "sucursala"
+  ],
+  "IAP3": [
+   "syndicat intercommunal a vocation unique sivu"
+  ],
+  "IAS6": [
+   "s g r",
+   "sociedad de garantia reciproca"
+  ],
+  "IC8G": [
+   "scp davocats aux conseils"
+  ],
+  "IC98": [
+   "scp de commissaires priseurs",
+   "scp de commissairespriseurs"
+  ],
+  "ICQT": [
+   "d v z",
+   "druzba za vzajemno zavarovanje"
+  ],
+  "ID30": [
+   "limited partnership"
+  ],
+  "IF49": [
+   "e g",
+   "e gen",
+   "genossenschaft"
+  ],
+  "IF7H": [
+   "sa cooperative de consommation a conseil dadministration"
+  ],
+  "IGSV": [
+   "societe civile laitiere"
+  ],
+  "IMHA": [
+   "ente ecclesiastico"
+  ],
+  "INIG": [
+   "odborova organizace"
+  ],
+  "INTY": [
+   "etaireia periorismenis efthynis me engyisi kai pou echei metochiko kefalaio"
+  ],
+  "IQ9O": [
+   "spolecenstvi vlastniku jednotek"
+  ],
+  "IQGE": [
+   "allmennaksjeselskap",
+   "asa"
+  ],
+  "IQR2": [
+   "societe civile dinteret collectif agricole sica"
+  ],
+  "ISCZ": [
+   "doplnkova dochod poist",
+   "doplnkova dochodkova poistovna"
+  ],
+  "IT6N": [
+   "e r l",
+   "emprendedor de responsabilidad limitada"
+  ],
+  "IVVD": [
+   "savez zadruga"
+  ],
+  "IW8Z": [
+   "vyrobne druzstvo"
+  ],
+  "IX01": [
+   "empresa intermunicipal"
+  ],
+  "IX7U": [
+   "asukashallintoalue",
+   "boendefoervaltningsomraade",
+   "boendeforvaltningsomrade"
+  ],
+  "IYF9": [
+   "ev luth kyrkan",
+   "evankelis luterilainen kirkko",
+   "evankelisluterilainen kirkko"
+  ],
+  "IYXU": [
+   "bencom",
+   "community benefit society"
+  ],
+  "J34T": [
+   "ametiuehing",
+   "ametiuhing"
+  ],
+  "J3A3": [
+   "se",
+   "spolka europejska"
+  ],
+  "J3VJ": [
+   "sinetairismos",
+   "synetairismos"
+  ],
+  "J4S1": [
+   "association"
+  ],
+  "J5OU": [
+   "economisch samenwerkingsverband",
+   "groupement dinteret economique",
+   "wirtschaftliche interessenvereinigung"
+  ],
+  "J6MO": [
+   "kkt",
+   "koezkereseti tarsasag",
+   "kozkereseti tarsasag"
+  ],
+  "J8DW": [
+   "podnik zahr osoby org zlozka",
+   "podnik zahranicnej osoby organizacna zlozka podniku zahranicnej osoby"
+  ],
+  "J9OZ": [
+   "societe dexercice liberal a responsabilite limitee"
+  ],
+  "JAM3": [
+   "cooeperatieve vennootschap van publiek recht",
+   "cooperatieve vennootschap van publiek recht",
+   "cv pr",
+   "oeffentlich rechtliche genossenschaft",
+   "oeffentlichrechtliche genossenschaft",
+   "oergen",
+   "offentlich rechtliche genossenschaft",
+   "offentlichrechtliche genossenschaft",
+   "sc dpu",
+   "societe cooperative de droit public"
+  ],
+  "JB25": [
+   "ausl ag ltd",
+   "auslaendische niederlassung im handelsregister eingetragen",
+   "auslandische niederlassung im handelsregister eingetragen",
+   "foreign plc",
+   "sa dom estero",
+   "sadom etran",
+   "succursale di una impresa domiciliata allestero iscritta al registro di commercio",
+   "succursale suisse dune entreprise domiciliee a letranger inscrite au registre de commerce",
+   "swiss branch of an enterprise domiciled abroad registered in the commercial registrer"
+  ],
+  "JB2M": [
+   "s l p",
+   "s r l p",
+   "sociedad limitada profesional"
+  ],
+  "JBIQ": [
+   "institution de prevoyance"
+  ],
+  "JC0Y": [
+   "osauehing",
+   "osauhing"
+  ],
+  "JCAD": [
+   "evidovane cirkevni pravnicke osoby"
+  ],
+  "JCK1": [
+   "stopanska interesna zaednica",
+   "stopanska interesna zaednitsa",
+   "stopanska interesna zayednitsa",
+   "stopanska ynteresna zaednytsa"
+  ],
+  "JCKO": [
+   "panstwowe jednostki organizacyjne"
+  ],
+  "JFET": [
+   "societe de participations financieres de profession liberale societe anonyme a directoire spfpl sa a directoire"
+  ],
+  "JHC4": [
+   "foundation"
+  ],
+  "JHK5": [
+   "fonds voor gemene rekening"
+  ],
+  "JI3A": [
+   "keskinaeinen vahinkovakuutusyhdistys",
+   "keskinainen vahinkovakuutusyhdistys",
+   "oemsesidigt skadefoersaekringsfoerening",
+   "omsesidigt skadeforsakringsforening"
+  ],
+  "JIYK": [
+   "syndicat inter hospitalier"
+  ],
+  "JJYB": [
+   "zahranicni pobocny spolek"
+  ],
+  "JJYT": [
+   "koerperschaft oeffentlichen rechts",
+   "korperschaft offentlichen rechts"
+  ],
+  "JKC5": [
+   "podnik alebo hosp zar",
+   "podnik alebo hospodarske zariadenie zdruzenia"
+  ],
+  "JM1W": [
+   "scp de dentistes"
+  ],
+  "JMO0": [
+   "commission syndicale pour la gestion des biens indivis des communes"
+  ],
+  "JMVF": [
+   "invag",
+   "investmentaktiengesellschaft"
+  ],
+  "JN2P": [
+   "sarl unipersonnelle"
+  ],
+  "JNAD": [
+   "besloten vennootschap met beperkte aansprakelijkheid met een sociaal oogmerk",
+   "bvba so",
+   "pmbhsz",
+   "privatgesellschaft mit beschraenkter haftung mit sozialer zielsetzung",
+   "privatgesellschaft mit beschrankter haftung mit sozialer zielsetzung",
+   "societe privee a responsabilite limitee a finalite sociale",
+   "sprl fs"
+  ],
+  "JNDX": [
+   "europaeische wirtschaftliche interessenvereinigung",
+   "europaische wirtschaftliche interessenvereinigung",
+   "ewiv"
+  ],
+  "JOX1": [
+   "limited",
+   "ltd",
+   "plc",
+   "public limited company"
+  ],
+  "JOZN": [
+   "partnership en nom collectif",
+   "socjeta fisem kollettiv"
+  ],
+  "JQA2": [
+   "kmetijska zadruga"
+  ],
+  "JQOI": [
+   "sparkasse"
+  ],
+  "JR7T": [
+   "sarl nationale"
+  ],
+  "JTAV": [
+   "offene gesellschaft"
+  ],
+  "JTCO": [
+   "credit union northern ireland"
+  ],
+  "JTV5": [
+   "fondo de capital riesgo",
+   "fondo de capitalriesgo"
+  ],
+  "JU82": [
+   "ministere"
+  ],
+  "JUHG": [
+   "offene erwerbsgesellschaft"
+  ],
+  "JXDX": [
+   "se",
+   "societas europaea"
+  ],
+  "JYKN": [
+   "loipa"
+  ],
+  "K021": [
+   "contratto di rete dotato di soggettivita giuridica"
+  ],
+  "K09E": [
+   "enskild naeringsidkare",
+   "enskild naringsidkare",
+   "yksityinen elinkeinonharjoittaja"
+  ],
+  "K0RI": [
+   "institucion de inversion colectiva"
+  ],
+  "K2G8": [
+   "muut oikeushenkiloet",
+   "muut oikeushenkilot",
+   "oevriga juridiska personer",
+   "ovriga juridiska personer"
+  ],
+  "K39X": [
+   "sa union de societes cooperatives a conseil dadministration"
+  ],
+  "K4GR": [
+   "biudzetines istaigos"
+  ],
+  "K5KA": [
+   "regie dune collectivite locale a caractere industriel ou commercial"
+  ],
+  "K5P8": [
+   "samvirkeforetak"
+  ],
+  "K65D": [
+   "sa a conseil dadministration s a i"
+  ],
+  "K69X": [
+   "sa de credit immobilier a directoire"
+  ],
+  "K6L9": [
+   "sociedad civil profesional"
+  ],
+  "K6VE": [
+   "julkinen osakeyhtio",
+   "julkinen osakeyhtioe",
+   "oyj",
+   "publikt aktiebolag"
+  ],
+  "K7XQ": [
+   "etablissement public national a caractere scientifique culturel et professionnel"
+  ],
+  "K98U": [
+   "europaeische wirtschaftliche interessenvereinigung",
+   "europaische wirtschaftliche interessenvereinigung",
+   "ewiv"
+  ],
+  "K99N": [
+   "comite social economique detablissement"
+  ],
+  "K9L6": [
+   "idiotiki etaireia periorismenis efthynis me metoches"
+  ],
+  "KB52": [
+   "kom spol",
+   "komanditna spolocnost"
+  ],
+  "KBEQ": [
+   "societe civile immobiliere d accession progressive a la propriete"
+  ],
+  "KBKD": [
+   "d o o",
+   "druzba z omejeno odgovornostjo"
+  ],
+  "KCN5": [
+   "etablissement public administratif cercle et foyer dans les armees"
+  ],
+  "KCSG": [
+   "consorzio",
+   "ente impresa"
+  ],
+  "KFR1": [
+   "artisan"
+  ],
+  "KH4O": [
+   "skupnost lastnikov stanovanj"
+  ],
+  "KHAB": [
+   "drushtvo so ogranichena odgovrnost",
+   "drushtvo so ohranychena odhovrnost",
+   "drustvo so ogranicena odgvornost"
+  ],
+  "KHI5": [
+   "julkinen vakuutusosakeyhtio",
+   "julkinen vakuutusosakeyhtioe",
+   "publikt foersaekringsaktiebolag",
+   "publikt forsakringsaktiebolag"
+  ],
+  "KIU5": [
+   "d o o",
+   "drushtvo sa ogranichenom odgovornoshcu",
+   "drustvo sa ogranicenom odgovornoscu"
+  ],
+  "KJ9Q": [
+   "nichtkaufmaennische prokuren",
+   "nichtkaufmannische prokuren",
+   "non commercial power of attorney",
+   "noncommercial power of attorney",
+   "power att",
+   "procura",
+   "procura non commerciale",
+   "procuration",
+   "procurations non commerciales",
+   "prokura"
+  ],
+  "KLBO": [
+   "burgerlijke vennootschap onder vorm van commanditaire vennootschap op aandelen",
+   "bv cva",
+   "sc sca",
+   "societe civile sous forme de societe en commandite par actions",
+   "zivilrechtliche gesellschaft in der rechtsform einer kommanditgesellschaft auf aktien",
+   "zrg kgaa"
+  ],
+  "KM66": [
+   "instytuty badawcze"
+  ],
+  "KM6O": [
+   "gesellschaft des allgemeinen rechts",
+   "maatschap",
+   "societe de droit commun"
+  ],
+  "KM6Z": [
+   "statni banka ceskoslovenska"
+  ],
+  "KMFX": [
+   "cuideachta neamhtheoranta",
+   "private unlimited company",
+   "ulc uc"
+  ],
+  "KMPN": [
+   "etablissement public national a caractere administratif"
+  ],
+  "KP34": [
+   "j t d",
+   "javno trgovacko drustvo"
+  ],
+  "KPG6": [
+   "association"
+  ],
+  "KQH7": [
+   "societe civile dattribution"
+  ],
+  "KS9B": [
+   "syndicat patronal"
+  ],
+  "KUQO": [
+   "n e p a",
+   "naftiliaki etaireia ploion anapsychis"
+  ],
+  "KUUV": [
+   "organismo da administracao publica"
+  ],
+  "KVQU": [
+   "zdruz medzinar obchodu",
+   "zdruzenie medzinarodneho obchodu"
+  ],
+  "KWBA": [
+   "viesosios istaigos"
+  ],
+  "KWFE": [
+   "komora s vynimkou profesnych komor"
+  ],
+  "KWI4": [
+   "scp de masseurs kinesitherapeutes",
+   "scp de masseurskinesitherapeutes"
+  ],
+  "KX7D": [
+   "fylkeskommune"
+  ],
+  "KXDY": [
+   "podrushnitsa na stransko trgovsko drushtvo odnosno na stranski trgovrets poedinets",
+   "podrushnitsa na stransko trgovsko drushtvo odnosno na stranski trgovrets poyedinets",
+   "podrushnytsa na stransko trhovsko drushtvo odnosno na stransky trhovrets poedynets",
+   "podruznica na stransko trgovsko drustvo odnosno na stranski trgovec poedinec"
+  ],
+  "KXZT": [
+   "azienda speciale"
+  ],
+  "KZ3R": [
+   "poistovna s p",
+   "poistovna statny podnik"
+  ],
+  "L05H": [
+   "besloten vennootschap van publiek recht",
+   "bv pr",
+   "oeffentlich rechtliche gesellschaft mit beschraenkter haftung",
+   "oeffentlichrechtliche gesellschaft mit beschraenkter haftung",
+   "oergmbh",
+   "offentlich rechtliche gesellschaft mit beschrankter haftung",
+   "offentlichrechtliche gesellschaft mit beschrankter haftung",
+   "orgmbh",
+   "societe a responsabilite limitee de droit public",
+   "srl dpu"
+  ],
+  "L1M7": [
+   "fakulta vysokej skoly"
+  ],
+  "L1ZJ": [
+   "azienda municipale"
+  ],
+  "L25Z": [
+   "societe anonyme mixte dinteret agricole smia a conseil dadministration"
+  ],
+  "L5DU": [
+   "ent pub communale",
+   "entreprise publique communale",
+   "imp pubb comunale",
+   "impresa pubblica comunale",
+   "loc publ co",
+   "local public company",
+   "oeff unt gemeinde",
+   "off unt gemeinde",
+   "unternehmen der gemeinde"
+  ],
+  "L6IY": [
+   "nomika prosopa dimosiou dikaiou",
+   "nomika prosopa dimosiou dikeou"
+  ],
+  "L6QO": [
+   "regime special de securite sociale"
+  ],
+  "L7HX": [
+   "kerkgenootschap"
+  ],
+  "L7XJ": [
+   "paliskunta",
+   "renbeteslag"
+  ],
+  "L8D6": [
+   "afanis etairia",
+   "afanis eteria"
+  ],
+  "L9WT": [
+   "obec mesto o m urad",
+   "obec obecny urad mesto mestsky urad"
+  ],
+  "LA47": [
+   "emhu",
+   "emhue",
+   "euroopa majandushuviuehing",
+   "euroopa majandushuviuhing"
+  ],
+  "LARO": [
+   "societe par actions simplifiee a associe unique ou societe par actions simplifiee unipersonnelle"
+  ],
+  "LBQS": [
+   "annan solidariskt ansvarig innehaallningspliktig",
+   "annan solidariskt ansvarig innehallningspliktig",
+   "muu yhteisvastuullinen pidaetysvelvollinen",
+   "muu yhteisvastuullinen pidatysvelvollinen"
+  ],
+  "LCR0": [
+   "groupement dinteret economique"
+  ],
+  "LECS": [
+   "sdruzhenie v chastna polza",
+   "sdruzheniye v chastna polza",
+   "sdruzhenye v chastna polza"
+  ],
+  "LEDI": [
+   "honebni spolecenstvo"
+  ],
+  "LGME": [
+   "sa a participation ouvriere a conseil dadministration"
+  ],
+  "LGWG": [
+   "cuideachta ghniomhaiochta ainmnithe",
+   "dac limited by shares",
+   "designated activity company"
+  ],
+  "LHBB": [
+   "impresa individuale"
+  ],
+  "LJ92": [
+   "ceskoslovenske statni drahy statni organizace",
+   "ceskoslovenske statni drahystatni organizace"
+  ],
+  "LJJW": [
+   "verdipapirfond"
+  ],
+  "LJL0": [
+   "organizacni slozka statu"
+  ],
+  "LMIM": [
+   "limited",
+   "limited company",
+   "ltd",
+   "teoranta"
+  ],
+  "LNY0": [
+   "egyhazi szervezetek"
+  ],
+  "LNYR": [
+   "obrtna zadruga"
+  ],
+  "LO9A": [
+   "limited",
+   "ltd",
+   "private limited by guarantee"
+  ],
+  "LPCQ": [
+   "mezinarodni odborova organizace"
+  ],
+  "LT9U": [
+   "zwiazek zawodowy"
+  ],
+  "LU8S": [
+   "associe gerant de societe"
+  ],
+  "LUGM": [
+   "kooperatines bendroves kooperatyvai"
+  ],
+  "LUIN": [
+   "sarl immobiliere pour le commerce et lindustrie sicomi"
+  ],
+  "LUMA": [
+   "d d",
+   "dionicko drustvo"
+  ],
+  "LUOA": [
+   "kb",
+   "komanditines ukines bendrijos"
+  ],
+  "LVEQ": [
+   "usaldusuehing",
+   "usaldusuhing"
+  ],
+  "LWHF": [
+   "cooeperatieve vennootschap met onbeperkte aansprakelijkheid",
+   "cooperatieve vennootschap met onbeperkte aansprakelijkheid",
+   "cvoa",
+   "gen mubh",
+   "genossenschaft mit unbeschraenkter haftung",
+   "genossenschaft mit unbeschrankter haftung",
+   "scri",
+   "societe cooperative a responsabilite illimitee"
+  ],
+  "LWOD": [
+   "medarbejderinvesteringsselskab"
+  ],
+  "LWV6": [
+   "comm v",
+   "einfache kommanditgesellschaft",
+   "gewone commanditaire vennootschap",
+   "societe en commandite simple"
+  ],
+  "LZIC": [
+   "comhphairtiocht theoranta infheistiochta",
+   "investment limited partnership"
+  ],
+  "LZZD": [
+   "societa consortile per azioni"
+  ],
+  "M0Y0": [
+   "foersaekringsfoerening",
+   "forsakringsforening"
+  ],
+  "M1BJ": [
+   "societe civile de moyens"
+  ],
+  "M1DW": [
+   "oenkentes koelcsoenoes biztositopenztar",
+   "onkentes kolcsonos biztositopenztar"
+  ],
+  "M1IZ": [
+   "overige privaatrechtelijke rechtspersoon"
+  ],
+  "M4TI": [
+   "se",
+   "societe europeas"
+  ],
+  "M673": [
+   "societe civile dexploitation agricole"
+  ],
+  "M848": [
+   "corp publ co",
+   "corpororate public company",
+   "ent pub corpor",
+   "entreprise publique dune corpororation",
+   "imp pubb corpora",
+   "impresa o ente pubblico di una corporazione",
+   "oeff unt koerp",
+   "oeffentlich rechtliche koerperschaft unternehmen",
+   "oeffentlichrechtliche koerperschaft unternehmen",
+   "off unt korp",
+   "offentlich rechtliche korperschaft unternehmen",
+   "offentlichrechtliche korperschaft unternehmen"
+  ],
+  "M8SS": [
+   "ehf",
+   "einkahlutafelag"
+  ],
+  "M9IQ": [
+   "kommandittselskap"
+  ],
+  "MAVU": [
+   "dobrovolny svazek obci"
+  ],
+  "MBPY": [
+   "asumisoikeusyhdistys",
+   "boenderaettsfoerening",
+   "boenderattsforening"
+  ],
+  "MBUU": [
+   "prispevkova organizace zrizena uzemnim samospravnym celkem"
+  ],
+  "MCQP": [
+   "limited partnership with separate legal personality"
+  ],
+  "MCWR": [
+   "kinopraxia",
+   "koinopraxia"
+  ],
+  "MDOL": [
+   "fundacion"
+  ],
+  "MF7P": [
+   "k d",
+   "komanditno drustvo"
+  ],
+  "MFHR": [
+   "se",
+   "sociedade anonima europeia"
+  ],
+  "MG2O": [
+   "institution interdepartementale ou entente"
+  ],
+  "MGCM": [
+   "association chargee de mission region flamande",
+   "beauftragte vereinigung flaemische region",
+   "beauftragte vereinigung flamische region",
+   "opdrachthoudende vereniging vlaams gewest"
+  ],
+  "MMA4": [
+   "sa union de societes cooperatives a directoire"
+  ],
+  "MNQ7": [
+   "limited",
+   "ltd",
+   "private company limited by shares",
+   "teoranta"
+  ],
+  "MOUL": [
+   "assurance mutuelle agricole"
+  ],
+  "MQH3": [
+   "commanditaire vennootschap",
+   "commv",
+   "kommanditgesellschaft",
+   "kommg",
+   "scomm",
+   "societe en commandite"
+  ],
+  "MQPZ": [
+   "caisse depargne et de prevoyance a forme cooperative"
+  ],
+  "MQU9": [
+   "organisme de placement collectif en valeurs mobilieres sans personnalite morale"
+  ],
+  "MRSY": [
+   "general partnership",
+   "kollektivgesellschaft",
+   "partnership general",
+   "societa in nome collettivo",
+   "societe en nom collectif"
+  ],
+  "MRW9": [
+   "annan offentligraettslig juridisk person",
+   "annan offentligrattslig juridisk person",
+   "muu julkisoikeudellinen oikeushenkilo",
+   "muu julkisoikeudellinen oikeushenkiloe"
+  ],
+  "MSGT": [
+   "fo slob povolanie v or",
+   "foslob povolanie v or",
+   "slobodne povolanie fyzicka osoba podnikajuca na zaklade ineho ako zivnostenskeho zakona zapisana v obchodnom registri",
+   "slobodne povolaniefyzicka osoba podnikajuca na zaklade ineho ako zivnostenskeho zakona zapisana v obchodnom registri"
+  ],
+  "MVII": [
+   "ag",
+   "aktiengesellschaft",
+   "company limited by shares",
+   "plc",
+   "societa anonima",
+   "societe anonyme"
+  ],
+  "MX8J": [
+   "sa cooperative de commercants detaillants a directoire",
+   "sa cooperative de commercantsdetaillants a directoire"
+  ],
+  "MY1S": [
+   "odstepny zavod alebo ina organizacna zlozka podniku zapisujuca sa do obchodneho registra",
+   "odstepny zavod v or"
+  ],
+  "MYKG": [
+   "dimosia etaireia"
+  ],
+  "N3LC": [
+   "registrerat religioest samfund",
+   "registrerat religiost samfund",
+   "rekisteroeity uskonnollinen yhdyskunta",
+   "rekisteroity uskonnollinen yhdyskunta"
+  ],
+  "N5MX": [
+   "samostatne podnikajuca fo",
+   "samostatne podnikajuca fyzicka osoba"
+  ],
+  "N5NT": [
+   "besloten vennootschap met beperkte aansprakelijkheid",
+   "bvba",
+   "pgmbh",
+   "privatgesellschaft mit beschraenkter haftung",
+   "privatgesellschaft mit beschrankter haftung",
+   "societe privee a responsabilite limitee",
+   "sprl"
+  ],
+  "N66B": [
+   "sociedade em nome coletivo"
+  ],
+  "N7I1": [
+   "org zlozka prisp org",
+   "organizacna zlozka prispevkovej organizacie s odvodenou pravnou subjektivitou"
+  ],
+  "N9QW": [
+   "pobocka stat penaz ust",
+   "pobocka statneho penazneho ustavu"
+  ],
+  "NAUO": [
+   "other company type"
+  ],
+  "NBA8": [
+   "autre etablissement public national administratif a competence territoriale limitee"
+  ],
+  "NBTW": [
+   "scottish partnership"
+  ],
+  "NC88": [
+   "ucelova org jedn csd",
+   "ucelova organizacna jednotka csd"
+  ],
+  "NDC3": [
+   "private company"
+  ],
+  "NDEW": [
+   "societa consortile cooperativa"
+  ],
+  "NDID": [
+   "kollektivgesellschaft"
+  ],
+  "NFCV": [
+   "association cooperative inscrite droit local alsace moselle"
+  ],
+  "NFFH": [
+   "cooep",
+   "cooeperatie",
+   "cooperatie"
+  ],
+  "NFHN": [
+   "entidades de prevision social voluntaria",
+   "epsv"
+  ],
+  "NFRJ": [
+   "reprezentant fiscal"
+  ],
+  "NGR5": [
+   "mixed liability company"
+  ],
+  "NI3I": [
+   "verejnopravni instituce"
+  ],
+  "NIJH": [
+   "erwerbs und wirtschaftsgenossenschaft"
+  ],
+  "NIQY": [
+   "entidade empresarial metropolitana"
+  ],
+  "NJ87": [
+   "spolecny podnik s vice zakladateli"
+  ],
+  "NL31": [
+   "spolocny podnik s viacerymi zakladatelmi"
+  ],
+  "NLI7": [
+   "sporitelna"
+  ],
+  "NM07": [
+   "sa immobiliere dinvestissement a directoire"
+  ],
+  "NNLI": [
+   "stille gesellschaft"
+  ],
+  "NO20": [
+   "zatial neurcene"
+  ],
+  "NOI8": [
+   "communaute dagglomeration"
+  ],
+  "NPH3": [
+   "ceska narodni banka"
+  ],
+  "NQCT": [
+   "autre etablissement public administratif local"
+  ],
+  "NQHQ": [
+   "komoditni burza"
+  ],
+  "NRTG": [
+   "podruznica"
+  ],
+  "NUL8": [
+   "k s",
+   "kommanditselskab"
+  ],
+  "NUMY": [
+   "sa cooperative artisanale a directoire"
+  ],
+  "NV7C": [
+   "annan stiftelse",
+   "muu saatio",
+   "muu saeaetioe"
+  ],
+  "NVPY": [
+   "privaciu detektyvu bendrijos"
+  ],
+  "NZAI": [
+   "kuelfoeldi szekhelyu vallalkozas kereskedelmi kepviselete",
+   "kulfoldi szekhelyu vallalkozas kereskedelmi kepviselete"
+  ],
+  "O0EU": [
+   "borettslag"
+  ],
+  "O0Y2": [
+   "nespecifikovana pravna forma"
+  ],
+  "O15N": [
+   "chuzhdestranno druzhestvo iuridichesko litse",
+   "chuzhdestranno druzhestvo yuridichesko litse",
+   "chuzhdestranno druzhestvo yurydychesko lytse"
+  ],
+  "O1QI": [
+   "oemsesidigt foersaekringsbolag",
+   "omsesidigt forsakringsbolag"
+  ],
+  "O59C": [
+   "economisch samenwerkingsverband met een sociaal oogmerk",
+   "esv so",
+   "gie fs",
+   "groupement dinteret economique a finalite sociale",
+   "wirtschaftliche interessenvereinigung mit sozialer zielsetzung",
+   "wivmsz"
+  ],
+  "O5HQ": [
+   "burgerlijke vennootschap onder vorm van cooeperatieve vennootschap met beperkte aansprakelijkheid",
+   "burgerlijke vennootschap onder vorm van cooperatieve vennootschap met beperkte aansprakelijkheid",
+   "bv cvba",
+   "sc scrl",
+   "societe civile sous forme de societe cooperative a responsabilite limitee",
+   "zivilrechtliche gesellschaft in der rechtsform einer genossenschaft mit beschraenkter haftung",
+   "zivilrechtliche gesellschaft in der rechtsform einer genossenschaft mit beschrankter haftung",
+   "zvggbh"
+  ],
+  "O65B": [
+   "europaeische gesellschaft se",
+   "europaische gesellschaft se",
+   "se"
+  ],
+  "O7LB": [
+   "europeisk samvirkeforetak"
+  ],
+  "O7TC": [
+   "spolocny podnik"
+  ],
+  "O7XB": [
+   "sp z o o",
+   "spolka z ograniczona odpowiedzialnoscia"
+  ],
+  "O9PW": [
+   "samospravna stavovska organizace profesni komora"
+  ],
+  "OAGA": [
+   "regime vieillesse ne dependant pas du regime general de la securite sociale"
+  ],
+  "OBFU": [
+   "haupt von gemeinderschaften",
+   "indivisioni",
+   "indivisions",
+   "rappresentanti dindivisioni",
+   "representants dindivisions",
+   "representative of an ownership in undivided shares",
+   "undivided"
+  ],
+  "OII5": [
+   "egyeni uegyved",
+   "egyeni ugyved"
+  ],
+  "OIQA": [
+   "autre organisme professionnel"
+  ],
+  "OJ9I": [
+   "foersaekringsaktiebolag",
+   "forsakringsaktiebolag"
+  ],
+  "OKAZ": [
+   "obecny urad"
+  ],
+  "OL20": [
+   "e k",
+   "e kffr",
+   "e kfm",
+   "einzelunternehmen eingetragener kaufmann eingetragene kauffrau"
+  ],
+  "OLJ1": [
+   "syndicat mixte ferme"
+  ],
+  "OMX0": [
+   "s k a",
+   "spolka komandytowo akcyjna",
+   "spolka komandytowoakcyjna"
+  ],
+  "ONF1": [
+   "kg",
+   "kommanditgesellschaft"
+  ],
+  "OPDJ": [
+   "k d",
+   "komanditna druzba"
+  ],
+  "OQ8C": [
+   "fondo pensione"
+  ],
+  "OQWO": [
+   "d o o",
+   "drustvo s ogranicenom odgovornoscu jednostavno drustvo s ogranicenom odgovornoscu",
+   "j d o o"
+  ],
+  "OSLZ": [
+   "societe cooperative de banque populaire"
+  ],
+  "OT3Y": [
+   "company limited by guarantee"
+  ],
+  "OV32": [
+   "s r l",
+   "societa a responsabilita limitata"
+  ],
+  "OVKW": [
+   "vysoka skola verejna statni"
+  ],
+  "OWUN": [
+   "communaute de communes"
+  ],
+  "OXLO": [
+   "statlig affaersinraettning",
+   "statlig affarsinrattning",
+   "valtion liikelaitos"
+  ],
+  "OXUC": [
+   "sociedade em comandita"
+  ],
+  "P12B": [
+   "tameia pronoias syntaxeos"
+  ],
+  "P1L1": [
+   "glowny oddzial zagranicznego zakladu ubezpieczen"
+  ],
+  "P3J5": [
+   "centre communal daction sociale"
+  ],
+  "P3YF": [
+   "pobocna odborova organizace a organizace zamestnavatelu"
+  ],
+  "P418": [
+   "s p a",
+   "societa per azioni"
+  ],
+  "P5JT": [
+   "eoos",
+   "evropaikos omilos oikonomikou skopou"
+  ],
+  "P5S3": [
+   "pessoa coletiva de direito publico"
+  ],
+  "P6XJ": [
+   "podnik alebo hosp zar",
+   "podnik alebo hospodarske zariadenie politickej strany"
+  ],
+  "P714": [
+   "association fonciere de remembrement"
+  ],
+  "P9F2": [
+   "kft",
+   "korlatolt felelossegu tarsasag"
+  ],
+  "PB3V": [
+   "konkursbo"
+  ],
+  "PDNU": [
+   "egbr",
+   "eingetragene gesellschaft buergerlichen rechts",
+   "eingetragene gesellschaft burgerlichen rechts"
+  ],
+  "PDQ0": [
+   "kooperativ hyresraettsfoerening",
+   "kooperativ hyresrattsforening"
+  ],
+  "PE9A": [
+   "federatja"
+  ],
+  "PESN": [
+   "indivision avec personne morale"
+  ],
+  "PFE5": [
+   "mestska cast mestsky obvod"
+  ],
+  "PHMS": [
+   "cooperativa sociale"
+  ],
+  "PIDC": [
+   "empresa municipal"
+  ],
+  "PIL2": [
+   "societe en commandite par actions"
+  ],
+  "PIOI": [
+   "erhvervsdrivende fond"
+  ],
+  "PKAN": [
+   "fonds de securite dexistence",
+   "fonds fuer existenzsicherheit",
+   "fonds fur existenzsicherheit",
+   "fonds voor bestaanszekerheid"
+  ],
+  "PL6V": [
+   "etablissement public local culturel"
+  ],
+  "PMJW": [
+   "andelsselskab"
+  ],
+  "PMOF": [
+   "loomeliit"
+  ],
+  "PPMX": [
+   "avoin yhtio",
+   "avoin yhtioe",
+   "oeppet bolag",
+   "oppet bolag"
+  ],
+  "PQJE": [
+   "mezinarodni nevladni organizace"
+  ],
+  "PRTB": [
+   "mittetulundusuehing",
+   "mittetulundusuhing",
+   "mtue"
+  ],
+  "PVT3": [
+   "ebvba so",
+   "eenpersoons besloten vennootschap met beperkte aansprakelijkheid met een sociaal oogmerk",
+   "pgbhsz",
+   "privatgesellschaft mit beschraenkter haftung mit sozialer zielsetzung mit einem alleingesellschafter",
+   "privatgesellschaft mit beschrankter haftung mit sozialer zielsetzung mit einem alleingesellschafter",
+   "societe privee a responsabilite limitee unipersonnelle a finalite sociale",
+   "sprlu fs"
+  ],
+  "PW3Y": [
+   "adsic",
+   "adsits",
+   "adsyts",
+   "aktsionerno druzhestvo sas spetsialna investitsionna tsel",
+   "aktsionerno druzhestvo sies spetsialna investitsionna tsel",
+   "aktsionerno druzhestvo ss spetsialna investitsionna tsel",
+   "aktsyonerno druzhestvo sies spetsyalna ynvestytsyonna tsel"
+  ],
+  "PWKL": [
+   "congregation"
+  ],
+  "PX29": [
+   "ina pravnicka osoba"
+  ],
+  "PZ6Y": [
+   "amba",
+   "andelsselskab med begraenset ansvar"
+  ],
+  "PZLG": [
+   "metropole"
+  ],
+  "PZV3": [
+   "gemeinderschaft"
+  ],
+  "Q0M5": [
+   "unregistered company"
+  ],
+  "Q0Q1": [
+   "selskap med begrenset ansvar"
+  ],
+  "Q25I": [
+   "odborova organizace a organizace zamestnavatelu"
+  ],
+  "Q2A1": [
+   "societe commerciale etrangere immatriculee au rcs"
+  ],
+  "Q2EV": [
+   "egiz",
+   "evropsko gospodarsko interesno zdruzenje"
+  ],
+  "Q49K": [
+   "limited liability partnership",
+   "llp"
+  ],
+  "Q4A3": [
+   "prekybos pramones ir amatu rumai"
+  ],
+  "Q634": [
+   "indivision entre personnes physiques"
+  ],
+  "Q89X": [
+   "sindicatul"
+  ],
+  "Q8E2": [
+   "societe en nom collectif cooperative"
+  ],
+  "Q8UI": [
+   "nuolatines arbitrazo institucijos"
+  ],
+  "QACV": [
+   "spotrebne druzstvo"
+  ],
+  "QCA0": [
+   "idiotiki kefalaiouchiki etairia",
+   "idiotiki kefaleouhiki eteria"
+  ],
+  "QCJ9": [
+   "spol kom na akcie",
+   "spolocnost komanditna na akcie"
+  ],
+  "QCWO": [
+   "groupement agricole dexploitation en commun gaec"
+  ],
+  "QFLH": [
+   "limited",
+   "ltd",
+   "private limited by guarantee"
+  ],
+  "QFXD": [
+   "pessoa coletiva internacional"
+  ],
+  "QG9Y": [
+   "sodininku bendrijos"
+  ],
+  "QJBA": [
+   "incorporated cell company"
+  ],
+  "QJWK": [
+   "rada pro verejny dohled nad auditem"
+  ],
+  "QMUM": [
+   "f i i",
+   "fondos de inversion inmobiliaria"
+  ],
+  "QNWW": [
+   "eoos",
+   "evropaikos omilos oikonomikou skopou"
+  ],
+  "QQ49": [
+   "zdravotni pojistovna mimo vzp"
+  ],
+  "QRXD": [
+   "etbg",
+   "europos teritorinio bendradarbiavimo grupes"
+  ],
+  "QRZJ": [
+   "s c",
+   "soc coop",
+   "societa cooperativa"
+  ],
+  "QS6A": [
+   "nadacni fond"
+  ],
+  "QSI2": [
+   "cooperative",
+   "genossenschaft",
+   "scoo",
+   "societa cooperativa",
+   "societe cooperative"
+  ],
+  "QSYQ": [
+   "somateia idrymata",
+   "somatia idrimata"
+  ],
+  "QU3G": [
+   "sa cooperative de production de hlm a conseil dadministration"
+  ],
+  "QUB4": [
+   "organisme consulaire"
+  ],
+  "QUEA": [
+   "tuja pravna oseba po zzk1"
+  ],
+  "QUX1": [
+   "otwarty fundusz emerytalny"
+  ],
+  "QV2O": [
+   "societe dexercice liberal a forme anonyme a directoire"
+  ],
+  "QVPB": [
+   "societe anonyme"
+  ],
+  "QW8S": [
+   "s p",
+   "samostojni podjetnik posameznik"
+  ],
+  "QYL4": [
+   "placowki systemu oswiaty"
+  ],
+  "QYQ5": [
+   "druzbeno podjetje"
+  ],
+  "QYV5": [
+   "koeltsegvetesi szerv",
+   "koltsegvetesi szerv"
+  ],
+  "QZ3L": [
+   "e v",
+   "eingetragener verein"
+  ],
+  "QZAU": [
+   "ednolichno aktsionerno druzhestvo sas spetsialna investitsionna tsel",
+   "ednolichno aktsionerno druzhestvo sies spetsialna investitsionna tsel",
+   "ednolychno aktsyonerno druzhestvo sies spetsyalna ynvestytsyonna tsel",
+   "yednolichno aktsionerno druzhestvo ss spetsialna investitsionna tsel"
+  ],
+  "QZIS": [
+   "etablissement public",
+   "etspubli",
+   "oeffentliche einrichtung",
+   "offentliche einrichtung",
+   "openbare instelling"
+  ],
+  "R0B6": [
+   "groupement dinteret economique gie"
+  ],
+  "R1JO": [
+   "communaute urbaine"
+  ],
+  "R2L8": [
+   "s a l",
+   "sociedad anonima laboral"
+  ],
+  "R2XE": [
+   "organizacni jednotka mezinarodni nevladni organizace"
+  ],
+  "R39F": [
+   "handelskammare",
+   "kauppakamari"
+  ],
+  "R59A": [
+   "societe en commandite par actions cooperative"
+  ],
+  "R5ZC": [
+   "eurooppaosuuskunnan kiintea toimipaikka",
+   "eurooppaosuuskunnan kiinteae toimipaikka",
+   "fast driftstaelle foer europeisk kooperativ foerening",
+   "fast driftstalle for europeisk kooperativ forening"
+  ],
+  "R6UB": [
+   "beskattningssammanslutning",
+   "verotusyhtyma",
+   "verotusyhtymae"
+  ],
+  "R6UT": [
+   "sociedad limitada unipersonal"
+  ],
+  "R6WQ": [
+   "groupement de cooperation sanitaire a gestion publique"
+  ],
+  "R71C": [
+   "sparebank"
+  ],
+  "R85P": [
+   "ag",
+   "aktiengesellschaft",
+   "naamloze vennootschap",
+   "societe anonyme"
+  ],
+  "R9GT": [
+   "samost prevadzkaren ou",
+   "samostatna drobna prevadzkaren obecneho uradu"
+  ],
+  "R9TC": [
+   "aus unt",
+   "auslaendische unternehmen",
+   "auslandische unternehmen",
+   "ent etrangere",
+   "entreprise etrangere",
+   "foreign enterprise",
+   "imp str",
+   "impresa straniera"
+  ],
+  "RAX7": [
+   "z o o",
+   "zadruga z omejeno odgovornostjo"
+  ],
+  "RBGQ": [
+   "ehzs",
+   "evropske hospodarske zajmove sdruzeni"
+  ],
+  "RBHP": [
+   "fundusz inwestycyjny"
+  ],
+  "RCPI": [
+   "idiotiki etaireia"
+  ],
+  "RD0Z": [
+   "fiducie"
+  ],
+  "RF3D": [
+   "zdruzenie zvaez spolok spolocnost klub ai",
+   "zdruzenie zvaz spolok spolocnost klub ai"
+  ],
+  "RFWH": [
+   "groupement foncier et rural"
+  ],
+  "RG9Z": [
+   "societas cooperativa europaea"
+  ],
+  "RLJO": [
+   "eeig",
+   "europeisk ekonomisk intressegruppering"
+  ],
+  "RNJZ": [
+   "societe de participations financieres de profession liberale societe en commandite par actions spfpl sca"
+  ],
+  "RNSB": [
+   "societe etrangere non immatriculee au rcs"
+  ],
+  "RP0E": [
+   "obecni podnik"
+  ],
+  "RT39": [
+   "societe creee de fait avec personne morale"
+  ],
+  "RT6Y": [
+   "agent commercial"
+  ],
+  "RUCO": [
+   "oddzial przedsiebiorcy zagranicznego"
+  ],
+  "RWMC": [
+   "communaute de villes"
+  ],
+  "RWZD": [
+   "altre forme"
+  ],
+  "RXTT": [
+   "euroopa uehistu",
+   "euroopa uhistu"
+  ],
+  "RYDY": [
+   "eeig",
+   "eoii",
+   "eoyy",
+   "evropeisko obedinenie po ikonomicheski interesi",
+   "evropeisko obedynenye po ykonomychesky ynteresy",
+   "evropeysko obedinenie po ikonomicheski interesi",
+   "yeoii",
+   "yevropeysko obedineniye po ikonomicheski interesi"
+  ],
+  "RYFP": [
+   "egts",
+   "europeisk gruppering foer territoriellt samarbete",
+   "europeisk gruppering for territoriellt samarbete"
+  ],
+  "S0X8": [
+   "caisse de credit agricole mutuel"
+  ],
+  "S0Z5": [
+   "f i",
+   "fondo de inversion"
+  ],
+  "S1UI": [
+   "civilna odvetniska druzba"
+  ],
+  "S3DA": [
+   "beteti tarsasag",
+   "bt"
+  ],
+  "S5E1": [
+   "miestna jednotka bez pravnej sposobilosti"
+  ],
+  "S6MS": [
+   "congregacion"
+  ],
+  "S6X7": [
+   "s c",
+   "s r c",
+   "sociedad colectiva"
+  ],
+  "S82R": [
+   "societe de participations financieres de profession liberale societe par actions simplifiee spfpl sas"
+  ],
+  "S94S": [
+   "komanditno druzhestvo",
+   "komandytno druzhestvo"
+  ],
+  "SBQN": [
+   "consorzio senza attivita esterna"
+  ],
+  "SCE1": [
+   "gemeinnuetzige gesellschaft mit beschraenkter haftung",
+   "gemeinnutzige gesellschaft mit beschrankter haftung",
+   "ggmbh"
+  ],
+  "SD81": [
+   "d n o",
+   "druzba z neomejeno odgovornostjo"
+  ],
+  "SDPE": [
+   "arbetsloeshetskassa",
+   "arbetsloshetskassa",
+   "tyoettoemyyskassa",
+   "tyottomyyskassa"
+  ],
+  "SFK9": [
+   "bendras valdymo ir pranesimu centras"
+  ],
+  "SFYA": [
+   "mazosios bendrijos"
+  ],
+  "SFZM": [
+   "persoana juridica de drept public"
+  ],
+  "SGST": [
+   "europaeische aktiengesellschaft",
+   "europaische aktiengesellschaft",
+   "se"
+  ],
+  "SIRY": [
+   "zaujm zdruz prav osob",
+   "zaujmove zdruzenie pravnickych osob"
+  ],
+  "SJL9": [
+   "andelsbank",
+   "osuuspankki"
+  ],
+  "SKGX": [
+   "samfaellda foermaaner",
+   "samfallda formaner",
+   "yhteisetuudet"
+  ],
+  "SMIS": [
+   "przedsiebiorstwo panstwowe"
+  ],
+  "SMUS": [
+   "zaujmove zdruzenie"
+  ],
+  "SMZ6": [
+   "societe de participations financieres de profession liberale societe anonyme a conseil dadministration spfpl sa a conseil dadministration"
+  ],
+  "SNWJ": [
+   "podilovy penzijni fond"
+  ],
+  "SOXQ": [
+   "societe en libre partenariat"
+  ],
+  "SP4S": [
+   "kosciol i zwiazki wyznaniowe"
+  ],
+  "SPIE": [
+   "podnikatel fyzicka osoba zapisany v obchodnom registri",
+   "podnikatelfyzicka osobazapisany v obchodnom registri",
+   "zivnostnik v or"
+  ],
+  "SPJ7": [
+   "vjerska zajednica"
+  ],
+  "SQ1A": [
+   "societe civile"
+  ],
+  "SQ4I": [
+   "podnikatel fyzicka osoba nezapis v or podnikajuca sucasne ako osoba so slobodnym povolanim",
+   "podnikatelfyzicka osobanezapis v orpodnikajuca sucasne ako osoba so slobodnym povolanim",
+   "ziv a sl povolanie"
+  ],
+  "SQFW": [
+   "ine druzstvo"
+  ],
+  "SQKS": [
+   "koerperschaft des oeffentlichen rechts",
+   "korperschaft des offentlichen rechts"
+  ],
+  "SQS1": [
+   "ahvenanmaan maakunta ja sen virastot",
+   "lanskapet aaland och dess aembetsverk",
+   "lanskapet aland och dess ambetsverk"
+  ],
+  "SQXV": [
+   "a r l",
+   "limited",
+   "ltd",
+   "private limited company"
+  ],
+  "SS0L": [
+   "cooperativa de credito"
+  ],
+  "SSHN": [
+   "regime dassurance chomage"
+  ],
+  "SSOM": [
+   "bostadsraettsfoerening",
+   "bostadsrattsforening"
+  ],
+  "SSP9": [
+   "azienda speciale rea"
+  ],
+  "STBC": [
+   "societe cooperative organisee sous forme de societe anonyme"
+  ],
+  "STUP": [
+   "narodna banka slovenska"
+  ],
+  "STX7": [
+   "scottish charitable incorporated organisation"
+  ],
+  "SUA1": [
+   "europaeische genossenschaft",
+   "europaische genossenschaft"
+  ],
+  "SUH3": [
+   "zaujmova org druzstiev",
+   "zaujmova organizacia druzstiev"
+  ],
+  "SUHV": [
+   "annan enhet inom beskattningen",
+   "muu verotuksen yksikko",
+   "muu verotuksen yksikkoe"
+  ],
+  "SVA3": [
+   "fundusze inne niz inwestycyjne i inne niz otwarte fundusze emerytalne"
+  ],
+  "SWMK": [
+   "societate in comandita pe actiuni"
+  ],
+  "SWPX": [
+   "sa cooperative de transport a conseil dadministration"
+  ],
+  "SZ63": [
+   "service deconcentre de letat a competence inter regionale"
+  ],
+  "SZW0": [
+   "evropeisko druzhestvo",
+   "evropeysko druzhestvo"
+  ],
+  "T0KQ": [
+   "svojpomoc poln druzstvo",
+   "svojpomocne polnohospodarske druzstvo"
+  ],
+  "T0YJ": [
+   "ag co kgaa",
+   "gmbh co kgaa",
+   "kgaa",
+   "kommanditgesellschaft auf aktien",
+   "stiftung co kgaa"
+  ],
+  "T1FT": [
+   "evropska druzstevni spolecnost"
+  ],
+  "T1JS": [
+   "ontotites pou diepontai apo to dimosio dikaio"
+  ],
+  "T25Y": [
+   "scp davocats"
+  ],
+  "T2X1": [
+   "s n c",
+   "societa in nome collettivo"
+  ],
+  "T31U": [
+   "kommunfoerbundets affaersinraettning",
+   "kommunforbundets affarsinrattning",
+   "kuntainliiton liikelaitos"
+  ],
+  "T3K4": [
+   "samfaelld skog",
+   "samfalld skog",
+   "yhteismetsa",
+   "yhteismetsae"
+  ],
+  "T3Q1": [
+   "bytove druzstvo"
+  ],
+  "T61R": [
+   "cyfyngedig"
+  ],
+  "T7PB": [
+   "wspolnoty samorzadowe"
+  ],
+  "T922": [
+   "burgerlijke vennootschap onder vorm van gewone commanditaire vennootschap",
+   "bv gcv",
+   "sc scs",
+   "societe civile sous forme de societe en commandite simple",
+   "zivilrechtliche gesellschaft in der rechtsform einer einfachen kommanditgesellschaft",
+   "zrg ekg"
+  ],
+  "TAV3": [
+   "ina org verejnej spravy",
+   "ina organizacia verejnej spravy"
+  ],
+  "TB2C": [
+   "eoefg",
+   "eofg",
+   "europaeisk oekonomisk firmagruppe",
+   "europaeisk okonomisk firmagruppe"
+  ],
+  "TCGV": [
+   "druzhestvo uchredeno po zakona za zadalzheniyata i dogovorite",
+   "druzhestvo uchredeno po zakona za zadielzheniiata i dogovorite",
+   "druzhestvo uchredeno po zakona za zadielzhenyiata y dohovoryte",
+   "druzhestvo uchredeno po zakona za zadlzheniyata i dogovorite",
+   "dzzd"
+  ],
+  "TDD5": [
+   "s com",
+   "s en c",
+   "sociedad comanditaria simple"
+  ],
+  "TE79": [
+   "limited partnership with legal personality"
+  ],
+  "TFXK": [
+   "societe unipersonelle a responsabilite limitee",
+   "surl"
+  ],
+  "TG3X": [
+   "podnikatel fyzicka osoba nezapis v or podnikajuca sucasne ako sam hosp rolnik",
+   "podnikatelfyzicka osobanezapis v orpodnikajuca sucasne ako sam hosp rolnik",
+   "ziv a shr rolnik"
+  ],
+  "TGRE": [
+   "caisse des ecoles"
+  ],
+  "TH8A": [
+   "asociatie familiala"
+  ],
+  "TIZ2": [
+   "omorithmi eteria",
+   "omorrythmi etairia"
+  ],
+  "TKPE": [
+   "private trust company"
+  ],
+  "TL87": [
+   "kommandit kapitalanlagen",
+   "kommanditgesellschaft fuer kollektive kapitalanlagen",
+   "ldt part coll invest",
+   "limited partnership for collective investments",
+   "soc com investimenti",
+   "soc com investissement",
+   "societa in accomandita per investimenti collettivi di capitale",
+   "societe en commandite de placements collectifs"
+  ],
+  "TLCJ": [
+   "junta de compensacion"
+  ],
+  "TMU1": [
+   "anstalt"
+  ],
+  "TMVE": [
+   "z b o",
+   "zadruga brez odgovornosti"
+  ],
+  "TNBA": [
+   "odstepny zavod zahranicni pravnicke osoby"
+  ],
+  "TNPO": [
+   "exploitant agricole"
+  ],
+  "TOL2": [
+   "sa nationale a directoire"
+  ],
+  "TPNT": [
+   "se",
+   "societe europeenne"
+  ],
+  "TPTU": [
+   "naamloze vennootschap van publiek recht",
+   "nv pr",
+   "o r ag",
+   "oe r ag",
+   "oeffentlich rechtliche aktiengesellschaft",
+   "oeffentlichrechtliche aktiengesellschaft",
+   "offentlich rechtliche aktiengesellschaft",
+   "offentlichrechtliche aktiengesellschaft",
+   "sa dpu",
+   "societe anonyme de droit public"
+  ],
+  "TQ3O": [
+   "egyeb mashova nem sorolt jogi szemelyisegu vallalkozas"
+  ],
+  "TRWS": [
+   "unincorporated association"
+  ],
+  "TSA0": [
+   "tijelo drzavne uprave"
+  ],
+  "TSVO": [
+   "szoevetseg kiveve sportszoevetseg",
+   "szovetseg kiveve sportszovetseg"
+  ],
+  "TT2H": [
+   "protected cell company"
+  ],
+  "TU6A": [
+   "societe en nom collectif"
+  ],
+  "TUE5": [
+   "office public dhabitation a loyer modere ophlm"
+  ],
+  "TUHS": [
+   "corporacion de derecho publico"
+  ],
+  "TV8Y": [
+   "kollektivtreuhaenderschaft",
+   "kollektivtreuhanderschaft"
+  ],
+  "TYJK": [
+   "private limited by guarantee no share capital use of limited exemption"
+  ],
+  "TZ1U": [
+   "kommunal affaersinraettning",
+   "kommunal affarsinrattning",
+   "kunnallinen liikelaitos"
+  ],
+  "U24X": [
+   "synergatika pistotika idrymata"
+  ],
+  "U2PN": [
+   "comm va",
+   "commanditaire vennootschap op aandelen",
+   "kgaa",
+   "kommanditgesellschaft auf aktien",
+   "societe en commandite par actions"
+  ],
+  "U3QQ": [
+   "banka a s",
+   "banka akciova spolocnost"
+  ],
+  "U5IM": [
+   "zeleznice sr"
+  ],
+  "U5KF": [
+   "burgerlijke vennootschap onder vorm van vennootschap onder firma",
+   "bv vof",
+   "sc snc",
+   "societe civile sous forme de societe en nom collectif",
+   "zivilrechtliche gesellschaft in der rechtsform einer offenen handelsgesellschaft",
+   "zrg ohg"
+  ],
+  "U6R9": [
+   "eeig",
+   "european economic interest grouping"
+  ],
+  "U7QK": [
+   "nadacia"
+  ],
+  "U8KA": [
+   "secsp",
+   "societe en commandite speciale"
+  ],
+  "U8LM": [
+   "evropeisko kooperativno druzhestvo",
+   "evropeisko kooperatyvno druzhestvo",
+   "evropeysko kooperativno druzhestvo",
+   "yekd"
+  ],
+  "U95A": [
+   "odstepny zavod zahranicni fyzicke osoby"
+  ],
+  "UA1O": [
+   "europaeisk selskab",
+   "se selskab",
+   "seselskab"
+  ],
+  "UAV1": [
+   "eurooppaosuuskunta",
+   "europaandelslag"
+  ],
+  "UBWU": [
+   "l p",
+   "limited partnership"
+  ],
+  "UCT9": [
+   "burgerlijke vennootschap onder vorm van landbouwvennootschap bv lv",
+   "bv lv",
+   "sc sagr",
+   "societe civile sous forme de societe agricole",
+   "zivilrechtliche gesellschaft in der rechtsform einer landwirtschaftlichen gesellschaft",
+   "zrg lg"
+  ],
+  "UCTO": [
+   "obl org jednotka csd",
+   "oblastna organizacna jednotka csd"
+  ],
+  "UCU5": [
+   "eterorrythmi kata metoches etaireia"
+  ],
+  "UD8K": [
+   "kuelfoeldi szekhelyu vallalkozas fioktelepe",
+   "kulfoldi szekhelyu vallalkozas fioktelepe"
+  ],
+  "UDQJ": [
+   "gospodarsko interesno zdruzenje"
+  ],
+  "UDY2": [
+   "sicav",
+   "societe dinvestissement a capital variable"
+  ],
+  "UESF": [
+   "javni sklad"
+  ],
+  "UFBW": [
+   "comunidad de bienes"
+  ],
+  "UFDA": [
+   "narodni podnik"
+  ],
+  "UFG8": [
+   "fondatsia",
+   "fondatsiia",
+   "fondatsiya",
+   "fondatsyia"
+  ],
+  "UFM7": [
+   "sa cooperative de construction a directoire"
+  ],
+  "UG0E": [
+   "dobrodelna organizacija"
+  ],
+  "UHKH": [
+   "societe de caution mutuelle"
+  ],
+  "UHNL": [
+   "zemes ukio bendroves"
+  ],
+  "UI81": [
+   "gesbr",
+   "gesellschaft des buergerlichen rechts",
+   "gesellschaft des burgerlichen rechts"
+  ],
+  "UJ35": [
+   "f i m",
+   "fondo de inversion mobiliaria"
+  ],
+  "UKOL": [
+   "enkelt bolag"
+  ],
+  "UMF0": [
+   "konkursbo",
+   "konkurssipesa",
+   "konkurssipesae"
+  ],
+  "UNA9": [
+   "branch rc",
+   "schweizerische zweigniederlassung im handelsregister eingetragen",
+   "succ rc",
+   "succursale suisse enregistree au registre de commerce",
+   "succursale svizzera registrata nel registro di commercio",
+   "swiss branch registered at the registry of commerce",
+   "zweig hr"
+  ],
+  "UNJ2": [
+   "rederij"
+  ],
+  "UO3D": [
+   "limited partnership"
+  ],
+  "UQRY": [
+   "ecole nationale non dotee de la personnalite morale"
+  ],
+  "URQH": [
+   "cuideachta neamhtheoranta",
+   "public unlimited company",
+   "puc uc"
+  ],
+  "US8E": [
+   "genossenschaft"
+  ],
+  "USOG": [
+   "sociedade por quotas"
+  ],
+  "UTY8": [
+   "bencom",
+   "community benefit society northern ireland"
+  ],
+  "UUT8": [
+   "scp de directeurs de laboratoire danalyse medicale"
+  ],
+  "UUYB": [
+   "plc",
+   "public limited company"
+  ],
+  "UV02": [
+   "service central dun ministere"
+  ],
+  "UW1Y": [
+   "offene handelsgesellschaft",
+   "ohg",
+   "societe en nom collectif",
+   "v o f",
+   "vennootschap onder firma"
+  ],
+  "UWEE": [
+   "societate cooperativa europeana"
+  ],
+  "UX9X": [
+   "personligt ejet mindre virksomhed"
+  ],
+  "UXEW": [
+   "aatteellinen yhdistys",
+   "ideell foerening",
+   "ideell forening"
+  ],
+  "UY66": [
+   "public company"
+  ],
+  "UZY3": [
+   "etablissement dhospitalisation"
+  ],
+  "V03J": [
+   "aisbl",
+   "association internationale sans but lucratif",
+   "internationale vereinigung ohne gewinnerzielungsabsicht",
+   "internationale vereniging zonder winstoogmerk",
+   "ivog",
+   "ivzw"
+  ],
+  "V06W": [
+   "europeisk selskap",
+   "se"
+  ],
+  "V0FL": [
+   "societate in comandita simpla"
+  ],
+  "V0TJ": [
+   "asunto osakeyhtio",
+   "asunto osakeyhtioe",
+   "asuntoosakeyhtio",
+   "asuntoosakeyhtioe",
+   "bostadsaktiebolag"
+  ],
+  "V19Y": [
+   "fondation"
+  ],
+  "V1Z5": [
+   "sarl cooperative de production scop"
+  ],
+  "V2YH": [
+   "stiftung des privaten rechts"
+  ],
+  "V3LT": [
+   "erdobirtokossagi tarsulat"
+  ],
+  "V42B": [
+   "ortodoksinen kirkko",
+   "ortodoxa kyrkan"
+  ],
+  "V44D": [
+   "stichting"
+  ],
+  "V5OS": [
+   "societe cooperative"
+  ],
+  "V5SV": [
+   "societe civile cooperative dinteret maritime"
+  ],
+  "V6G1": [
+   "regime maladie des non salaries non agricoles",
+   "regime maladie des nonsalaries non agricoles"
+  ],
+  "V6YH": [
+   "spolecna zajmova organizace druzstev"
+  ],
+  "V6YL": [
+   "societas cooperativa europaea"
+  ],
+  "V7FT": [
+   "agmsz",
+   "aktiengesellschaft mit sozialer zielsetzung",
+   "naamloze vennootschap met een sociaal oogmerk",
+   "nv so",
+   "sa fs",
+   "societe anonyme a finalite sociale"
+  ],
+  "V7QY": [
+   "geie",
+   "groupement europeen dinteret economique"
+  ],
+  "V89C": [
+   "kumpanija privata",
+   "limited",
+   "ltd",
+   "private limited liability company"
+  ],
+  "V8L7": [
+   "burgerlijke vennootschap onder vorm van besloten vennootschap met beperkte aansprakelijkheid",
+   "bv bvba",
+   "sc sprl",
+   "societe civile sous forme de societe privee a responsabilite limitee",
+   "zivilrechtliche gesellschaft in der rechtsform einer privatgesellschaft mit beschraenkter haftung",
+   "zivilrechtliche gesellschaft in der rechtsform einer privatgesellschaft mit beschrankter haftung",
+   "zvgpgbh"
+  ],
+  "V9QP": [
+   "societe a responsabilite limitee sans autre indication"
+  ],
+  "VA1V": [
+   "societa di mutuo soccorso"
+  ],
+  "VALH": [
+   "empresario em nome individual"
+  ],
+  "VATN": [
+   "europ zoskup uzem spol",
+   "europske zoskupenie uzemnej spoluprace"
+  ],
+  "VBC7": [
+   "institution banque de france"
+  ],
+  "VBQP": [
+   "fonds a forme societale a directoire"
+  ],
+  "VD7Z": [
+   "societe en commandite simple"
+  ],
+  "VDRB": [
+   "consorzio municipale"
+  ],
+  "VF4C": [
+   "sociedade unipessoal por quotas"
+  ],
+  "VFIU": [
+   "s com p",
+   "s en c p",
+   "sociedad comanditaria simple profesional"
+  ],
+  "VIE3": [
+   "zajmove sdruzeni pravnickych osob"
+  ],
+  "VJ3G": [
+   "druzhestvo s ogranichena otgovornost",
+   "druzhestvo s ohranychena othovornost",
+   "ood"
+  ],
+  "VJBO": [
+   "akciju sabiedriba"
+  ],
+  "VJRL": [
+   "private unlimited company"
+  ],
+  "VJV5": [
+   "sarl deconomie mixte"
+  ],
+  "VKKN": [
+   "eurooppaosuuspankki",
+   "europaandelsbank"
+  ],
+  "VKSR": [
+   "simplioktisia",
+   "symploioktisia"
+  ],
+  "VO18": [
+   "etablissement public local a caractere industriel ou commercial"
+  ],
+  "VOTI": [
+   "kuntayhtyma",
+   "kuntayhtymae",
+   "samkommun"
+  ],
+  "VPFY": [
+   "trgovec poedinec",
+   "trgovets poedinets",
+   "trgovets poyedinets",
+   "trhovets poedynets"
+  ],
+  "VPRH": [
+   "distr publ co",
+   "district public company",
+   "ent pub district",
+   "entreprise publique de district",
+   "imp pubb distretto",
+   "impresa pubblica di distretto",
+   "oeff unt bezirk",
+   "oeffentliches unternehmen des bezirks",
+   "off unt bezirk",
+   "offentliches unternehmen des bezirks"
+  ],
+  "VQU7": [
+   "organizacni slozka zahranicni nadace"
+  ],
+  "VRJP": [
+   "nezisk org poskyt vseob prosp sluzby",
+   "neziskova organizacia poskytujuca vseobecne prospesne sluzby"
+  ],
+  "VSC1": [
+   "zahr kul inf strediska",
+   "zahranicne kulturne informacne stredisko rozhlasova tlacova a televizna agentura"
+  ],
+  "VSEV": [
+   "tueh",
+   "tulundusuehistu",
+   "tulundusuhistu"
+  ],
+  "VSZS": [
+   "spol s r o",
+   "spolocnost s rucenim obmedzenym"
+  ],
+  "VTFS": [
+   "sarl cooperative artisanale"
+  ],
+  "VUPE": [
+   "se",
+   "societa europea"
+  ],
+  "VV0W": [
+   "investment company with variable capital"
+  ],
+  "VYAX": [
+   "cuideachta phoibli theoranta",
+   "plc",
+   "public limited company"
+  ],
+  "VYF8": [
+   "ukeig",
+   "united kingdom economic interest grouping"
+  ],
+  "W2NK": [
+   "anonimi eteria",
+   "anonymi etairia"
+  ],
+  "W2PE": [
+   "societa non prevista dalla legislazione italiana"
+  ],
+  "W3LD": [
+   "groupement agricole foncier"
+  ],
+  "W3WH": [
+   "asbl",
+   "association sans but lucratif",
+   "vereinigung ohne gewinnerzielungsabsicht",
+   "vereniging zonder winstoogmerk",
+   "vzw"
+  ],
+  "W4G1": [
+   "sarl cooperative de transport"
+  ],
+  "W6A7": [
+   "kmag",
+   "kommanditaktiengesellschaft",
+   "patnership limited by shares",
+   "saca",
+   "scma",
+   "societa in accomandita per azioni",
+   "societe en commandite par action"
+  ],
+  "W6JC": [
+   "personengesellschaft"
+  ],
+  "W7HT": [
+   "autoritatea administratiei publice locale"
+  ],
+  "W86L": [
+   "etaireia periorismenis efthynis me engyisi choris metochiko kefalaio"
+  ],
+  "W9SC": [
+   "mutua assicurazione"
+  ],
+  "W9W3": [
+   "sociedade anonima desportiva"
+  ],
+  "WAK8": [
+   "europaeische gesellschaft",
+   "europaische gesellschaft",
+   "se"
+  ],
+  "WBKH": [
+   "limited",
+   "ltd",
+   "private limited company"
+  ],
+  "WBQU": [
+   "credit union"
+  ],
+  "WCEP": [
+   "se",
+   "societe europeenne"
+  ],
+  "WGCY": [
+   "groupement demployeurs"
+  ],
+  "WJ0A": [
+   "partneriaeth atebolrwydd cyfyngedig"
+  ],
+  "WJ30": [
+   "druzstevni podnik zemedelsky"
+  ],
+  "WKFL": [
+   "kommun"
+  ],
+  "WL83": [
+   "zvlastni organizace pro zastoupeni ceskych zajmu v mezinarodnich nevladnich organizacich"
+  ],
+  "WNX1": [
+   "towarzystwo ubezpieczen wzajemnych"
+  ],
+  "WO0T": [
+   "pobocna mezinarodni odborova organizace"
+  ],
+  "WOK7": [
+   "zwiazki inne niz zawodowe"
+  ],
+  "WPED": [
+   "associazione impresa"
+  ],
+  "WQCR": [
+   "podnikatel fyzicka osoba zapis v or podnikajuca sucasne ako osoba so slobodnym povolanim",
+   "podnikatelfyzicka osobazapis v orpodnikajuca sucasne ako osoba so slobodnym povolanim",
+   "ziv a sl povolanie v or"
+  ],
+  "WQRG": [
+   "centrinis bankas"
+  ],
+  "WRU2": [
+   "societa consortile in accomandita semplice"
+  ],
+  "WTK4": [
+   "aktsionerno druzhestvo",
+   "aktsyonerno druzhestvo"
+  ],
+  "WTLP": [
+   "burgerlijke vennootschap onder vorm van cooeperatieve vennootschap met onbeperkte aansprakelijkheid",
+   "burgerlijke vennootschap onder vorm van cooperatieve vennootschap met onbeperkte aansprakelijkheid",
+   "bv cvoa",
+   "sc scri",
+   "societe civile sous forme de societe cooperative a responsabilite illimitee",
+   "zivilrechtliche gesellschaft in der rechtsform einer genossenschaft mit unbeschraenkter haftung",
+   "zivilrechtliche gesellschaft in der rechtsform einer genossenschaft mit unbeschrankter haftung",
+   "zvggugch"
+  ],
+  "WU7R": [
+   "fmba",
+   "forening med begraenset ansvar"
+  ],
+  "WUFK": [
+   "odstepny zavod"
+  ],
+  "WUJ2": [
+   "uczelnia"
+  ],
+  "WVIN": [
+   "ednolichno druzhestvo s ogranichena otgovornost",
+   "ednolychno druzhestvo s ohranychena othovornost",
+   "eood",
+   "yednolichno druzhestvo s ogranichena otgovornost",
+   "yeood"
+  ],
+  "WVZF": [
+   "ucelova zahranicne obchodni organizace"
+  ],
+  "WXNU": [
+   "scp dhuissiers"
+  ],
+  "WZ78": [
+   "k d d",
+   "komanditna delniska druzba"
+  ],
+  "WZDB": [
+   "bostadsfoerening",
+   "bostadsforening"
+  ],
+  "X0SX": [
+   "takarek es hitelszoevetkezet",
+   "takarek es hitelszovetkezet",
+   "tksz"
+  ],
+  "X32V": [
+   "societa per azioni con socio unico"
+  ],
+  "X78I": [
+   "fonds a forme societale a conseil dadministration"
+  ],
+  "X7W6": [
+   "entreprise en nom personnel"
+  ],
+  "X8J8": [
+   "politines partijos"
+  ],
+  "X8ZK": [
+   "cooeperatieve vennootschap met beperkte aansprakelijkheid van publiek recht",
+   "cooperatieve vennootschap met beperkte aansprakelijkheid van publiek recht",
+   "cvba pr",
+   "oeffentlich rechtliche genossenschaft mit beschraenkter haftung",
+   "oeffentlichrechtliche genossenschaft mit beschraenkter haftung",
+   "oefrgmbh",
+   "offentlich rechtliche genossenschaft mit beschrankter haftung",
+   "offentlichrechtliche genossenschaft mit beschrankter haftung",
+   "ofrgmbh",
+   "scrl dpu",
+   "societe cooperative a responsabilite limitee de droit public"
+  ],
+  "X94Z": [
+   "republika slovenija"
+  ],
+  "XD16": [
+   "empresa metropolitana"
+  ],
+  "XG70": [
+   "pravnikca osoba zrizena zvlastnim zakonem zapisovana do verejneho rejstriku"
+  ],
+  "XGKW": [
+   "aalands affaersverk",
+   "ahvenanmaan liikelaitos",
+   "alands affarsverk"
+  ],
+  "XH7Z": [
+   "komanditno drushtvo",
+   "komanditno drustvo",
+   "komandytno drushtvo"
+  ],
+  "XH8C": [
+   "association declaree reconnue dutilite publique"
+  ],
+  "XHN1": [
+   "societate cu raspundere limitata"
+  ],
+  "XJH3": [
+   "eurooppayhtio",
+   "eurooppayhtioe",
+   "europabolag",
+   "se"
+  ],
+  "XJHM": [
+   "ab",
+   "aktiebolag"
+  ],
+  "XJOT": [
+   "investment company with variable capital",
+   "investmentgesellschaft mit variablem kapital sicav",
+   "societa di investimento a capitale variabile sicav",
+   "societe dinvestissement a capital variable sicav"
+  ],
+  "XK4T": [
+   "comite social economique dentreprise"
+  ],
+  "XLEO": [
+   "einfache kommanditgesellschaft mit sozialer zielsetzung",
+   "ekgmsz",
+   "gcw so",
+   "gewone commanditaire vennootschap met een sociaal oogmerk",
+   "scs fs",
+   "societe en commandite simple a finalite sociale"
+  ],
+  "XLWA": [
+   "anstalt des oeffentlichen rechts",
+   "anstalt des offentlichen rechts"
+  ],
+  "XLXU": [
+   "politicka strana politicke hnutie"
+  ],
+  "XLZV": [
+   "registered society"
+  ],
+  "XPX6": [
+   "sa cooperative de production scop a conseil dadministration"
+  ],
+  "XQBA": [
+   "societe en participation avec personne morale"
+  ],
+  "XQLW": [
+   "jedinica lokalne ili podrucne regionalne samouprave"
+  ],
+  "XQZX": [
+   "burgerlijke vennootschap onder vorm van naamloze vennootschap",
+   "bv nv",
+   "sc sa",
+   "societe civile sous forme de societe anonyme",
+   "zivilrechtliche gesellschaft in der rechtsform einer aktiengesellschaft",
+   "zrg ag"
+  ],
+  "XRK7": [
+   "politicka strana politicke hnuti"
+  ],
+  "XW5U": [
+   "europai reszvenytarsasag",
+   "se"
+  ],
+  "XYGP": [
+   "fcr pyme",
+   "fcrpyme",
+   "fondo de capital riesgo pyme",
+   "fondo de capitalriesgopyme"
+  ],
+  "Y18E": [
+   "spolecny podnik"
+  ],
+  "Y1Q4": [
+   "fondation privee",
+   "fondpriv",
+   "priv st",
+   "private stichting",
+   "privatstiftung"
+  ],
+  "Y1W1": [
+   "section de commune"
+  ],
+  "Y1X5": [
+   "statny podnik"
+  ],
+  "Y3ZB": [
+   "s c e",
+   "societas cooperativa europaea"
+  ],
+  "Y45Q": [
+   "podnik zahranicneho obchodu"
+  ],
+  "Y4VA": [
+   "departement"
+  ],
+  "Y64R": [
+   "orszagos betetbiztositasi alap"
+  ],
+  "Y7G8": [
+   "caisse locale de credit mutuel"
+  ],
+  "Y8CL": [
+   "limited partnership",
+   "limited partnerships"
+  ],
+  "Y8LH": [
+   "ges m b h",
+   "gesellschaft mit beschraenkter haftung",
+   "gesellschaft mit beschrankter haftung",
+   "gmbh"
+  ],
+  "Y8WC": [
+   "groupement de cooperation sanitaire a gestion privee"
+  ],
+  "YA01": [
+   "gemeinnuetzige aktiengesellschaft",
+   "gemeinnutzige aktiengesellschaft"
+  ],
+  "YA9S": [
+   "zajednica ustanova"
+  ],
+  "YADL": [
+   "autorite administrative ou publique independante"
+  ],
+  "YB0U": [
+   "eeig",
+   "european economic interest grouping"
+  ],
+  "YB59": [
+   "podnik so zahr maj uc",
+   "podnik so zahranicnou majetkovou ucastou"
+  ],
+  "YBHM": [
+   "europaeische genossenschaft",
+   "europaische genossenschaft",
+   "europese cooeperatieve vennootschap",
+   "europese cooperatieve vennootschap",
+   "societe cooperative europeenne"
+  ],
+  "YF99": [
+   "verejnoprav institucia",
+   "verejnopravna institucia"
+  ],
+  "YGN4": [
+   "organizacna zlozka podniku"
+  ],
+  "YHI5": [
+   "pole metropolitain"
+  ],
+  "YI42": [
+   "aksjeselskap"
+  ],
+  "YJ4C": [
+   "kirchliche stiftung des oeffentlichen rechts",
+   "kirchliche stiftung des offentlichen rechts"
+  ],
+  "YJM5": [
+   "officier public ou ministeriel"
+  ],
+  "YK5G": [
+   "saatio",
+   "saeaetioe",
+   "stiftelse"
+  ],
+  "YLZL": [
+   "s c",
+   "spolka cywilna"
+  ],
+  "YMLD": [
+   "agrupamento complementar de empresas"
+  ],
+  "YOMR": [
+   "ocsg",
+   "oecsg",
+   "ostermelok csaladi gazdasaga"
+  ],
+  "YRGM": [
+   "administration du district",
+   "amministrazione del distretto",
+   "bezirk",
+   "distretto",
+   "district",
+   "district administration",
+   "verwaltung des bezirks"
+  ],
+  "YRIU": [
+   "neziskova organizacia"
+  ],
+  "YRXK": [
+   "savivaldybiu imones"
+  ],
+  "YTMC": [
+   "interkommunalt selskap"
+  ],
+  "YUCL": [
+   "institution de retraite complementaire"
+  ],
+  "YVE8": [
+   "europ zoskup hosp zaujm",
+   "europske zoskupenie hospodarskych zaujmov",
+   "ezhz"
+  ],
+  "YVPW": [
+   "a d",
+   "akcionarsko drustvo",
+   "aktsionarsko drushtvo",
+   "aktsyonarsko drushtvo"
+  ],
+  "YVRM": [
+   "societa anonima"
+  ],
+  "YVWB": [
+   "zaujmove zdruz fyz osob",
+   "zaujmove zdruzenie fyzickych osob bez pravnej sposobilosti"
+  ],
+  "YVZD": [
+   "unlimited liability company"
+  ],
+  "YX4E": [
+   "societe civile de placement collectif immobilier scpi"
+  ],
+  "Z0EY": [
+   "limited liability partnership",
+   "llp",
+   "partneriaeth atebolrwydd cyfyngedig"
+  ],
+  "Z0JP": [
+   "etablissement public national a caractere industriel ou commercial non dote dun comptable public"
+  ],
+  "Z0NE": [
+   "fundacao"
+  ],
+  "Z2FQ": [
+   "groupement dinteret public gip"
+  ],
+  "Z38E": [
+   "saastopankki",
+   "saeaestoepankki",
+   "sparbank"
+  ],
+  "Z3BF": [
+   "zemedelske druzstvo"
+  ],
+  "Z5WG": [
+   "groupement pastoral"
+  ],
+  "Z7ZX": [
+   "sucursal financeira exterior"
+  ],
+  "Z9K8": [
+   "association davocats a responsabilite professionnelle individuelle"
+  ],
+  "ZECH": [
+   "syndicat mixte ouvert"
+  ],
+  "ZFFA": [
+   "etablissement public"
+  ],
+  "ZFQS": [
+   "ustanova"
+  ],
+  "ZG2I": [
+   "spolocenstva vlastnikov",
+   "spolocenstva vlastnikov pozemkov bytov a pod"
+  ],
+  "ZG6S": [
+   "ente pubblico economico"
+  ],
+  "ZILA": [
+   "estabelecimento individual de responsabilidade limitada"
+  ],
+  "ZJS8": [
+   "i ps",
+   "industrial and provident society"
+  ],
+  "ZM5P": [
+   "sa deconomie mixte a directoire"
+  ],
+  "ZMTL": [
+   "dodsbo",
+   "doedsbo",
+   "kuolinpesa",
+   "kuolinpesae"
+  ],
+  "ZMY8": [
+   "zaklada"
+  ],
+  "ZOK2": [
+   "landbouwvennootschap",
+   "landwirtschaftliche gesellschaft",
+   "s agr",
+   "societe agricole"
+  ],
+  "ZPEZ": [
+   "association syndicale libre"
+  ],
+  "ZPOY": [
+   "o d",
+   "ortachko drushtvo",
+   "ortacko drustvo"
+  ],
+  "ZQ0Q": [
+   "eierseksjonssameie"
+  ],
+  "ZQ6S": [
+   "limited",
+   "ltd",
+   "old public company"
+  ],
+  "ZQ9B": [
+   "exploitant public"
+  ],
+  "ZQAQ": [
+   "koezjegyzoi iroda",
+   "kozjegyzoi iroda"
+  ],
+  "ZQIT": [
+   "sa cooperative de consommation a directoire"
+  ],
+  "ZQO8": [
+   "evropska spolecnost",
+   "se"
+  ],
+  "ZRPO": [
+   "a s",
+   "aktieselskab"
+  ],
+  "ZSFX": [
+   "agmsz",
+   "aktiengesellschaft mit sozialer zielsetzung",
+   "naamloze vennootschap met een sociaal oogmerk",
+   "nv so",
+   "sa fs",
+   "societe anonyme a finalite sociale"
+  ],
+  "ZSWE": [
+   "empresa regional"
+  ],
+  "ZU32": [
+   "jine druzstvo"
+  ],
+  "ZU9S": [
+   "piccola societa cooperativa a responsabilita limitata"
+  ],
+  "ZUHK": [
+   "fondation dutilite publique",
+   "gemeinnuetzige stiftung",
+   "gemeinnutzige stiftung",
+   "stichting van openbaar nut"
+  ],
+  "ZVVM": [
+   "osoby fizyczne prowadzace dzialalnosc gospodarcza"
+  ],
+  "ZXHJ": [
+   "societe dexercice liberal a forme anonyme a conseil dadministration"
+  ],
+  "ZY9X": [
+   "entrepreneur individuel"
+  ],
+  "ZZ0X": [
+   "etablissement public des cultes dalsace lorraine",
+   "etablissement public des cultes dalsacelorraine"
+  ],
+  "ZZGG": [
+   "co op",
+   "co operative society",
+   "cooperative society"
+  ],
+  "ZZKE": [
+   "stowarzyszenie i zwiazki stowarzyszen"
+  ],
+  "ZZOG": [
+   "societa tra professionisti"
+  ]
+ }
+}

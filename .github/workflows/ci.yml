@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint & type-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2  # v10.3.3
+        with:
+          enable-cache: true
+      - run: uv sync --locked
+      - run: uv run ruff check --output-format=github .
+      - run: uv run ruff format --check .
+      - run: uv run mypy
+
+  test:
+    name: Test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2  # v10.3.3
+        with:
+          enable-cache: true
+          python-version: ${{ matrix.python-version }}
+      - run: uv sync --locked
+      - run: uv run pytest --cov --cov-report=term-missing
+
+  build:
+    name: Build distribution
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2  # v10.3.3
+      - run: uv build
+      - name: Smoke-test the wheel in a clean environment
+        run: |
+          uv venv /tmp/smoke
+          uv pip install --python /tmp/smoke dist/*.whl
+          /tmp/smoke/bin/nameproof --version
+
+  docker:
+    name: Docker image
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - name: Build
+        run: docker build -t nameproof:ci .
+      - name: Smoke-test the container
+        run: |
+          docker run -d --name np -p 8080:8080 \
+            -e NAMEPROOF_DIRECTORY=json:/data/accounts.json \
+            -v "$PWD/examples:/data:ro" nameproof:ci
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:8080/health && break; sleep 1; done
+          response=$(curl -sf -X POST http://127.0.0.1:8080/vop/v1/payee-verifications \
+            -H 'Content-Type: application/json' -H 'Accept: application/json' \
+            -H "X-Request-ID: $(cat /proc/sys/kernel/random/uuid)" \
+            -H "X-Request-Timestamp: $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            -d '{"party": {"name": "Giorgos Papadopoulos"},
+                 "partyAccount": {"iban": "GR1601101250000000012300695"},
+                 "partyAgent": {"financialInstitutionId": {"bicfi": "ABCDBEBBXXX"}},
+                 "requestingAgent": {"financialInstitutionId": {"bicfi": "ABCDBEB0XXX"}}}')
+          echo "$response"
+          test "$response" = '{"partyNameMatch":"MTCH"}'
+      - name: Container logs
+        if: always()
+        run: docker logs np || true

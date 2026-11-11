@@ -1,0 +1,115 @@
+[project]
+name = "nameproof"
+dynamic = ["version"]
+description = "Explainable name matching across scripts for Verification of Payee, Confirmation of Payee and KYC."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "Nada Boulaares" }]
+keywords = [
+  "verification-of-payee",
+  "confirmation-of-payee",
+  "name-matching",
+  "transliteration",
+  "payments",
+  "kyc",
+  "fintech",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Office/Business :: Financial",
+  "Topic :: Text Processing :: Linguistic",
+  "Typing :: Typed",
+]
+dependencies = ["rapidfuzz>=3.10"]
+
+[project.optional-dependencies]
+# EPC VoP responder service: `pip install "nameproof[service]"`
+service = ["fastapi>=0.115", "uvicorn>=0.32"]
+
+[project.urls]
+Homepage = "https://github.com/nadaboulaares/nameproof"
+Issues = "https://github.com/nadaboulaares/nameproof/issues"
+
+[project.scripts]
+nameproof = "nameproof.cli:main"
+
+[dependency-groups]
+dev = [
+  "nameproof[service]",
+  "httpx>=0.27",
+  "hypothesis>=6.100",
+  "mypy>=1.13",
+  "pre-commit>=4.0",
+  "pytest>=8.3",
+  "pytest-cov>=6.0",
+  "ruff>=0.17",
+]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/nameproof/__init__.py"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests", "bench"]
+
+[tool.ruff.lint]
+select = [
+  "E", "W", "F", "I", "N", "B", "UP", "SIM", "C4", "PIE", "RET", "PT", "RUF", "S", "PL", "D",
+]
+ignore = [
+  "D100", "D104", "D105", "D107",  # module/package/magic/__init__ docstrings
+  "D203", "D213",                  # conflicting docstring styles
+  "PLR2004",                       # magic values are fine in tests and thresholds
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S311", "D", "PLR2004", "RUF001", "RUF003"]
+# Transliteration tables are full of Greek, Cyrillic and Arabic letters on purpose.
+"src/nameproof/translit.py" = ["RUF001", "RUF003"]
+# Seeded randomness builds reproducible test data; it is not used for security.
+"bench/**" = ["S311"]
+# Enum values like "fuzzy_token" are explanation codes, not credentials.
+"src/nameproof/explain.py" = ["S105"]
+
+[tool.mypy]
+strict = true
+python_version = "3.11"
+files = ["src", "tests", "bench"]
+warn_unreachable = true
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = ["-ra", "--strict-markers", "--strict-config"]
+testpaths = ["tests"]
+pythonpath = ["bench"]
+xfail_strict = true
+filterwarnings = [
+  # Starlette's TestClient warns about its httpx backend; not something we control.
+  "ignore:Using `httpx` with `starlette.testclient`",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["nameproof"]
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+skip_covered = true
+exclude_also = ["if TYPE_CHECKING:", "raise NotImplementedError"]

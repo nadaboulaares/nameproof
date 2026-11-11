@@ -1,0 +1,30 @@
+name: Bug report
+description: A wrong verdict, crash or other unexpected behaviour
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never paste real customer or account-holder names.** Use synthetic or public-figure names.
+        Possible false MATCH or name-leak issues are security issues — see SECURITY.md.
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: Input names, country, party type and policy version.
+      render: python
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual verdict
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: nameproof version
+      placeholder: "0.0.1"
+    validations:
+      required: true
