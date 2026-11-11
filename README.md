@@ -13,6 +13,8 @@ UK Confirmation of Payee and KYC, and explains every decision.
 
 **[▶ Try it in your browser](https://nadaboulaares.github.io/nameproof/)**: nothing you type leaves the page.
 
+<a href="https://nadaboulaares.github.io/nameproof/"><img src="docs/assets/playground-demo.gif" width="760" alt="nameproof playground: a Greek name matches its romanisation, an Arabic name is a close match, a typo is a close match, Siemens AG vs Siemens Energy AG is a close match, and Ahmed vs Hamid is no match."></a>
+
 ```bash
 pip install nameproof
 ```

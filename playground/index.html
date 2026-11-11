@@ -157,7 +157,7 @@ const REASON = {
   fuzzy_token: "a word is spelled slightly differently",
   mismatched_token: "a word does not match",
   missing_tokens: "a word appears on one side only",
-  missing_name_part: "a first name, surname or half of a compound is missing",
+  missing_name_part: "a word that can't be skipped is missing (first name, surname, part of a compound, or a company word)",
   single_token: "only one word to go on",
   suffix_conflict: "different generational suffixes (Jr vs Sr)",
   unsupported_script: "this script can't be romanised yet",
@@ -214,6 +214,17 @@ function update() {
   }
 }
 
+// Shareable examples: #p=<provided>&a=<account names, one per line>. The fragment
+// after "#" never leaves the browser, so names are not sent to any server.
+function fromLink() {
+  const params = new URLSearchParams(location.hash.slice(1));
+  if (!params.has("p") && !params.has("a")) return;
+  $("provided").value = params.get("p") || "";
+  $("accounts").value = params.get("a") || "";
+  update();
+}
+window.addEventListener("hashchange", fromLink);
+
 let timer = null;
 const debounced = () => { clearTimeout(timer); timer = setTimeout(update, 120); };
 $("provided").addEventListener("input", debounced);
@@ -242,6 +253,7 @@ def run_match(provided, accounts):
 `);
     runMatch = pyodide.globals.get("run_match");
     update();
+    fromLink();
   } catch (error) {
     $("status").textContent = "Could not load the playground: " + error.message;
   }

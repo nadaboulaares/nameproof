@@ -7,6 +7,11 @@ All notable changes to nameproof are documented here. The format follows
 
 ## [Unreleased]
 
+### Playground
+- Shareable example links: `#p=<provided name>&a=<account names>` pre-fills the page.
+  The part after `#` never leaves the browser.
+- Clearer explanation for `missing_name_part`; demo GIF in the README.
+
 ## [0.1.0] - 2026-11-11
 
 First public release.
