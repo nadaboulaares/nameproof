@@ -29,6 +29,9 @@ pip install nameproof
   for crafted input, no data leaves your servers
 - **EPC VoP responder** included, tested against the EPC reference test cases
 
+**Bank or payment institution?** See [nameproof for banks](docs/FOR-BANKS.md): what it
+does, how it fits your stack, and the design-partner pilot.
+
 ## Benchmark
 
 <picture>

@@ -12,6 +12,9 @@ All notable changes to nameproof are documented here. The format follows
   The part after `#` never leaves the browser.
 - Clearer explanation for `missing_name_part`; demo GIF in the README.
 
+### Docs
+- `docs/FOR-BANKS.md`: a one-page overview for banks and payment institutions.
+
 ## [0.1.0] - 2026-11-11
 
 First public release.
