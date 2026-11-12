@@ -33,7 +33,7 @@ against typical fuzzy-matching approaches:
 
 | | nameproof | token-sort fuzzy | Levenshtein | exact match |
 |---|---|---|---|---|
-| Same person wrongly rejected (lower is better) | **9.7%** | 63.8% | 76.5% | 89.8% |
+| Same person wrongly rejected (lower is better) | **9.4%** | 63.8% | 76.5% | 89.8% |
 | Same person matched automatically | **41.7%** | 26.2% | 11.3% | 10.2% |
 | Different people falsely matched (fraud risk) | **0.0%** | 0.0% | 0.0% | 0.0% |
 

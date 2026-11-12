@@ -1,0 +1,175 @@
+# Common Arabic given names and their usual Latin spellings (English, French and
+# Maghreb, Gulf, Turkish). Hand-written for nameproof, Apache-2.0. One name per line:
+# Arabic<TAB>comma-separated spellings. Spellings are written lower case without
+# accents, spaces, hyphens or apostrophes ("Abdel Kader" -> abdelkader). A spelling
+# listed under two names (hamid) is ambiguous on purpose.
+محمد	mohamed,mohammed,muhammad,mohammad,muhammed,mohamad,muhamed,mouhamed,mouhammad,mehmet,mohd,mhamed
+امحمد	mhamed
+أحمد	ahmed,ahmad,ahmet,ahmid
+محمود	mahmoud,mahmud,mahmood,mahmut,mahmod
+حامد	hamed,hamid,haamed
+حميد	hamid,hameed
+حمادي	hamadi,hammadi
+حمادة	hamada,hamadah
+مصطفى	mustafa,mostafa,moustafa,mustapha,moustapha,mostefa,mustafah
+مختار	mokhtar,mukhtar,moktar
+منصف	moncef,munsif,monsef
+منير	mounir,munir,monir,muneer
+نبيل	nabil,nabeel
+كريم	karim,kareem,kerim
+سمير	samir,sameer
+سامي	sami,samy
+علي	ali,aly,alee
+عمر	omar,umar,omer
+عثمان	othman,osman,uthman,otman,outhman,usman
+يوسف	youssef,yousef,yusuf,youcef,yousif,yusef,youssouf,yousuf
+إبراهيم	ibrahim,brahim,ebrahim,ibraheem,ibrahima
+إسماعيل	ismail,smail,esmail,ismayil
+خالد	khaled,khalid,khaleed
+خليل	khalil,khaleel
+جمال	jamal,djamel,jamel,gamal,cemal,djamal
+كمال	kamal,kamel,kemal
+عادل	adel,adil
+عبد الله	abdallah,abdullah,abdellah,abdalla,abdulla,abdellahi
+عبد الرحمن	abderrahmane,abdelrahman,abdulrahman,abdurrahman,abderrahman,abdelrahmane,abdourahmane,abdurahman
+عبد القادر	abdelkader,abdulkadir,abdulqadir,abdelkadir,abdelqader,abdulkader,abdelkadeur
+عبد العزيز	abdelaziz,abdulaziz,abdelazize
+عبد الكريم	abdelkarim,abdulkarim,abdelkrim,abdulkareem
+عبد الحميد	abdelhamid,abdulhamid,abdelhamide
+عبد المجيد	abdelmajid,abdelmadjid,abdulmajid,abdelmajeed,abdelmegid
+عبد الرزاق	abderrazak,abdelrazak,abdulrazzaq,abderrazek,abderrazzak,abdelrazek
+عبد اللطيف	abdellatif,abdullatif,abdellatife
+عبد السلام	abdessalem,abdesselam,abdulsalam,abdelsalam,abdessalam,abdesslem
+عبد الحكيم	abdelhakim,abdulhakim,abdelhakime
+عبد الوهاب	abdelwahab,abdulwahab,abdelouahab,abdelwaheb
+عبد الرحيم	abderrahim,abdelrahim,abdulrahim,abdurrahim
+عبد الجليل	abdeljelil,abdeljalil,abduljalil
+عبد الفتاح	abdelfattah,abdulfattah,abdelfatah
+عبد الناصر	abdennaceur,abdelnasser,abdulnasser,abdennasser,abdennacer
+عبد المالك	abdelmalek,abdulmalik,abdelmalik
+حسن	hassan,hasan,hassen,hacen,hasen
+حسين	hussein,hussain,hocine,houcine,husain,hossein,huseyin,hussien,hosseyn,houssein
+حسني	hosni,husni,hosny
+محسن	mohsen,muhsin,mohcen
+فتحي	fethi,fathi,fethy,fathy
+رضا	ridha,reda,rida,redha,riza
+صالح	saleh,salih
+صلاح	salah
+نور الدين	noureddine,nourredine,nuraddin,nourdine,nureddin,nouredine,nourreddine
+صلاح الدين	salaheddine,salahuddin,salahedine,salahaddin
+عز الدين	ezzeddine,izzeddin,azeddine,izzaddin,ezzedine,izzedine
+سيف الدين	seifeddine,saifuddin,sayfeddine,seifedine,saifeddine
+بدر الدين	badreddine,badruddin,badredine
+خير الدين	kheireddine,khairuddin,khayreddine,kheiredine
+مهدي	mehdi,mahdi
+هادي	hedi,hadi
+طاهر	tahar,taher,tahir
+شاذلي	chedly,chadli,chedli,shadhili,shazly,shazli,chedlie
+بشير	bechir,bashir,bachir,beshir,basheer
+حبيب	habib,lahbib
+أخضر	lakhdar,akhdar
+عربي	larbi,arbi,elarbi,arabi
+أمين	amine,amin,ameen,emin,lamine
+منصور	mansour,mansur,mansoor
+مبروك	mabrouk,mabruk
+مبارك	mubarak,moubarak,mbarek
+ناصر	nasser,naser,nacer,nasir,nacir
+سليم	slim,salim,selim,saleem
+سليمان	slimane,soliman,suleiman,sulayman,souleymane,suleyman,sulaiman,soulaimane
+رشيد	rachid,rashid,rached,rasheed
+سعيد	said,saeed,saaid
+سعد	saad
+أنور	anouar,anwar,anour,enver
+فريد	farid,fareed
+وليد	walid,oualid,waleed
+طارق	tarek,tariq,tarik,tareq
+زياد	ziad,ziyad
+ياسين	yassine,yasin,yassin,yacine,yaseen
+أيمن	aymen,ayman,aimen
+أسامة	oussama,osama,usama,ousama
+حمزة	hamza,hamzah
+بلال	bilel,bilal
+أنيس	anis,anes,aniss
+وسيم	wassim,wasim,waseem
+هشام	hichem,hisham,hicham,hesham
+عماد	imed,imad,emad
+مراد	mourad,murad,morad
+فيصل	faycal,faisal,faysal,fayssal
+فؤاد	fouad,fuad,foued
+لطفي	lotfi,lutfi,lotfy
+شكري	chokri,shukri,choukri,shokri
+صبري	sabri,sabry
+زهير	zouhair,zuhair,zouheir,zoher,zuheir
+عصام	issam,essam,isam
+توفيق	taoufik,tawfik,tawfiq,toufik,tevfik,taoufiq
+رياض	riadh,riyad,riad,ryad
+معز	moez,muizz,moezz
+منذر	mondher,munther,mounzer,munzir
+عامر	amer,aamer
+أمير	amir,ameer,emir
+ماهر	maher
+جلال	jalel,jalal,djalel,celal
+نجيب	najib,nejib,naguib,najeeb
+عمار	ammar,amar
+مروان	marwan,marouane,merouane,marwen
+عدنان	adnan
+غسان	ghassan,ghassen
+إلياس	elyes,ilyas,elias,ilias,ilyes
+أيوب	ayoub,ayub,eyup,ayoob
+يحيى	yahia,yahya,yehia
+زكريا	zakaria,zakariya,zakariyya,zakariae
+موسى	moussa,musa,mousa
+عيسى	issa,isa,aissa
+هارون	haroun,harun
+داود	daoud,dawud,davut,dawood
+سفيان	sofiane,sufyan,soufiane,sofian
+مهند	mohanad,muhannad,mohannad
+قاسم	kacem,kassem,qasim,kasim,gacem,qassem
+بلقاسم	belkacem,belgacem,belkassem
+فاطمة	fatma,fatima,fatimah,fatema,fadma
+عائشة	aicha,aisha,aysha,ayesha,aischa
+خديجة	khadija,khadidja,khadeeja
+مريم	meriem,maryam,mariem,meryem,mariam
+زينب	zeineb,zaynab,zainab,zineb,zeynep
+آمنة	amna,aamina
+أمينة	amina
+سعاد	souad,suad,soad
+نادية	nadia,nadya
+ليلى	leila,layla,laila,leyla
+سلمى	salma,selma
+سارة	sarra,sara,sarah
+هدى	houda,huda,hoda
+منى	mouna,mona,muna
+نور	nour,nur,noor
+سناء	sana,sanaa
+رحمة	rahma
+وفاء	wafa,wafaa
+حنان	hanen,hanan
+إيمان	imen,iman,eman
+أسماء	asma,asmaa
+رانية	rania,ranya
+ريم	rim,reem
+سلوى	salwa
+نجلاء	najla,nejla
+سميرة	samira,sameera
+كريمة	karima
+نعيمة	naima,naeema
+حليمة	halima
+جميلة	jamila,djamila,jemila,gamila
+لطيفة	latifa
+سهام	siham,sihem
+إيناس	ines,inas,enas
+أميرة	amira,ameera
+ياسمين	yasmine,yasmin
+دنيا	dounia,donia,dunya
+خولة	khaoula,khawla,khaula
+وئام	wiem,wiam
+نجوى	najoua,najwa,nagwa
+صفاء	safa,safaa
+هالة	hela,hala
+منيرة	mounira,munira
+بسمة	basma,besma
+عفاف	afef,afaf
+فوزية	faouzia,fawzia,fawziya
+مبروكة	mabrouka
+زهرة	zohra,zahra

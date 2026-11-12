@@ -143,7 +143,7 @@ def test_a_single_string_is_rejected() -> None:
 def test_report_to_dict_is_json_ready() -> None:
     report = find_duplicates(["John Smith", "J. Smith", ""])
     data = json.loads(json.dumps(report.to_dict()))
-    assert data["policy_version"] == "epc-default@2"
+    assert data["policy_version"] == "records@1"
     assert data["unchecked"] == [2]
     assert data["groups"] == [{"members": [0, 1], "needs_review": True}]
     assert data["pairs"][0] == {

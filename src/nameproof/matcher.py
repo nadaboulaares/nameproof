@@ -22,6 +22,7 @@ from nameproof._lexicon import (
     SYMBOL_CONNECTORS,
 )
 from nameproof._types import MatchResult, Verdict
+from nameproof.arabic_names import different_names
 from nameproof.explain import Reason, ordered
 from nameproof.legal_forms import LEGAL_FORM_WORDS, LegalForm, same_legal_form, split_legal_form
 from nameproof.normalize import fold_variants, normalize_text
@@ -77,6 +78,7 @@ class _Form:
     compound_split: bool = False  # tokens came from splitting a hyphenated name
     particles: Tokens = ()  # particles dropped or glued in this spelling
     legal_form_words: int = 0  # words removed as the legal form
+    source: Tokens = ()  # the Arabic words behind a consonant skeleton
 
 
 @dataclass(frozen=True, slots=True)
@@ -235,9 +237,11 @@ def _forms(tokens: Tokens, base_reasons: tuple[Reason, ...], raw_floor: int) -> 
         reasons = (*base_reasons, *rendering.reasons)
         raw_size = max(raw_floor, len(rendering.text.split()))
         if rendering.mode is Mode.SKELETON:
+            words = tuple(text.split())
             candidates = [
-                _Form(tuple(rendering.text.split()), None, reasons, raw_size, Mode.SKELETON)
-            ]
+                _Form(tuple(rendering.text.split()), None, reasons, raw_size, Mode.SKELETON,
+                      source=words)
+            ]  # fmt: skip
         else:
             candidates = [
                 form
@@ -470,7 +474,7 @@ def _evaluate(provided: _Form, account: _Form, account_name: str, policy: Policy
     blockers, legal_reasons = _blockers(comparison, provided, account, policy)
     company = provided.legal_form is not None or account.legal_form is not None
     anchored = any(
-        pair.kind in (PairKind.EXACT, PairKind.FUZZY)
+        pair.kind in (PairKind.EXACT, PairKind.FUZZY, PairKind.VARIANT)
         and pair.similarity >= policy.close_threshold
         and _is_name_word(comparison.left[pair.left], skeleton=comparison.skeleton)
         for pair in comparison.alignment.pairs
@@ -485,8 +489,15 @@ def _evaluate(provided: _Form, account: _Form, account_name: str, policy: Policy
         pair.kind is PairKind.FUZZY and pair.similarity < policy.distinct_word_threshold
         for pair in comparison.alignment.pairs
     )
+    # Known names that don't correspond ("Mahmoud" vs محمد) share a consonant
+    # skeleton but are different names.
+    if comparison.skeleton and _different_given_names(provided, account):
+        blockers.add(Reason.DIFFERENT_GIVEN_NAME)
     allow_close = (
-        anchored and not distinct_word and not (Reason.SINGLE_TOKEN in blockers and not company)
+        anchored
+        and not distinct_word
+        and Reason.DIFFERENT_GIVEN_NAME not in blockers
+        and not (Reason.SINGLE_TOKEN in blockers and not company)
     )
     result, score, decision_reasons = _decide(
         comparison.alignment, policy, frozenset(blockers), allow_close=allow_close
@@ -501,6 +512,13 @@ def _evaluate(provided: _Form, account: _Form, account_name: str, policy: Policy
     return _Outcome(result, score, ordered(reasons), account_name)
 
 
+def _different_given_names(provided: _Form, account: _Form) -> bool:
+    """Known given names on both sides that don't correspond (via the Arabic words)."""
+    left = provided.source if provided.mode is Mode.SKELETON else provided.tokens
+    right = account.source if account.mode is Mode.SKELETON else account.tokens
+    return different_names(left, right)
+
+
 def _decide(
     alignment: Alignment, policy: Policy, blockers: frozenset[Reason], *, allow_close: bool
 ) -> tuple[MatchResult, float, set[Reason]]:
@@ -511,6 +529,8 @@ def _decide(
             reasons.add(Reason.INITIAL)
         elif pair.kind is PairKind.ABBREVIATION:
             reasons.add(Reason.ABBREVIATION)
+        elif pair.kind is PairKind.VARIANT:
+            reasons.add(Reason.KNOWN_VARIANT)
         elif pair.kind is PairKind.FUZZY:
             close = pair.similarity >= policy.close_threshold
             reasons.add(Reason.FUZZY_TOKEN if close else Reason.MISMATCHED_TOKEN)
@@ -521,7 +541,9 @@ def _decide(
 
     score = alignment.score(policy.missing_token_penalty)
     identical = all(
-        pair.kind is PairKind.EXACT or (pair.kind is PairKind.INITIAL and policy.initials_can_match)
+        pair.kind is PairKind.EXACT
+        or (pair.kind is PairKind.INITIAL and policy.initials_can_match)
+        or (pair.kind is PairKind.VARIANT and policy.known_variants_can_match)
         for pair in alignment.pairs
     )
     if (

@@ -27,8 +27,12 @@ pip install nameproof
   order, particles (*ben*, *al-*, *van der*), compound names, titles, patronymics, joint names
 - **Organisations**: about 1,400 legal forms (SARL, GmbH, Sp. z o.o., ΑΕ, ЕООД, …) from the
   GLEIF ISO 20275 list
-- **Careful by design**: a spelling difference is never a full match; *Mohamed* vs *Mahmoud*
-  and *Ahmed* vs *حامد* (Hamid) are no match; every answer comes with reason codes
+- **Knows Arabic names**: about 170 common given names with their usual spellings, so
+  *Hussein* = *Hocine* = *حسين* and *Youssef* = *Yusuf*, while *Mahmoud* vs *محمد* (both
+  m-h-m-d without vowels) is no match; Maghreb spellings too (*Larbi* = *العربي*,
+  *Belgacem* = *بلقاسم*, *Brahim* = *إبراهيم*)
+- **Careful by design**: a spelling difference is never a full match for payments; *Ahmed*
+  vs *حامد* (Hamid) is no match; every answer comes with reason codes
 - **Find duplicates in a list** of thousands of names: [in your browser](https://nadaboulaares.github.io/nameproof/dedupe.html)
   (paste names or open a CSV; nothing is uploaded) or `nameproof dedupe people.csv`
 - **Private and fast**: pure Python, runs offline or in the browser, about a millisecond per
@@ -94,13 +98,15 @@ first grouped by a coarse, cross-script consonant key per word, and only names s
 key are compared, with exactly the rules of `match`. On the 9,624 distinct names of
 nameproof-bench this compares 147,000 pairs instead of 46 million and keeps 98% of the
 same-person pairs `match` finds (the rest are mostly heavy typos); it takes about 30
-seconds on 8 cores. A group needs review whenever one of its links is a close match.
+seconds on 8 cores. A group needs review whenever one of its links is a close match. Duplicate finding uses the
+`records@1` policy by default: known spellings of one name (*Mohamed* / *Mohammed* /
+*Muhammad*) count as the same name.
 
 ## Benchmark
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/benchmark-dark.svg">
-  <img alt="Same person wrongly rejected: nameproof 9.7%, token-sort 63.8%, Levenshtein 76.5%, exact match 89.8%. Same person auto-matched: nameproof 41.7%, token-sort 26.2%, Levenshtein 11.3%, exact match 10.2%. Different people falsely matched: 0.0% for every system." src="docs/assets/benchmark-light.svg">
+  <img alt="Same person wrongly rejected: nameproof 9.4%, token-sort 63.8%, Levenshtein 76.5%, exact match 89.8%. Same person auto-matched: nameproof 41.7%, token-sort 26.2%, Levenshtein 11.3%, exact match 10.2%. Different people falsely matched: 0.0% for every system." src="docs/assets/benchmark-light.svg">
 </picture>
 
 On [nameproof-bench](bench/README.md), 6,000 labelled name pairs across Greek, Cyrillic,
@@ -108,7 +114,7 @@ Arabic and Latin scripts built from Wikidata, against typical fuzzy-matching bas
 
 | | nameproof | token-sort | Levenshtein | exact |
 |---|---|---|---|---|
-| Same person **wrongly rejected** (lower is better) | **9.7%** | 63.8% | 76.5% | 89.8% |
+| Same person **wrongly rejected** (lower is better) | **9.4%** | 63.8% | 76.5% | 89.8% |
 | Same person **auto-matched** (higher is better) | **41.7%** | 26.2% | 11.3% | 10.2% |
 | Different people **falsely matched** (fraud risk) | **0.0%** | 0.0% | 0.0% | 0.0% |
 
@@ -173,9 +179,10 @@ CLOSE_MATCH  score=0.8442  policy=epc-default@2
 | `NOT_POSSIBLE` | nothing to compare: empty, longer than 140 characters or 10 words, or a script nameproof can't romanise yet |
 
 Banks that accept dropped particles, legal-form variants and reordered company names as
-a match can use the `lenient@2` policy. Policies are versioned and never change once
-published: `epc-default@1` and `lenient@1` keep their 0.1.0 behaviour for anyone who pinned
-them.
+a match can use the `lenient@2` policy, and lists of people (beneficiaries, patients) the
+`records@1` policy, where known spellings of one name (*Youssef* / *Yusuf*) match. A
+published policy never changes its thresholds or switches; the matching rules improve with
+each nameproof version, so pin both for audit (every verdict records its policy).
 
 Every verdict lists stable explanation codes (`Reason`) that never contain name fragments,
 and the account holder's name is only ever exposed on `CLOSE_MATCH`.

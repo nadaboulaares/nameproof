@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from nameproof._lexicon import CONNECTORS, HONORIFICS, PARTICLES, POSTNOMINALS, SUFFIXES
+from nameproof.arabic_names import same_name
 from nameproof.explain import Reason
 
 Tokens = tuple[str, ...]
@@ -88,11 +89,16 @@ def _particle_runs(tokens: Tokens) -> list[tuple[int, int]]:
 def merge_compounds(left: Tokens, right: Tokens) -> tuple[Tokens, Tokens, bool]:
     """Glue adjacent tokens on one side when the other side spells them as one word.
 
-    "Jean Pierre" vs "Jeanpierre" becomes "jeanpierre" on both sides.
+    "Jean Pierre" vs "Jeanpierre" becomes "jeanpierre" on both sides, and so does a
+    known spelling of the same Arabic name ("Abdul Qadir" vs "Abdelkader").
     """
     new_left, merged_left = _merge_into(left, frozenset(right))
     new_right, merged_right = _merge_into(right, frozenset(new_left))
     return new_left, new_right, merged_left or merged_right
+
+
+def _joins_into(joined: str, targets: frozenset[str]) -> bool:
+    return joined in targets or any(same_name(joined, target) for target in targets)
 
 
 def _merge_into(tokens: Tokens, targets: frozenset[str]) -> tuple[Tokens, bool]:
@@ -100,7 +106,7 @@ def _merge_into(tokens: Tokens, targets: frozenset[str]) -> tuple[Tokens, bool]:
     merged = False
     index = 0
     while index < len(tokens):
-        if index + 1 < len(tokens) and tokens[index] + tokens[index + 1] in targets:
+        if index + 1 < len(tokens) and _joins_into(tokens[index] + tokens[index + 1], targets):
             out.append(tokens[index] + tokens[index + 1])
             merged = True
             index += 2

@@ -11,7 +11,7 @@ from pathlib import Path
 
 from nameproof import __version__
 from nameproof._table import Table, groups_csv, read_table
-from nameproof.dedupe import MAX_GROUP, DedupeReport, find_duplicates
+from nameproof.dedupe import DEDUPE_POLICY, MAX_GROUP, DedupeReport, find_duplicates
 from nameproof.matcher import match
 from nameproof.policy import DEFAULT_POLICY
 
@@ -49,7 +49,7 @@ def build_parser() -> argparse.ArgumentParser:
     dedupe.add_argument(
         "--column", help="CSV column with the names (default: the only column, or 'name')"
     )
-    dedupe.add_argument("--policy", default=DEFAULT_POLICY, help="policy id (default: %(default)s)")
+    dedupe.add_argument("--policy", default=DEDUPE_POLICY, help="policy id (default: %(default)s)")
     dedupe.add_argument(
         "--jobs",
         type=int,

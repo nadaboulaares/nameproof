@@ -249,11 +249,15 @@ def test_company_with_ampersand_is_not_split_into_holders() -> None:
 
 def test_arabic_skeleton_limit_is_documented() -> None:
     # Arabic leaves vowels unwritten, so Mohamed (محمد) and Mahmoud (محمود) share
-    # the skeleton "mhmd". That is why Arabic never MATCHes: the payer is shown
-    # the real name and decides.
+    # the skeleton "mhmd". The list of known names tells them apart...
     verdict = match("Mohamed", ["محمود"])
+    assert verdict.result is N
+    assert "different_given_name" in verdict.explanation
+    # ...but names missing from the list still share a skeleton, which is why
+    # Arabic never MATCHes: the payer is shown the real name and decides.
+    verdict = match("Hamdi", ["حمادي"])
     assert verdict.result is C
-    assert verdict.suggested_name == "محمود"
+    assert verdict.suggested_name == "حمادي"
 
 
 # --- M3 regressions: false MATCHes found by the benchmark ----------------------

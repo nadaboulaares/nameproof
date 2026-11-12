@@ -7,6 +7,24 @@ All notable changes to nameproof are documented here. The format follows
 
 ## [Unreleased]
 
+### Arabic names
+- A hand-written list of about 170 common Arabic given names and their usual Latin
+  spellings (`nameproof.arabic_names`, `data/arabic_given_names.tsv`). Known spellings of
+  one name are a `known_variant` (*Hussein* = *Hocine*, *Abdelkader* = *Abdul Qadir*);
+  known names that don't correspond are `different_given_name`, no match, even when they
+  share a consonant skeleton (*Mahmoud* vs *محمد*, *محمد* vs *محمود*) or a prefix (*Samir*
+  vs *Samira*). It only applies when both names are on the list.
+- Maghreb and French romanisations of Arabic script: soft c (*Hocine* = حسين), the article
+  glued on (*Larbi* = العربي, *Elnadi* = النادي), a dropped first vowel (*Brahim* =
+  إبراهيم, *M'hamed* = امحمد), g for qaf (*Belgacem* = بلقاسم, *Guettaf* = قطاف), and a
+  final h that is a real consonant (*Salah* = صلاح; it was no match before).
+- New policy `records@1` for lists of people: `lenient@2` plus known spellings of one name
+  as a match. It is the default for `nameproof dedupe` and `find_duplicates`.
+- Benchmark: Arabic same-person pairs wrongly rejected 12.8% (was 16.8%); all scripts
+  9.4% (was 9.7%); different people shown the other's name 0.8% (was 0.9%). Verdicts for
+  `epc-default@2` change accordingly: policies pin thresholds and switches, the package
+  version pins the matching rules.
+
 ### Playground
 - Find duplicates in the browser (`dedupe.html`): paste names or open a CSV or text file,
   see the groups with a reason for every link, download them as a CSV that Excel opens
