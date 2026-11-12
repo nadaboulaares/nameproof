@@ -38,7 +38,7 @@ explainable implementation of that matching.
 - **Policies**: `epc-default@2` and `lenient@2`: a clearly different word in a person's
   name is no match.
 
-## Done (unreleased)
+## Done (0.3.0)
 
 - **Dedupe in the browser**: `dedupe.html`, paste a list or open a CSV, nothing uploaded.
 - **Arabic names**: known given names and their spellings, Maghreb romanisations, and the
