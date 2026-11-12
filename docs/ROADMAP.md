@@ -31,7 +31,21 @@ explainable implementation of that matching.
 - **Security review**: adversarial cases (false matches, name leaks, crafted input)
   are part of the test suite (`tests/test_review_regressions.py`).
 
+## Done (0.2.0, unreleased)
+
+- **Duplicate finding**: `nameproof dedupe` and `find_duplicates()`, with cross-script
+  blocking keys and parallel comparison.
+- **Policies**: `epc-default@2` and `lenient@2`: a clearly different word in a person's
+  name is no match.
+
 ## Next
+
+- [ ] Records policy for non-payment use: known spelling variants (*Mohamed* / *Mohammed*,
+      *Fatma* / *Fatima*) count as a match; Arabic-script comparisons still go to review
+- [ ] Better Arabic: Maghreb and Gulf spellings, long vowels (*محمد* vs *Mahmoud*), and an
+      Arabic slice built for duplicate finding
+- [ ] Dedupe in the browser playground (paste a list, nothing uploaded)
+- [ ] Optional extra fields for dedupe (date of birth) without becoming a full MDM tool
 
 - [ ] Hebrew, Armenian and Georgian romanisation; more Arabic dialect conventions
 - [ ] UK Confirmation of Payee, India and PIX presets

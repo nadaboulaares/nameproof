@@ -417,7 +417,7 @@ def test_health(client: TestClient) -> None:
     assert client.get("/health").json() == {
         "status": "ok",
         "version": "0.1.0",
-        "policy": "epc-default@1",
+        "policy": "epc-default@2",
         "verification_of_payee": True,
         "match_endpoint": False,
     }

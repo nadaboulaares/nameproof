@@ -3,12 +3,15 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
+import os
 import sys
 from collections.abc import Sequence
 from pathlib import Path
 
 from nameproof import __version__
+from nameproof.dedupe import MAX_GROUP, DedupeReport, find_duplicates
 from nameproof.matcher import match
 from nameproof.policy import DEFAULT_POLICY
 
@@ -17,7 +20,7 @@ def build_parser() -> argparse.ArgumentParser:
     """Build the top-level argument parser."""
     parser = argparse.ArgumentParser(
         prog="nameproof",
-        description="Explainable name matching across scripts for payments.",
+        description="Explainable name matching across scripts: same person, maybe, or different?",
     )
     parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     commands = parser.add_subparsers(dest="command")
@@ -31,6 +34,40 @@ def build_parser() -> argparse.ArgumentParser:
     check.add_argument("account", nargs="+", help="name(s) registered on the account")
     check.add_argument("--policy", default=DEFAULT_POLICY, help="policy id (default: %(default)s)")
     check.add_argument("--json", action="store_true", help="print the verdict as JSON")
+
+    dedupe = commands.add_parser(
+        "dedupe",
+        help="find likely duplicates in a list of names",
+        description=(
+            "Find names in a list that likely belong to the same person or organisation, "
+            "across scripts and spellings. Nothing leaves your computer."
+        ),
+    )
+    dedupe.add_argument(
+        "file", type=Path, help="CSV file with a header row, or a .txt file with one name per line"
+    )
+    dedupe.add_argument(
+        "--column", help="CSV column with the names (default: the only column, or 'name')"
+    )
+    dedupe.add_argument("--policy", default=DEFAULT_POLICY, help="policy id (default: %(default)s)")
+    dedupe.add_argument(
+        "--jobs",
+        type=int,
+        default=os.cpu_count() or 1,
+        help="processes to compare with (default: all CPUs, %(default)s)",
+    )
+    dedupe.add_argument(
+        "--max-group",
+        type=int,
+        default=MAX_GROUP,
+        help="largest group of similar names compared with each other (default: %(default)s)",
+    )
+    dedupe.add_argument(
+        "--output",
+        type=Path,
+        help="write the rows that have duplicates to this CSV, with group and review columns",
+    )
+    dedupe.add_argument("--json", action="store_true", help="print the full report as JSON")
 
     bench = commands.add_parser(
         "bench",
@@ -64,6 +101,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.command == "match":
         return _run_match(args.provided, args.account, policy=args.policy, as_json=args.json)
+    if args.command == "dedupe":
+        return _run_dedupe(args)
     if args.command == "bench":
         return _run_bench(args.dataset, args.systems.split(","), as_json=args.json)
     if args.command == "serve":
@@ -87,6 +126,117 @@ def _run_match(provided: str, accounts: list[str], *, policy: str, as_json: bool
     if verdict.explanation:
         print(f"  why: {', '.join(verdict.explanation)}")
     return 0
+
+
+class _Table:
+    """Names read from a file, with the file row of each and the original columns."""
+
+    def __init__(self, header: list[str], rows: list[list[str]], numbers: list[int], column: int):
+        self.header = header
+        self.rows = rows
+        self.numbers = numbers
+        self.names = [row[column] if column < len(row) else "" for row in rows]
+
+
+def _read_names(path: Path, column: str | None) -> _Table:
+    text = path.read_text(encoding="utf-8-sig")  # Excel writes a byte-order mark
+    if path.suffix.lower() == ".txt":
+        lines = text.splitlines()
+        return _Table(
+            ["name"], [[line.strip()] for line in lines], list(range(1, len(lines) + 1)), 0
+        )
+    try:
+        dialect: type[csv.Dialect] | csv.Dialect = csv.Sniffer().sniff(text[:4096], ",;\t")
+    except csv.Error:
+        dialect = csv.excel
+    reader = csv.reader(text.splitlines(), dialect)
+    header = next(reader, None)
+    if header is None:
+        msg = f"{path} is empty"
+        raise ValueError(msg)
+    rows: list[list[str]] = []
+    numbers: list[int] = []
+    for row in reader:
+        if any(cell.strip() for cell in row):
+            rows.append(row)
+            numbers.append(reader.line_num)
+    return _Table(header, rows, numbers, _pick_column(header, column))
+
+
+def _pick_column(header: list[str], column: str | None) -> int:
+    folded = [name.strip().casefold() for name in header]
+    if column is not None:
+        if column.strip().casefold() in folded:
+            return folded.index(column.strip().casefold())
+        msg = f"no column {column!r}; columns are: {', '.join(header)}"
+        raise ValueError(msg)
+    if len(header) == 1:
+        return 0
+    if "name" in folded:
+        return folded.index("name")
+    msg = f"choose the name column with --column; columns are: {', '.join(header)}"
+    raise ValueError(msg)
+
+
+def _run_dedupe(args: argparse.Namespace) -> int:
+    try:
+        table = _read_names(args.file, args.column)
+        report = find_duplicates(
+            table.names, policy=args.policy, max_group=args.max_group, jobs=max(args.jobs, 1)
+        )
+        if args.output is not None:
+            _write_groups(args.output, table, report)
+    except (OSError, UnicodeDecodeError, ValueError) as exc:
+        print(f"nameproof: error: {exc}", file=sys.stderr)
+        return 2
+    if args.json:
+        payload = {"rows": table.numbers, **report.to_dict()}
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        _print_dedupe(table, report)
+    return 0
+
+
+def _print_dedupe(table: _Table, report: DedupeReport) -> None:
+    review = sum(group.needs_review for group in report.groups)
+    print(
+        f"{len(report.groups)} groups of likely duplicates in {len(table.names)} names "
+        f"({review} to review); {report.compared} pairs compared."
+    )
+    if report.unchecked:
+        rows = ", ".join(str(table.numbers[index]) for index in report.unchecked[:20])
+        more = " ..." if len(report.unchecked) > 20 else ""
+        print(f"Not checked (empty, too long or unsupported script): rows {rows}{more}")
+    if report.crowded_keys:
+        print(
+            f"Some very common names were not all compared ({report.crowded_keys}); "
+            "a larger --max-group compares more."
+        )
+    links: dict[int, list[str]] = {}
+    for pair in report.pairs:
+        why = ", ".join(pair.explanation) or "identical"
+        line = (
+            f"    rows {table.numbers[pair.first]} & {table.numbers[pair.second]}: "
+            f"{pair.result.value} ({why})"
+        )
+        links.setdefault(pair.first, []).append(line)
+    for number, group in enumerate(report.groups, 1):
+        print(f"\nGroup {number}" + (" (review)" if group.needs_review else ""))
+        for index in group.members:
+            print(f"  row {table.numbers[index]:>5}  {table.names[index]}")
+        for index in group.members:
+            for line in links.get(index, []):
+                print(line)
+
+
+def _write_groups(path: Path, table: _Table, report: DedupeReport) -> None:
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["group", "review", "row", *table.header])
+        for number, group in enumerate(report.groups, 1):
+            for index in group.members:
+                review = "yes" if group.needs_review else "no"
+                writer.writerow([number, review, table.numbers[index], *table.rows[index]])
 
 
 def _run_bench(dataset: Path, systems: list[str], *, as_json: bool) -> int:

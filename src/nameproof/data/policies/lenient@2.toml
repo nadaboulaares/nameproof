@@ -1,0 +1,17 @@
+name = "lenient"
+version = 2
+description = """
+epc-default@2 plus three equivalences some banks accept as a MATCH: a dropped or
+glued surname particle ("Ludwig van Beethoven" = "Ludwig Beethoven"), the same legal
+form spelled out or missing ("Acme Ltd" = "Acme Limited" = "Acme"), and company words
+in another order. Spelling differences and initials still give at most CLOSE_MATCH.
+"""
+match_threshold = 0.95
+close_threshold = 0.80
+missing_token_penalty = 0.05
+max_missing_tokens_for_match = 1
+initials_can_match = false
+particle_variants_can_match = true
+legal_form_variants_can_match = true
+company_reorder_can_match = true
+distinct_word_threshold = 0.65

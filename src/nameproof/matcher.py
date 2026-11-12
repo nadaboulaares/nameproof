@@ -120,33 +120,56 @@ def match(
     """
     active = load_policy(policy)
     names = _check_account_names(account_names)
-    provided_tokens = _usable_tokens(provided)
-    if provided_tokens is None:
-        return _not_possible(active, Reason.NAME_TOO_LONG)
-    provided_forms = _forms(provided_tokens, (), 0)
-    if not provided_forms:
-        return _not_possible(active, Reason.EMPTY_NAME)
+    provided_forms = _prepare_provided(provided)
+    if isinstance(provided_forms, Reason):
+        return _not_possible(active, provided_forms)
+    return _judge(provided_forms, [(name, _prepare_account(name)) for name in names], active)
 
+
+def _prepare_provided(name: str) -> list[_Form] | Reason:
+    """Spellings of the name a payer typed, or why it can't be checked."""
+    tokens = _usable_tokens(name)
+    if tokens is None:
+        return Reason.NAME_TOO_LONG
+    return _forms(tokens, (), 0) or Reason.EMPTY_NAME
+
+
+def _prepare_account(name: str) -> list[_Form] | None:
+    """Spellings of an account name and of each joint holder; ``None`` if too long."""
+    tokens = _usable_tokens(name)
+    if tokens is None:
+        return None
+    return [
+        form
+        for holder, holder_reasons, raw_floor in _holders(tokens)
+        for form in _forms(holder, holder_reasons, raw_floor)
+    ]
+
+
+def _judge(
+    provided_forms: Sequence[_Form],
+    accounts: Sequence[tuple[str, Sequence[_Form] | None]],
+    policy: Policy,
+) -> Verdict:
+    """Compare prepared spellings; the best account spelling decides the verdict."""
     best: _Outcome | None = None
     skipped_too_long = False
-    for account in names:
-        account_tokens = _usable_tokens(account)
-        if account_tokens is None:
+    for account, account_forms in accounts:
+        if account_forms is None:
             skipped_too_long = True
             continue
-        for holder, holder_reasons, raw_floor in _holders(account_tokens):
-            for account_form in _forms(holder, holder_reasons, raw_floor):
-                for provided_form in provided_forms:
-                    outcome = _evaluate(provided_form, account_form, account, active)
-                    if best is None or outcome.rank > best.rank:
-                        best = outcome
+        for account_form in account_forms:
+            for provided_form in provided_forms:
+                outcome = _evaluate(provided_form, account_form, account, policy)
+                if best is None or outcome.rank > best.rank:
+                    best = outcome
     if best is None:
         reason = Reason.NAME_TOO_LONG if skipped_too_long else Reason.EMPTY_NAME
-        return _not_possible(active, reason)
+        return _not_possible(policy, reason)
     return Verdict(
         result=best.result,
         score=round(best.score, 4),
-        policy_version=active.id,
+        policy_version=policy.id,
         explanation=tuple(reason.value for reason in best.reasons),
         suggested_name=best.account if best.result is MatchResult.CLOSE_MATCH else None,
     )
@@ -454,7 +477,17 @@ def _evaluate(provided: _Form, account: _Form, account_name: str, policy: Policy
     )
     # A single word ("Smith", "Gamble") is not enough to reveal a person's full
     # name; companies may still close-match on their name without legal form.
-    allow_close = anchored and not (Reason.SINGLE_TOKEN in blockers and not company)
+    # A close match is for small deviations: in a person's name, one clearly
+    # different word ("Mohamed" vs "Mahmoud", "Béla" vs "Eva") rules it out,
+    # however many other words agree. Company names are often translated
+    # ("Moscow" vs "Москва"), so they are left to the score.
+    distinct_word = not company and any(
+        pair.kind is PairKind.FUZZY and pair.similarity < policy.distinct_word_threshold
+        for pair in comparison.alignment.pairs
+    )
+    allow_close = (
+        anchored and not distinct_word and not (Reason.SINGLE_TOKEN in blockers and not company)
+    )
     result, score, decision_reasons = _decide(
         comparison.alignment, policy, frozenset(blockers), allow_close=allow_close
     )

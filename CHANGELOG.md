@@ -7,6 +7,31 @@ All notable changes to nameproof are documented here. The format follows
 
 ## [Unreleased]
 
+nameproof is now positioned as general explainable name matching across scripts (charities
+and aid organisations, health records, HR, travel, payments); Verification of Payee is one
+use case.
+
+### Duplicate finding
+- `nameproof dedupe FILE` (CSV with a header row, or one name per line) and
+  `nameproof.dedupe.find_duplicates(names)`: groups of likely duplicates across scripts
+  and spellings, each link with its verdict and reason codes; a group needs review when a
+  link is a close match. `--output` writes the duplicate rows with `group` and `review`
+  columns; `--json` prints the full report.
+- Names are only compared when they share a coarse cross-script consonant key, so a list
+  of 10,000 names takes seconds to minutes instead of 50 million comparisons; on the
+  benchmark's 9,624 names it keeps 98% of the same-person pairs `match` finds. `--jobs`
+  compares in parallel.
+
+### Matching
+- New default policy `epc-default@2` (and `lenient@2`): in a person's name, a clearly
+  different word (similarity below 0.65, `distinct_word_threshold`) rules out a close
+  match, however many other words agree. *Mohamed Ben Ali* vs *Mahmoud Ben Ali* and
+  *Béla Bartók* vs *Eva Bartok* were close matches and revealed a relative's name; they are
+  now no match. Company names are unaffected. `epc-default@1` and `lenient@1` are
+  unchanged.
+- Benchmark: same entity wrongly rejected 9.7% (was 9.5%); different people shown the other
+  name 0.9% (was 1.2%), a new table in `docs/BENCHMARK.md`.
+
 ### Playground
 - Shareable example links: `#p=<provided name>&a=<account names>` pre-fills the page.
   The part after `#` never leaves the browser.

@@ -152,3 +152,25 @@ def test_lenient_policy_accepts_documented_equivalences() -> None:
     assert match("Hassan Ibn Ali", ["Hassan Abu Ali"], policy=lenient).result is not M
     assert match("Siemens AG", ["Siemens Energy AG"], policy=lenient).result is not M
     assert match("Smith", ["Smith AG"], policy=lenient).result is not M
+
+
+def test_a_clearly_different_first_name_is_not_a_close_match() -> None:
+    # Found while building dedupe: two agreeing words lifted a different first
+    # name over the close threshold, revealing a relative's name. epc-default@2.
+    for provided, account in [
+        ("Mohamed Ben Ali", "Mahmoud Ben Ali"),
+        ("Béla Bartók", "Eva Bartok"),
+        ("Irène Joliot-Curie", "Frédéric Joliot-Curie"),
+    ]:
+        assert match(provided, [account]).result is MatchResult.NO_MATCH
+    # Version 1 keeps its published behaviour.
+    old = match("Mohamed Ben Ali", ["Mahmoud Ben Ali"], policy="epc-default@1")
+    assert old.result is MatchResult.CLOSE_MATCH
+    # Small deviations are still close matches...
+    for provided, account in [("Jon Smyth", "John Smith"), ("Maria Garcia", "Mario Garcia")]:
+        assert match(provided, [account]).result is MatchResult.CLOSE_MATCH
+    # ...and company names, often translated word by word, are left to the score.
+    company = match("Alpha Kosmetik GmbH", ["Alpha Cosmetics GmbH"])
+    assert company.result is MatchResult.CLOSE_MATCH
+    assert "mismatched_token" in company.explanation
+    assert match("Mohamed Ben Ali", ["Mahmoud Ben Ali"], policy="lenient@2").result is not M

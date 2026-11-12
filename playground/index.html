@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>nameproof playground: payee name matching across scripts</title>
-  <meta name="description" content="Try nameproof in your browser: explainable Verification of Payee name matching for Greek, Cyrillic, Arabic and Latin names. Nothing leaves this page.">
+  <title>nameproof playground: is this the same person?</title>
+  <meta name="description" content="Try nameproof in your browser: explainable name matching across Arabic, Greek, Cyrillic and Latin scripts. Nothing leaves this page.">
   <style>
     :root {
       --bg: #f7f7f5; --panel: #ffffff; --ink: #1c1d1f; --muted: #5d6066; --line: #dcdcd8;
@@ -68,33 +68,35 @@
 <main>
   <header>
     <h1>nameproof playground</h1>
-    <p>Explainable name matching across scripts for <strong>Verification of Payee</strong>.
-       Type the name a payer entered and the name the bank holds.</p>
+    <p><strong>Is this the same person?</strong> Explainable name matching across scripts.
+       Type a name, and the name or names to compare it with.</p>
     <span class="privacy">🔒 Runs entirely in your browser. Nothing you type leaves this page.</span>
   </header>
 
   <section class="panel" aria-labelledby="inputs-title">
     <h2 id="inputs-title" hidden>Names to compare</h2>
     <div class="field">
-      <label for="provided">Name the payer typed</label>
+      <label for="provided">Name</label>
       <input id="provided" dir="auto" autocomplete="off" spellcheck="false" value="Yorgos Papadopoulos">
     </div>
     <div class="field">
-      <label for="accounts">Account holder name(s) <span class="hint">: one per line, any script</span></label>
+      <label for="accounts">Compare with <span class="hint">: one name per line, any script</span></label>
       <textarea id="accounts" dir="auto" spellcheck="false">Γιώργος Παπαδόπουλος</textarea>
     </div>
     <div class="examples" role="group" aria-label="Examples">
       <button data-p="Giorgos Papadopoulos" data-a="Γιώργος Παπαδόπουλος">Greek</button>
       <button data-p="Volodymyr Zelenskyi" data-a="Володимир Олександрович Зеленський">Ukrainian</button>
       <button data-p="Novak Djokovic" data-a="Новак Ђоковић">Serbian</button>
-      <button data-p="Abdel Rahman" data-a="عبد الرحمن">Arabic</button>
+      <button data-p="Fatma Trabelsi" data-a="فاطمة الطرابلسي">Arabic ↔ Latin</button>
+      <button data-p="Abdel Rahman" data-a="عبد الرحمن">Arabic compound</button>
       <button data-p="Mueller Anna" data-a="Anna Müller">Umlaut + order</button>
       <button data-p="Jon Smyth" data-a="John Smith">Typo</button>
       <button data-p="J. Smith" data-a="John Smith">Initial</button>
-      <button data-p="Hans Mueller" data-a="Anna Müller&#10;Hans-Joachim Müller">Joint account</button>
+      <button data-p="Hans Mueller" data-a="Anna Müller&#10;Hans-Joachim Müller">Several names</button>
       <button data-p="Acme GmbH" data-a="ACME Gesellschaft mit beschränkter Haftung">Company</button>
       <button data-p="Acme GmbH" data-a="Acme AG">Different legal form</button>
       <button data-p="Ahmed" data-a="حامد">Different person</button>
+      <button data-p="Mohamed Ben Ali" data-a="Mahmoud Ben Ali">Different first name</button>
     </div>
   </section>
 
@@ -131,9 +133,9 @@
 const EPC = { MATCH: "MTCH", CLOSE_MATCH: "CMTC", NO_MATCH: "NMTC", NOT_POSSIBLE: "NOAP" };
 const LABEL = { MATCH: "Match", CLOSE_MATCH: "Close match", NO_MATCH: "No match", NOT_POSSIBLE: "Not possible" };
 const MEANING = {
-  MATCH: "Same name once case, accents, word order, titles and official romanisation are accounted for. The payment can go ahead.",
-  CLOSE_MATCH: "Almost the same. The bank shows the payer the real account name so they can decide.",
-  NO_MATCH: "A different person or company. The payer is warned before paying.",
+  MATCH: "Same name once case, accents, word order, titles and official romanisation are accounted for.",
+  CLOSE_MATCH: "Almost the same: a person should check. (In a payment, the payer is shown the real name and decides.)",
+  NO_MATCH: "A different person or company.",
   NOT_POSSIBLE: "Nothing to compare, or a script nameproof can't romanise yet.",
 };
 const REASON = {
@@ -183,7 +185,7 @@ function render(verdict) {
   suggested.hidden = !verdict.suggested_name;
   const name = document.createElement("bdi");  // keeps right-to-left names intact
   name.textContent = verdict.suggested_name || "";
-  suggested.replaceChildren(...(verdict.suggested_name ? ["Shown to the payer: ", name] : []));
+  suggested.replaceChildren(...(verdict.suggested_name ? ["Closest name: ", name] : []));
   const list = $("reasons");
   list.replaceChildren(...verdict.explanation.map((code) => {
     const item = document.createElement("li");
@@ -202,7 +204,7 @@ function update() {
   if (!accounts.length) {
     $("result").hidden = true;
     $("status").hidden = false;
-    $("status").textContent = "Enter at least one account holder name.";
+    $("status").textContent = "Enter at least one name to compare with.";
     return;
   }
   try {

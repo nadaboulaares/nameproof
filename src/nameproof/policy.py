@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from functools import lru_cache
 from importlib.resources import files
 
-DEFAULT_POLICY = "epc-default@1"
+DEFAULT_POLICY = "epc-default@2"
 
 _SPEC = re.compile(r"[a-z0-9][a-z0-9-]*@[0-9]+")
 _POLICY_DIR = files("nameproof") / "data" / "policies"
@@ -24,7 +24,9 @@ class Policy:
     ``*_can_match`` switches (all off in ``epc-default``, as in EPC288-23 v2.0)
     let a bank also accept a dropped surname particle ("van Beethoven" vs
     "Beethoven"), a spelled-out or missing legal form ("Ltd" vs "Limited"), and
-    company words in another order as a ``MATCH``.
+    company words in another order as a ``MATCH``. ``distinct_word_threshold``
+    (0 = off; 0.65 from ``epc-default@2``) rules out ``CLOSE_MATCH`` for a
+    person's name with a word less similar than that ("Mohamed" vs "Mahmoud").
     """
 
     name: str
@@ -37,6 +39,7 @@ class Policy:
     particle_variants_can_match: bool = False
     legal_form_variants_can_match: bool = False
     company_reorder_can_match: bool = False
+    distinct_word_threshold: float = 0.0
     description: str = ""
 
     def __post_init__(self) -> None:
@@ -44,7 +47,12 @@ class Policy:
         if not _SPEC.fullmatch(self.id):
             msg = f"invalid policy name or version: {self.id!r}"
             raise ValueError(msg)
-        for field in ("match_threshold", "close_threshold", "missing_token_penalty"):
+        for field in (
+            "match_threshold",
+            "close_threshold",
+            "missing_token_penalty",
+            "distinct_word_threshold",
+        ):
             value = getattr(self, field)
             if not 0.0 <= value <= 1.0:
                 msg = f"{field} must be within [0, 1], got {value!r}"
@@ -58,7 +66,7 @@ class Policy:
 
     @property
     def id(self) -> str:
-        """Identifier recorded on every verdict, e.g. ``"epc-default@1"``."""
+        """Identifier recorded on every verdict, e.g. ``"epc-default@2"``."""
         return f"{self.name}@{self.version}"
 
     @classmethod
@@ -79,6 +87,11 @@ class Policy:
             particle_variants_can_match=_optional_bool(data, "particle_variants_can_match"),
             legal_form_variants_can_match=_optional_bool(data, "legal_form_variants_can_match"),
             company_reorder_can_match=_optional_bool(data, "company_reorder_can_match"),
+            distinct_word_threshold=(
+                _float(data, "distinct_word_threshold")
+                if "distinct_word_threshold" in data
+                else 0.0
+            ),
             description=_str(data, "description") if "description" in data else "",
         )
 

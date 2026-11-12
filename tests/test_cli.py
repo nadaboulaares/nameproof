@@ -40,7 +40,7 @@ def test_match_prints_human_readable_verdict(capsys: pytest.CaptureFixture[str])
 
 def test_match_exact_has_no_extra_lines(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["match", "John Smith", "John Smith"]) == 0
-    assert capsys.readouterr().out.splitlines() == ["MATCH  score=1.0000  policy=epc-default@1"]
+    assert capsys.readouterr().out.splitlines() == ["MATCH  score=1.0000  policy=epc-default@2"]
 
 
 def test_match_json(capsys: pytest.CaptureFixture[str]) -> None:
@@ -48,7 +48,7 @@ def test_match_json(capsys: pytest.CaptureFixture[str]) -> None:
     payload = json.loads(capsys.readouterr().out)
     assert payload["result"] == "MATCH"
     assert payload["suggested_name"] is None
-    assert payload["policy_version"] == "epc-default@1"
+    assert payload["policy_version"] == "epc-default@2"
 
 
 def test_match_unknown_policy_exits_2(capsys: pytest.CaptureFixture[str]) -> None:

@@ -21,8 +21,12 @@ customer friction: the payer is told the name is wrong when it isn't. A `CLOSE_M
 shows the payer the real name to confirm. For *different* entities, a `MATCH` is the
 fraud risk: the payment goes through with no warning.
 
-**Policy:** `epc-default@1` (EPC288-23 v2.0): dropped particles, legal-form variants and
-reordered company names are close matches, not matches.
+**Policy:** `epc-default@2` (EPC288-23 v2.0): dropped particles, legal-form variants and
+reordered company names are close matches, not matches, and a clearly different word in a
+person's name is no match. Compared with `epc-default@1` (0.1.0) this moves six
+different-person pairs (*Béla Bartók* / *Eva Bartok*) and six same-entity pairs (four
+company names without a legal form that were translated, a heavy typo and a nickname) from
+close match to no match.
 
 **Known hard cases kept in on purpose:** exonyms and stage names (*Irene Papas* /
 *Ειρήνη Παπά*, *John Paul II* / *Jan Paweł II*) and company names that are
@@ -38,7 +42,7 @@ why the company slices have high rejection rates for every system.
 | russian | 4.8% | 100.0% | 100.0% | 100.0% |
 | ukrainian | 8.8% | 100.0% | 100.0% | 100.0% |
 | bulgarian | 4.8% | 100.0% | 100.0% | 100.0% |
-| serbian | 1.6% | 100.0% | 100.0% | 100.0% |
+| serbian | 2.4% | 100.0% | 100.0% | 100.0% |
 | arabic | 16.8% | 100.0% | 100.0% | 100.0% |
 | polish | 1.2% | 71.6% | 46.0% | 23.2% |
 | czech | 0.0% | 82.0% | 49.6% | 17.2% |
@@ -47,9 +51,9 @@ why the company slices have high rejection rates for every system.
 | german | 0.0% | 77.6% | 52.0% | 26.0% |
 | french | 0.8% | 77.6% | 52.8% | 26.0% |
 | spanish | 0.0% | 76.0% | 46.8% | 22.0% |
-| greek-company | 40.8% | 100.0% | 100.0% | 100.0% |
-| cyrillic-company | 54.4% | 100.0% | 100.0% | 100.0% |
-| **all** | 9.5% | 89.8% | 76.5% | 63.8% |
+| greek-company | 41.2% | 100.0% | 100.0% | 100.0% |
+| cyrillic-company | 55.6% | 100.0% | 100.0% | 100.0% |
+| **all** | 9.7% | 89.8% | 76.5% | 63.8% |
 
 **Same person/company: auto-matched** (MATCH; n=3750, higher is better)
 
@@ -93,19 +97,45 @@ why the company slices have high rejection rates for every system.
 | cyrillic-company | 0.0% | 0.0% | 0.0% | 0.0% |
 | **all** | 0.0% | 0.0% | 0.0% | 0.0% |
 
+**Different people/companies: shown the other's name** (CLOSE_MATCH; n=2250, lower is better)
+
+| slice | nameproof | exact | levenshtein | token-sort |
+|---|---|---|---|---|
+| greek | 0.7% | 0.0% | 0.0% | 0.0% |
+| russian | 0.7% | 0.0% | 0.0% | 0.0% |
+| ukrainian | 1.3% | 0.0% | 0.0% | 0.0% |
+| bulgarian | 0.7% | 0.0% | 0.0% | 0.0% |
+| serbian | 2.0% | 0.0% | 0.0% | 0.0% |
+| arabic | 2.0% | 0.0% | 0.0% | 0.0% |
+| polish | 0.7% | 0.0% | 0.0% | 0.7% |
+| czech | 1.3% | 0.0% | 0.7% | 0.7% |
+| hungarian | 0.7% | 0.0% | 0.0% | 0.7% |
+| romanian | 0.7% | 0.0% | 0.0% | 0.7% |
+| german | 0.7% | 0.0% | 0.0% | 0.0% |
+| french | 1.3% | 0.0% | 0.0% | 0.0% |
+| spanish | 0.7% | 0.0% | 0.0% | 0.0% |
+| greek-company | 0.0% | 0.0% | 0.0% | 0.0% |
+| cyrillic-company | 0.7% | 0.0% | 0.0% | 0.0% |
+| **all** | 0.9% | 0.0% | 0.0% | 0.2% |
+
+**Why nameproof shows more close matches for different people than the baselines:** the
+baselines reject almost every cross-script name, so they rarely show any name at all. A
+nameproof close match on a different person is mostly a relative or namesake with one
+similar word; the payer sees the real name and can stop.
+
 **nameproof by variation** (share of each verdict)
 
 | label | variation | n | MATCH | CLOSE | NO | NOT POSSIBLE |
 |---|---|---|---|---|---|---|
 | same | uppercase | 824 | 72.3% | 18.6% | 9.1% | 0.0% |
-| same | typo | 789 | 0.1% | 86.8% | 13.1% | 0.0% |
-| same | reordered | 729 | 73.0% | 18.5% | 8.5% | 0.0% |
-| same | native_script | 455 | 46.8% | 35.8% | 17.4% | 0.0% |
+| same | typo | 789 | 0.1% | 86.4% | 13.4% | 0.0% |
+| same | reordered | 729 | 73.0% | 18.4% | 8.6% | 0.0% |
+| same | native_script | 455 | 46.8% | 35.4% | 17.8% | 0.0% |
 | same | initial | 669 | 0.0% | 96.4% | 3.6% | 0.0% |
 | same | english_label | 75 | 56.0% | 32.0% | 12.0% | 0.0% |
 | same | dropped_middle | 52 | 46.2% | 42.3% | 11.5% | 0.0% |
 | same | ascii_typed | 157 | 100.0% | 0.0% | 0.0% | 0.0% |
-| different | same_surname | 640 | 0.0% | 4.2% | 95.8% | 0.0% |
+| different | same_surname | 640 | 0.0% | 3.3% | 96.7% | 0.0% |
 | different | different_person | 1610 | 0.0% | 0.0% | 100.0% | 0.0% |
 
-nameproof latency: p50 0.33 ms, p95 0.82 ms
+nameproof latency: p50 0.33 ms, p95 0.82 ms (measured on an idle machine)

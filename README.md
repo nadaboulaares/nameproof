@@ -5,11 +5,12 @@
 [![Python](https://img.shields.io/badge/python-3.11%E2%80%933.14-blue.svg)](pyproject.toml)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
-**Open-source, explainable name matching across scripts for payments.**
+**Is this the same person? Explainable name matching across scripts.**
 
-Is *"Γιώργος Παπαδόπουλος"* the same payee as *"Giorgos Papadopoulos"* or *"G. Papadopoulos"*?
-`nameproof` answers **Match / Close match / No match** for EU **Verification of Payee (VoP)**,
-UK Confirmation of Payee and KYC, and explains every decision.
+Is *"محمد علي"* the same person as *"Mohamed Ali"*? Is *"Fatma Trabelsi"* the
+*"فاطمة الطرابلسي"* on another list? Is *"Γιώργος Παπαδόπουλος"* the *"Giorgos Papadopoulos"*
+a customer typed? `nameproof` answers **Match / Close match / No match** and explains every
+decision, so people only review the uncertain cases.
 
 **[▶ Try it in your browser](https://nadaboulaares.github.io/nameproof/)**: nothing you type leaves the page.
 
@@ -19,27 +20,82 @@ UK Confirmation of Payee and KYC, and explains every decision.
 pip install nameproof
 ```
 
-- **Latin script** with diacritics (*José García*, *Wałęsa*, *Müller* = *Mueller*, *Đoković* = *Djokovic*)
-- **Greek, Cyrillic and Arabic**: official romanisations (ELOT 743, ICAO 9303, national systems)
-- **Real names**: initials, word order, particles (*van der*, *al-*), compound names, titles, joint accounts
-- **Companies**: about 1,400 legal forms (GmbH, Sp. z o.o., S.R.L., ΑΕ, ЕООД, …) from the GLEIF ISO 20275 list
-- **Safe by design**: follows the EPC matching recommendations (EPC288-23 v2.0): only names identical after
-  clean-up match; the real name is only revealed on a close match, never to a probe like a surname alone
-- **Deterministic and fast**: versioned policies, CPU-only, typically under 1 ms per check, bounded work
-  for crafted input, no data leaves your servers
-- **EPC VoP responder** included, tested against the EPC reference test cases
+- **Arabic, Greek and Cyrillic** against Latin spellings: official romanisations (ELOT 743,
+  ICAO 9303, national systems); Arabic through consonant skeletons (*Mohamed*, *Muhammad*,
+  *محمد*), always a close match for review because Arabic spelling is ambiguous
+- **Real names**: diacritics (*José García*, *Wałęsa*, *Müller* = *Mueller*), initials, word
+  order, particles (*ben*, *al-*, *van der*), compound names, titles, patronymics, joint names
+- **Organisations**: about 1,400 legal forms (SARL, GmbH, Sp. z o.o., ΑΕ, ЕООД, …) from the
+  GLEIF ISO 20275 list
+- **Careful by design**: a spelling difference is never a full match; *Mohamed* vs *Mahmoud*
+  and *Ahmed* vs *حامد* (Hamid) are no match; every answer comes with reason codes
+- **Find duplicates in a list** of thousands of names: `nameproof dedupe people.csv`
+- **Private and fast**: pure Python, runs offline or in the browser, about a millisecond per
+  check, bounded work for crafted input
 
-**Bank or payment institution?** See [nameproof for banks](docs/FOR-BANKS.md): what it
-does, how it fits your stack, and the design-partner pilot.
+### Where it's used
+
+| | |
+|---|---|
+| **Charities, zakat and aid organisations** | spot the same beneficiary registered twice, once in Arabic and once in Latin letters |
+| **Clinics and health records** | link a patient's records across spellings |
+| **Recruiting, schools and HR** | merge duplicate candidates or students |
+| **Travel** | compare a booking name with the passport (ICAO 9303) |
+| **Payments** | EU Verification of Payee: an [EPC responder](#verification-of-payee-service) is included; see [nameproof for banks](docs/FOR-BANKS.md) |
+
+nameproof compares **names only**. Matching records properly also uses dates of birth,
+phone numbers or ID numbers; nameproof is the name part of that decision.
 
 **Background:** [Why fuzzy matching fails EU Verification of Payee](https://dev.to/nadaboulaares/why-fuzzy-matching-fails-eu-verification-of-payee-and-what-to-do-about-greek-cyrillic-and-arabic-29aa), the
 design and the lessons from the pre-release review.
+
+## Find duplicates in a list
+
+```console
+$ nameproof dedupe examples/beneficiaries.csv
+3 groups of likely duplicates in 9 names (2 to review); 7 pairs compared.
+
+Group 1 (review)
+  row     2  محمد بن علي
+  row     3  Mohamed Ben Ali
+  row     7  Mohamed Ben Ali
+    rows 2 & 3: CLOSE_MATCH (transliterated, approximate_transliteration, fuzzy_token)
+    rows 3 & 7: MATCH (identical)
+
+Group 2 (review)
+  row     5  Fatma Trabelsi
+  row     6  فاطمة الطرابلسي
+    rows 5 & 6: CLOSE_MATCH (transliterated, approximate_transliteration, fuzzy_token)
+
+Group 3
+  row     9  Γιώργος Παπαδόπουλος
+  row    10  Giorgos Papadopoulos
+    rows 9 & 10: MATCH (transliterated)
+```
+
+It reads a CSV (with a header row; pick the column with `--column`) or a text file with one
+name per line, and `--output` writes the rows that have duplicates, with `group` and
+`review` columns, ready to sort in a spreadsheet. From Python:
+
+```python
+from nameproof.dedupe import find_duplicates
+
+report = find_duplicates(["Fatma Trabelsi", "Ahmed Salah", "فاطمة الطرابلسي"])
+report.groups  # (DuplicateGroup(members=(0, 2), needs_review=True),)
+```
+
+Comparing every pair of a 10,000-name list would take 50 million checks, so names are
+first grouped by a coarse, cross-script consonant key per word, and only names sharing a
+key are compared, with exactly the rules of `match`. On the 9,624 distinct names of
+nameproof-bench this compares 147,000 pairs instead of 46 million and keeps 98% of the
+same-person pairs `match` finds (the rest are mostly heavy typos); it takes about 30
+seconds on 8 cores. A group needs review whenever one of its links is a close match.
 
 ## Benchmark
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/benchmark-dark.svg">
-  <img alt="Same person wrongly rejected: nameproof 9.5%, token-sort 63.8%, Levenshtein 76.5%, exact match 89.8%. Same person auto-matched: nameproof 41.7%, token-sort 26.2%, Levenshtein 11.3%, exact match 10.2%. Different people falsely matched: 0.0% for every system." src="docs/assets/benchmark-light.svg">
+  <img alt="Same person wrongly rejected: nameproof 9.7%, token-sort 63.8%, Levenshtein 76.5%, exact match 89.8%. Same person auto-matched: nameproof 41.7%, token-sort 26.2%, Levenshtein 11.3%, exact match 10.2%. Different people falsely matched: 0.0% for every system." src="docs/assets/benchmark-light.svg">
 </picture>
 
 On [nameproof-bench](bench/README.md), 6,000 labelled name pairs across Greek, Cyrillic,
@@ -47,7 +103,7 @@ Arabic and Latin scripts built from Wikidata, against typical fuzzy-matching bas
 
 | | nameproof | token-sort | Levenshtein | exact |
 |---|---|---|---|---|
-| Same person **wrongly rejected** (lower is better) | **9.5%** | 63.8% | 76.5% | 89.8% |
+| Same person **wrongly rejected** (lower is better) | **9.7%** | 63.8% | 76.5% | 89.8% |
 | Same person **auto-matched** (higher is better) | **41.7%** | 26.2% | 11.3% | 10.2% |
 | Different people **falsely matched** (fraud risk) | **0.0%** | 0.0% | 0.0% | 0.0% |
 
@@ -96,23 +152,25 @@ match("John Smith", ["John and Mary Smith"]).result  # MATCH  (joint_account_hol
 
 ```console
 $ nameproof match "Jon Smyth" "John Smith"
-CLOSE_MATCH  score=0.8442  policy=epc-default@1
+CLOSE_MATCH  score=0.8442  policy=epc-default@2
   suggested name: John Smith
   why: fuzzy_token
 ```
 
-**How verdicts work** (default policy `epc-default@1`, following
+**How verdicts work** (default policy `epc-default@2`, following
 [EPC288-23 v2.0](https://www.europeanpaymentscouncil.eu/sites/default/files/kb/file/2026-11/EPC288-23%20v2.0%20EPC%20Recommendations%20for%20the%20Matching%20Processes%20under%20the%20VOP%20Scheme%20Rulebook.pdf)):
 
 | Result | When |
 |---|---|
 | `MATCH` | identical after clean-up: case, diacritics, punctuation, titles, word order of a person's name, official romanisation of the stored name. A person's extra middle names or a trailing female patronymic are allowed (first and last name exact) |
-| `CLOSE_MATCH` | small differences: a typo, swapped letters, an initial, an abbreviation, a dropped particle (*van*), a legal form spelled differently or missing, company words in another order. The real name is returned so the payer can decide |
+| `CLOSE_MATCH` | small differences: a typo, swapped letters, an initial, an abbreviation, a dropped particle (*van*), a legal form spelled differently or missing, company words in another order. The real name is returned so the payer can decide. A clearly different word in a person's name (*Mohamed* vs *Mahmoud*) is not a small difference |
 | `NO_MATCH` | a different person or company, or too little to go on (a surname alone, initials alone, a generic word like *GmbH*) |
 | `NOT_POSSIBLE` | nothing to compare: empty, longer than 140 characters or 10 words, or a script nameproof can't romanise yet |
 
 Banks that accept dropped particles, legal-form variants and reordered company names as
-a match can use the `lenient@1` policy.
+a match can use the `lenient@2` policy. Policies are versioned and never change once
+published: `epc-default@1` and `lenient@1` keep their 0.1.0 behaviour for anyone who pinned
+them.
 
 Every verdict lists stable explanation codes (`Reason`) that never contain name fragments,
 and the account holder's name is only ever exposed on `CLOSE_MATCH`.

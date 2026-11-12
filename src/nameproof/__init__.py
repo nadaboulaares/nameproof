@@ -1,4 +1,4 @@
-"""nameproof: explainable name matching across scripts for payments."""
+"""nameproof: explainable name matching across scripts."""
 
 from nameproof._types import MatchResult, Verdict
 from nameproof.explain import Reason

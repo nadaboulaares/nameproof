@@ -1,0 +1,22 @@
+name = "epc-default"
+version = 2
+description = """
+Follows the EPC Recommendations for the Matching Processes under the VOP Scheme
+Rulebook (EPC288-23 v2.0, November 2026). MATCH only when the names are identical
+after data clean-up: case, diacritics, punctuation, titles, word order of personal
+names, official romanisation of the stored name, and middle names (first and last
+name exact). Spelling mistakes, swapped letters, an initial instead of the first
+name, abbreviations, dropped particles, legal-form variants and company words out
+of order give CLOSE_MATCH; anything else NO_MATCH.
+Changed from version 1: in a person's name, a clearly different word ("Mohamed" vs
+"Mahmoud") is NO_MATCH even when the other words agree.
+"""
+match_threshold = 0.95
+close_threshold = 0.80
+missing_token_penalty = 0.05
+max_missing_tokens_for_match = 1
+initials_can_match = false
+particle_variants_can_match = false
+legal_form_variants_can_match = false
+company_reorder_can_match = false
+distinct_word_threshold = 0.65

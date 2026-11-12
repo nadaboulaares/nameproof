@@ -94,6 +94,7 @@ def test_run_and_report(dataset: Path) -> None:
     markdown = render_markdown(report)
     assert "| greek | 0.0% | 100.0% | 100.0% | 100.0% |" in markdown  # wrongly rejected
     assert "**all**" in markdown
+    assert "shown the other's name** (CLOSE_MATCH" in markdown
     assert "| same | typo | 1 |" in markdown
 
     data = to_dict(report)

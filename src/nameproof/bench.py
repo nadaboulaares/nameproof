@@ -244,6 +244,11 @@ def render_markdown(report: Report) -> str:
         "",
         *_table(report, "different", lambda t: t.rate(_M)),
         "",
+        "**Different people/companies: shown the other's name** "
+        f"(CLOSE_MATCH; n={different_n}, lower is better)",
+        "",
+        *_table(report, "different", lambda t: t.rate(_C)),
+        "",
         *_variation_table(report, report.systems[0]),
         f"{report.systems[0]} latency: p50 {report.latency(0.5):.2f} ms, "
         f"p95 {report.latency(0.95):.2f} ms",

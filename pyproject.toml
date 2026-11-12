@@ -1,20 +1,21 @@
 [project]
 name = "nameproof"
 dynamic = ["version"]
-description = "Explainable name matching across scripts for Verification of Payee, Confirmation of Payee and KYC."
+description = "Explainable name matching across scripts (Arabic, Latin, Greek, Cyrillic): same person, maybe, or different?"
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE"]
 requires-python = ">=3.11"
 authors = [{ name = "Nada Boulaares" }]
 keywords = [
-  "verification-of-payee",
-  "confirmation-of-payee",
   "name-matching",
+  "deduplication",
+  "entity-resolution",
+  "record-linkage",
   "transliteration",
-  "payments",
-  "kyc",
-  "fintech",
+  "arabic",
+  "multilingual",
+  "verification-of-payee",
 ]
 classifiers = [
   "Development Status :: 3 - Alpha",

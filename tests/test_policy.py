@@ -37,6 +37,8 @@ def test_malformed_identifiers_are_rejected(spec: str) -> None:
     ("override", "message"),
     [
         ({"match_threshold": 1.5}, "match_threshold"),
+        ({"distinct_word_threshold": 1.2}, "distinct_word_threshold"),
+        ({"distinct_word_threshold": "low"}, "wrong type"),
         ({"close_threshold": 0.99}, "must not exceed"),
         ({"max_missing_tokens_for_match": -1}, ">= 0"),
         ({"name": "Bad Name"}, "invalid policy name"),
@@ -58,6 +60,16 @@ def test_missing_field_is_rejected() -> None:
     del data["close_threshold"]
     with pytest.raises(ValueError, match="required"):
         Policy.from_mapping(data)
+
+
+def test_distinct_word_threshold_is_optional() -> None:
+    assert Policy.from_mapping(BASE).distinct_word_threshold == 0.0
+    assert (
+        Policy.from_mapping({**BASE, "distinct_word_threshold": 0.5}).distinct_word_threshold == 0.5
+    )
+    assert load_policy("epc-default@1").distinct_word_threshold == 0.0
+    assert load_policy("epc-default@2").distinct_word_threshold == 0.65
+    assert DEFAULT_POLICY == "epc-default@2"
 
 
 def test_description_is_optional_and_typed() -> None:

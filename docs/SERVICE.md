@@ -77,7 +77,7 @@ All settings are environment variables; every one has a safe default.
 | Variable | Default | Meaning |
 |---|---|---|
 | `NAMEPROOF_DIRECTORY` | *(none)* | `json:<path>` or `plugin:<module>:<factory>`. Without it only `/v1/match` is served |
-| `NAMEPROOF_POLICY` | `epc-default@1` | nameproof decision policy |
+| `NAMEPROOF_POLICY` | `epc-default@2` | nameproof decision policy |
 | `NAMEPROOF_ALLOWED_REQUESTING_BICS` | *(any)* | comma-separated BIC11s; others get `401 CLIENT_INVALID` |
 | `NAMEPROOF_CLIENT_BIC_HEADER` | *(off)* | header in which your TLS gateway passes the BIC it verified; must equal `requestingAgent`, else `401 CLIENT_INCONSISTENT` |
 | `NAMEPROOF_MAX_REQUEST_AGE_S` | `300` | older `X-Request-Timestamp` → `TIMESTAMP_INVALID` |
@@ -193,7 +193,7 @@ reference cases of the **EPC VOP API Reference Toolbox (EPC139-25 v1.2)**.
   in the SEPA Latin set, the close match can't be shown, so verification is not possible.
   Set `NAMEPROOF_LATIN_MATCHED_NAME=false` if your scheme community agreed to exchange
   other characters.
-- **Name matching rules.** The default policy `epc-default@1` follows the EPC
+- **Name matching rules.** The default policy `epc-default@2` follows the EPC
   Recommendations for the Matching Processes (EPC288-23 v2.0, November 2026): `MATCH`
   only when first and last name (or the company name) are identical after data clean-up;
   spelling mistakes, swapped letters, an initial instead of the first name, abbreviations,
