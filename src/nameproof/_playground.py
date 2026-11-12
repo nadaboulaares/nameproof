@@ -27,14 +27,17 @@ def find_in_text(
     """Find duplicates in a pasted list or an uploaded CSV; return groups and a result CSV."""
     table = read_table(text, plain=plain, column=column)
     report = find_duplicates(table.names, progress=progress)
-    links: dict[int, list[dict[str, object]]] = {}
+    links: dict[int, list[tuple[int, dict[str, object]]]] = {}
     for pair in report.pairs:
         links.setdefault(pair.first, []).append(
-            {
-                "rows": [table.numbers[pair.first], table.numbers[pair.second]],
-                "result": pair.result.value,
-                "explanation": list(pair.explanation),
-            }
+            (
+                pair.second,
+                {
+                    "rows": [table.numbers[pair.first], table.numbers[pair.second]],
+                    "result": pair.result.value,
+                    "explanation": list(pair.explanation),
+                },
+            )
         )
     groups = [
         {
@@ -42,7 +45,12 @@ def find_in_text(
             "members": [
                 {"row": table.numbers[index], "name": table.names[index]} for index in group.members
             ],
-            "links": [link for index in group.members for link in links.get(index, [])],
+            "links": [
+                link
+                for index in group.members
+                for second, link in links.get(index, [])
+                if second in group.members
+            ],
         }
         for group in report.groups
     ]

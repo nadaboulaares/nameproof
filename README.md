@@ -95,12 +95,22 @@ report.groups  # (DuplicateGroup(members=(0, 2), needs_review=True),)
 
 Comparing every pair of a 10,000-name list would take 50 million checks, so names are
 first grouped by a coarse, cross-script consonant key per word, and only names sharing a
-key are compared, with exactly the rules of `match`. On the 9,624 distinct names of
-nameproof-bench this compares 147,000 pairs instead of 46 million and keeps 98% of the
-same-person pairs `match` finds (the rest are mostly heavy typos); it takes about 30
-seconds on 8 cores. A group needs review whenever one of its links is a close match. Duplicate finding uses the
-`records@1` policy by default: known spellings of one name (*Mohamed* / *Mohammed* /
-*Muhammad*) count as the same name.
+key are compared, with exactly the rules of `match`. A group holds names that are all
+linked to each other, and needs review whenever one of its links is a close match.
+Duplicate finding uses the `records@1` policy by default: known spellings of one name
+(*Mohamed* / *Mohammed* / *Muhammad*) count as the same name.
+
+**Compared with fuzzy matching and Splink** on 13,417 real Arabic, English and French
+spellings of 6,235 people (held out from nameproof's own benchmark; the baselines' thresholds
+tuned on the answers, nameproof on defaults):
+
+| | precision | recall | F1 | Arabic ↔ Latin found |
+|---|---|---|---|---|
+| **nameproof** | **76.5%** | **79.5%** | **78.0%** | **79.3%** |
+| fuzzy matching | 16.9% | 8.3% | 11.2% | 1.1% |
+| Splink | 27.6% | 5.2% | 8.8% | 0.0% |
+
+Details, limits and how to reproduce: [docs/COMPARISON.md](docs/COMPARISON.md).
 
 ## Benchmark
 

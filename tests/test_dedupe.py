@@ -6,7 +6,14 @@ import pytest
 from nameproof import MatchResult, load_policy, match
 from nameproof import dedupe as dedupe_module
 from nameproof.cli import main
-from nameproof.dedupe import DedupeReport, find_duplicates, word_key, word_keys
+from nameproof.dedupe import (
+    DedupeReport,
+    DuplicateGroup,
+    DuplicatePair,
+    find_duplicates,
+    word_key,
+    word_keys,
+)
 
 
 def _grouped(report: DedupeReport, names: list[str]) -> list[set[str]]:
@@ -69,7 +76,10 @@ def test_crowded_keys_are_narrowed_not_dropped() -> None:
     report = find_duplicates(names, max_group=4)
     found = _grouped(report, names)
     assert {"Mohamed Trabelsi", "محمد الطرابلسي"} in found
-    assert {"V. Pavlov", "Valentin Pavlov", "Vladimir Pavlov"} in found
+    # The initial joins one Pavlov; Valentin and Vladimir are different people, so
+    # complete linkage keeps them apart instead of chaining them through "V.".
+    assert {"V. Pavlov", "Valentin Pavlov"} in found or {"V. Pavlov", "Vladimir Pavlov"} in found
+    assert not any({"Valentin Pavlov", "Vladimir Pavlov"} <= group for group in found)
     assert report.compared < len(names) * (len(names) - 1) // 20
 
 
@@ -285,3 +295,41 @@ def test_readme_example_is_current(capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["dedupe", str(root / "examples" / "beneficiaries.csv"), "--jobs", "1"]) == 0
     out = capsys.readouterr().out
     assert out in (root / "README.md").read_text(encoding="utf-8")
+
+
+def _pair(first: int, second: int, result: MatchResult, score: float) -> DuplicatePair:
+    return DuplicatePair(first, second, result, score, ())
+
+
+def test_groups_do_not_chain() -> None:
+    # 0~1 and 1~2 but not 0~2: chaining would join three people; complete linkage
+    # keeps the strongest link and leaves 2 alone.
+    close = MatchResult.CLOSE_MATCH
+    groups = dedupe_module._groups([_pair(0, 1, close, 0.9), _pair(1, 2, close, 0.85)], {})
+    assert [group.members for group in groups] == [(0, 1)]
+    # With 0~2 as well, all three are linked to each other: one group.
+    triangle = [_pair(0, 1, close, 0.9), _pair(1, 2, close, 0.85), _pair(0, 2, close, 0.84)]
+    assert [group.members for group in dedupe_module._groups(triangle, {})] == [(0, 1, 2)]
+
+
+def test_identical_copies_count_as_one_name() -> None:
+    match_ = MatchResult.MATCH
+    pairs = [_pair(0, 3, match_, 1.0), _pair(0, 1, match_, 0.95)]
+    groups = dedupe_module._groups(pairs, {0: [0, 3]})
+    assert groups == (DuplicateGroup((0, 1, 3), needs_review=False),)
+    # Copies with no other link still form a group of their own.
+    assert dedupe_module._groups([_pair(5, 6, match_, 1.0)], {5: [5, 6]}) == (
+        DuplicateGroup((5, 6), needs_review=False),
+    )
+
+
+def test_cli_lists_only_links_inside_each_group(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    path = tmp_path / "pavlov.txt"
+    path.write_text("V. Pavlov\nValentin Pavlov\nVladimir Pavlov\n", encoding="utf-8")
+    assert main(["dedupe", str(path)]) == 0
+    out = capsys.readouterr().out
+    assert out.startswith("1 groups")
+    assert out.count("lines ") == 0
+    assert out.count("rows ") == 1  # one link shown: the one inside the group
