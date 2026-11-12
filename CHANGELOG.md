@@ -7,6 +7,8 @@ All notable changes to nameproof are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-12
+
 ### Arabic names
 - A hand-written list of about 170 common Arabic given names and their usual Latin
   spellings (`nameproof.arabic_names`, `data/arabic_given_names.tsv`). Known spellings of
@@ -113,6 +115,7 @@ First public release.
   name leaks through generic words, and slow crafted inputs; all are fixed and kept as
   regression tests (`tests/test_review_regressions.py`).
 
-[Unreleased]: https://github.com/nadaboulaares/nameproof/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/nadaboulaares/nameproof/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/nadaboulaares/nameproof/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/nadaboulaares/nameproof/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/nadaboulaares/nameproof/releases/tag/v0.1.0
