@@ -27,6 +27,8 @@ class Policy:
     company words in another order as a ``MATCH``. ``distinct_word_threshold``
     (0 = off; 0.65 from ``epc-default@2``) rules out ``CLOSE_MATCH`` for a
     person's name with a word less similar than that ("Mohamed" vs "Mahmoud").
+    ``known_variants_can_match`` accepts known spellings of one Arabic name
+    ("Youssef" / "Yusuf", ``records@1``) as a ``MATCH``.
     """
 
     name: str
@@ -40,6 +42,7 @@ class Policy:
     legal_form_variants_can_match: bool = False
     company_reorder_can_match: bool = False
     distinct_word_threshold: float = 0.0
+    known_variants_can_match: bool = False
     description: str = ""
 
     def __post_init__(self) -> None:
@@ -87,6 +90,7 @@ class Policy:
             particle_variants_can_match=_optional_bool(data, "particle_variants_can_match"),
             legal_form_variants_can_match=_optional_bool(data, "legal_form_variants_can_match"),
             company_reorder_can_match=_optional_bool(data, "company_reorder_can_match"),
+            known_variants_can_match=_optional_bool(data, "known_variants_can_match"),
             distinct_word_threshold=(
                 _float(data, "distinct_word_threshold")
                 if "distinct_word_threshold" in data

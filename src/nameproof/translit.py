@@ -349,13 +349,18 @@ _LATIN_CLUSTERS = {
 _LATIN_SINGLE = {"q": "k", "c": "k", "g": "j", "p": "b", "x": "ks", "v": "w"}
 _LATIN_VOWELS = frozenset("aeiou")
 _LATIN_GLIDES = frozenset("yw")
+_FRONT_VOWELS = frozenset({"e", "i", "y"})
 _LATIN_ARTICLES = frozenset({"al", "el", "ul", "ar", "as", "ash", "at", "ad", "az", "an"})
 
 
-def latin_skeleton(word: str) -> str:
-    """Reduce a romanised Arabic word to its consonant skeleton ("mohammed" -> "mhmd")."""
-    if len(word) > 2 and word[-1] == "h" and word[-2] in _LATIN_VOWELS:
-        word = word[:-1]  # "Fatimah" and "Fatima" are the same name
+def latin_skeleton(word: str, *, final_h: bool = False) -> str:
+    """Reduce a romanised Arabic word to its consonant skeleton ("mohammed" -> "mhmd").
+
+    A final "h" after a vowel is usually the silent ta marbuta ("Fatimah" is
+    "Fatima"); ``final_h`` keeps it for names that end in a real *h* ("Salah" is صلاح).
+    """
+    if not final_h and _silent_final_h(word):
+        word = word[:-1]
     out: list[str] = []
     index = 0
     while index < len(word):
@@ -371,7 +376,10 @@ def latin_skeleton(word: str) -> str:
             out.append(_LATIN_CLUSTERS[cluster])
             index += len(cluster)
             continue
-        letter = _LATIN_SINGLE.get(word[index], word[index])
+        if word[index] == "c" and word[index + 1 : index + 2] in _FRONT_VOWELS:
+            letter = "s"  # French and English soft c: "Hocine" is حسين, "Lahcen" is لحسن
+        else:
+            letter = _LATIN_SINGLE.get(word[index], word[index])
         if letter in _LATIN_VOWELS:
             out.append("a" if index == 0 else "")
         elif letter in _LATIN_GLIDES:
@@ -385,8 +393,11 @@ def latin_skeleton(word: str) -> str:
 def latin_skeleton_variants(tokens: tuple[str, ...]) -> list[tuple[str, ...]]:
     """Return skeleton spellings of a Latin name for comparison with Arabic script.
 
-    Articles ("al", "el", "ar"...) before another word are dropped, and words
-    fused with the article ("Abdel", "Abdul") also get the bare "abd" form.
+    Articles ("al", "el", "ar"...) before another word are dropped, and each word
+    also gets the readings a romanisation may hide: the article glued on ("Elnadi"
+    is النادي, Maghreb "Larbi" is العربي), a dropped first vowel ("Brahim" is
+    إبراهيم, "M'hamed" is امحمد), *g* for qaf as spoken in the Maghreb ("Guettaf"
+    is قطاف), and the bare "abd" of "Abdel" or "Abdul".
     """
     kept = [
         token
@@ -395,12 +406,41 @@ def latin_skeleton_variants(tokens: tuple[str, ...]) -> list[tuple[str, ...]]:
     ]
     options: list[list[str]] = []
     for token in kept:
-        skeleton = latin_skeleton(token)
-        alternatives = [skeleton]
-        if skeleton.startswith("abdl"):
-            alternatives.append("abd" + skeleton[4:])
+        alternatives: list[str] = []
+        for reading in (token, *latin_readings(token)):
+            skeletons = [latin_skeleton(reading)]
+            if _silent_final_h(reading):
+                skeletons.append(latin_skeleton(reading, final_h=True))  # "Salah" is صلاح
+            for skeleton in skeletons:
+                abd = "abd" + skeleton[4:] if skeleton.startswith("abdl") else ""
+                for option in (skeleton, abd):
+                    if option and option not in alternatives:
+                        alternatives.append(option)
         options.append(alternatives)
-    return [tuple(part for part in combo if part) for combo in islice(product(*options), 8)]
+    return [tuple(part for part in combo if part) for combo in islice(product(*options), 16)]
+
+
+def _silent_final_h(word: str) -> bool:
+    return len(word) > 2 and word[-1] == "h" and word[-2] in _LATIN_VOWELS
+
+
+def latin_readings(word: str) -> list[str]:
+    """Other ways to read a romanised Arabic word: glued article, dropped first vowel, g as qaf."""
+    readings: list[str] = []
+    if len(word) >= 5 and word[:2] in {"el", "al"}:
+        readings.append(word[2:])
+    elif len(word) >= 4 and word.startswith("la"):
+        readings.append(word[1:])
+    if word[:2] not in _LATIN_CLUSTERS and _starts_with_two_consonants(word):
+        readings.append("a" + word)  # Maghreb drops a first vowel: "Brahim" is إبراهيم
+    if "g" in word.replace("gh", ""):
+        qaf = [reading.replace("g", "q").replace("qhq", "ghq") for reading in [word, *readings]]
+        readings.extend(qaf)
+    return readings
+
+
+def _starts_with_two_consonants(word: str) -> bool:
+    return len(word) >= 4 and not set(word[:2]) & (_LATIN_VOWELS | _LATIN_GLIDES)
 
 
 def _collapse(text: str) -> str:

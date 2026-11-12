@@ -26,7 +26,8 @@ reordered company names are close matches, not matches, and a clearly different 
 person's name is no match. Compared with `epc-default@1` (0.1.0) this moves six
 different-person pairs (*Béla Bartók* / *Eva Bartok*) and six same-entity pairs (four
 company names without a legal form that were translated, a heavy typo and a nickname) from
-close match to no match.
+close match to no match. Since 0.3.0 a list of common Arabic given names and Maghreb
+romanisations (*Hocine*, *Larbi*, *Belgacem*) cut the Arabic rejections from 16.8% to 12.8%.
 
 **Known hard cases kept in on purpose:** exonyms and stage names (*Irene Papas* /
 *Ειρήνη Παπά*, *John Paul II* / *Jan Paweł II*) and company names that are
@@ -43,7 +44,7 @@ why the company slices have high rejection rates for every system.
 | ukrainian | 8.8% | 100.0% | 100.0% | 100.0% |
 | bulgarian | 4.8% | 100.0% | 100.0% | 100.0% |
 | serbian | 2.4% | 100.0% | 100.0% | 100.0% |
-| arabic | 16.8% | 100.0% | 100.0% | 100.0% |
+| arabic | 12.8% | 100.0% | 100.0% | 100.0% |
 | polish | 1.2% | 71.6% | 46.0% | 23.2% |
 | czech | 0.0% | 82.0% | 49.6% | 17.2% |
 | hungarian | 1.6% | 81.2% | 52.4% | 18.4% |
@@ -53,7 +54,7 @@ why the company slices have high rejection rates for every system.
 | spanish | 0.0% | 76.0% | 46.8% | 22.0% |
 | greek-company | 41.2% | 100.0% | 100.0% | 100.0% |
 | cyrillic-company | 55.6% | 100.0% | 100.0% | 100.0% |
-| **all** | 9.7% | 89.8% | 76.5% | 63.8% |
+| **all** | 9.4% | 89.8% | 76.5% | 63.8% |
 
 **Same person/company: auto-matched** (MATCH; n=3750, higher is better)
 
@@ -106,7 +107,7 @@ why the company slices have high rejection rates for every system.
 | ukrainian | 1.3% | 0.0% | 0.0% | 0.0% |
 | bulgarian | 0.7% | 0.0% | 0.0% | 0.0% |
 | serbian | 2.0% | 0.0% | 0.0% | 0.0% |
-| arabic | 2.0% | 0.0% | 0.0% | 0.0% |
+| arabic | 0.7% | 0.0% | 0.0% | 0.0% |
 | polish | 0.7% | 0.0% | 0.0% | 0.7% |
 | czech | 1.3% | 0.0% | 0.7% | 0.7% |
 | hungarian | 0.7% | 0.0% | 0.0% | 0.7% |
@@ -116,7 +117,7 @@ why the company slices have high rejection rates for every system.
 | spanish | 0.7% | 0.0% | 0.0% | 0.0% |
 | greek-company | 0.0% | 0.0% | 0.0% | 0.0% |
 | cyrillic-company | 0.7% | 0.0% | 0.0% | 0.0% |
-| **all** | 0.9% | 0.0% | 0.0% | 0.2% |
+| **all** | 0.8% | 0.0% | 0.0% | 0.2% |
 
 **Why nameproof shows more close matches for different people than the baselines:** the
 baselines reject almost every cross-script name, so they rarely show any name at all. A
@@ -127,15 +128,15 @@ similar word; the payer sees the real name and can stop.
 
 | label | variation | n | MATCH | CLOSE | NO | NOT POSSIBLE |
 |---|---|---|---|---|---|---|
-| same | uppercase | 824 | 72.3% | 18.6% | 9.1% | 0.0% |
-| same | typo | 789 | 0.1% | 86.4% | 13.4% | 0.0% |
-| same | reordered | 729 | 73.0% | 18.4% | 8.6% | 0.0% |
-| same | native_script | 455 | 46.8% | 35.4% | 17.8% | 0.0% |
-| same | initial | 669 | 0.0% | 96.4% | 3.6% | 0.0% |
+| same | uppercase | 824 | 72.3% | 18.9% | 8.7% | 0.0% |
+| same | typo | 789 | 0.1% | 86.6% | 13.3% | 0.0% |
+| same | reordered | 729 | 73.0% | 18.5% | 8.5% | 0.0% |
+| same | native_script | 455 | 46.8% | 36.3% | 16.9% | 0.0% |
+| same | initial | 669 | 0.0% | 96.6% | 3.4% | 0.0% |
 | same | english_label | 75 | 56.0% | 32.0% | 12.0% | 0.0% |
 | same | dropped_middle | 52 | 46.2% | 42.3% | 11.5% | 0.0% |
 | same | ascii_typed | 157 | 100.0% | 0.0% | 0.0% | 0.0% |
-| different | same_surname | 640 | 0.0% | 3.3% | 96.7% | 0.0% |
+| different | same_surname | 640 | 0.0% | 3.0% | 97.0% | 0.0% |
 | different | different_person | 1610 | 0.0% | 0.0% | 100.0% | 0.0% |
 
 nameproof latency: p50 0.33 ms, p95 0.82 ms (measured on an idle machine)

@@ -8,6 +8,8 @@ from enum import StrEnum
 from functools import lru_cache
 from itertools import permutations
 
+from nameproof.arabic_names import different_known, same_name
+
 try:
     from rapidfuzz.distance import JaroWinkler, Levenshtein
 
@@ -21,6 +23,10 @@ except ImportError:  # pragma: no cover - e.g. in the browser (Pyodide)
 # or a word is abbreviated to its first letters ("Corp" ~ "Corporation").
 INITIAL_SIMILARITY = 0.9
 ABBREVIATION_SIMILARITY = 0.9
+KNOWN_VARIANT_SIMILARITY = 0.9
+# Two known names of different Arabic names ("Mohammed", "Mahmoud") look alike but
+# are different names: their similarity is capped below any close-match bar.
+KNOWN_DIFFERENT_SIMILARITY = 0.5
 MIN_ABBREVIATION = 3
 
 # Informal romanisations and Arabic skeletons are guesses: identical output is
@@ -38,6 +44,7 @@ class PairKind(StrEnum):
     EXACT = "exact"
     INITIAL = "initial"
     ABBREVIATION = "abbreviation"
+    VARIANT = "variant"  # known spellings of one Arabic name ("Hussein", "Hocine")
     FUZZY = "fuzzy"
 
 
@@ -45,6 +52,7 @@ class PairKind(StrEnum):
 def token_similarity(left: str, right: str) -> tuple[float, PairKind]:
     """Score two normalised tokens in ``[0, 1]`` and say how they relate.
 
+    Known spellings of one Arabic name ("Youssef", "Yusuf") are a variant.
     Fuzzy similarity averages Jaro-Winkler (forgiving of typos late in the word)
     with normalised Levenshtein (strict on short words), so "Maria" vs "Mario"
     stays well below an exact match.
@@ -55,12 +63,18 @@ def token_similarity(left: str, right: str) -> tuple[float, PairKind]:
         if left[0] == right[0]:
             return INITIAL_SIMILARITY, PairKind.INITIAL
         return 0.0, PairKind.FUZZY
+    if same_name(left, right):
+        return KNOWN_VARIANT_SIMILARITY, PairKind.VARIANT
+    different = different_known(left, right)  # "Samir" is not short for "Samira"
     short, long = sorted((left, right), key=len)
-    if len(short) >= MIN_ABBREVIATION and long.startswith(short):
+    if not different and len(short) >= MIN_ABBREVIATION and long.startswith(short):
         return ABBREVIATION_SIMILARITY, PairKind.ABBREVIATION
     jaro_winkler = _jaro_winkler(left, right)
     levenshtein = _levenshtein(left, right)
-    return (jaro_winkler + levenshtein) / 2, PairKind.FUZZY
+    similarity = (jaro_winkler + levenshtein) / 2
+    if different:
+        similarity = min(similarity, KNOWN_DIFFERENT_SIMILARITY)
+    return similarity, PairKind.FUZZY
 
 
 @dataclass(frozen=True, slots=True)

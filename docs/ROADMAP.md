@@ -41,13 +41,13 @@ explainable implementation of that matching.
 ## Done (unreleased)
 
 - **Dedupe in the browser**: `dedupe.html`, paste a list or open a CSV, nothing uploaded.
+- **Arabic names**: known given names and their spellings, Maghreb romanisations, and the
+  `records@1` policy.
 
 ## Next
 
-- [ ] Records policy for non-payment use: known spelling variants (*Mohamed* / *Mohammed*,
-      *Fatma* / *Fatima*) count as a match; Arabic-script comparisons still go to review
-- [ ] Better Arabic: Maghreb and Gulf spellings, long vowels (*محمد* vs *Mahmoud*), and an
-      Arabic slice built for duplicate finding
+- [ ] More Arabic given names and family names, reviewed by native speakers; Gulf and
+      Levantine spellings; an Arabic slice built for duplicate finding
 - [ ] Optional extra fields for dedupe (date of birth) without becoming a full MDM tool
 
 - [ ] Hebrew, Armenian and Georgian romanisation; more Arabic dialect conventions

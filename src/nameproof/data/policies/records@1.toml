@@ -1,0 +1,19 @@
+name = "records"
+version = 1
+description = """
+For lists of people and organisations (beneficiaries, patients, members, customers)
+rather than payments. lenient@2 plus known spellings of one Arabic name ("Mohamed" =
+"Mohammed" = "Muhammad", "Hussein" = "Hocine") as a MATCH. Names in different scripts
+whose romanisation is a guess (Arabic, informal Greek) still give at most CLOSE_MATCH,
+so a person reviews them.
+"""
+match_threshold = 0.95
+close_threshold = 0.80
+missing_token_penalty = 0.05
+max_missing_tokens_for_match = 1
+initials_can_match = false
+particle_variants_can_match = true
+legal_form_variants_can_match = true
+company_reorder_can_match = true
+distinct_word_threshold = 0.65
+known_variants_can_match = true

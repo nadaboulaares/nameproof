@@ -29,8 +29,11 @@ from nameproof.matcher import (
     _prepare_provided,
     _usable_tokens,
 )
-from nameproof.policy import DEFAULT_POLICY, Policy, load_policy
-from nameproof.translit import Mode, latin_skeleton, scripts
+from nameproof.policy import Policy, load_policy
+from nameproof.translit import Mode, latin_readings, latin_skeleton, scripts
+
+DEDUPE_POLICY = "records@1"
+"""Default policy for duplicates: known spellings of one name ("Youssef", "Yusuf") match."""
 
 MAX_GROUP = 64
 """Default largest comparison group; bigger key groups are narrowed first."""
@@ -119,7 +122,7 @@ class _Prepared:
 def find_duplicates(
     names: Sequence[str],
     *,
-    policy: str | Policy = DEFAULT_POLICY,
+    policy: str | Policy = DEDUPE_POLICY,
     max_group: int = MAX_GROUP,
     jobs: int = 1,
     progress: Callable[[int, int], object] | None = None,
@@ -243,6 +246,7 @@ def word_keys(word: str, *, skeleton: bool = False) -> set[str]:
     keys = {word_key(word, skeleton=skeleton)}
     if skeleton:
         return keys
+    keys.update(word_key(reading) for reading in latin_readings(word))  # "Guettaf" is قطاف
     if "ch" in word:
         keys.add(word_key(word.replace("ch", "kh")))
     glued = _GLUED_PREFIX.match(word)

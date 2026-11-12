@@ -57,7 +57,7 @@ def test_find_in_csv_with_a_chosen_column() -> None:
     text = "first,full\nx,John Smith\ny,J. Smith\nz,Peter Brown\n"
     result = json.loads(find_in_text(text, False, "full"))
     assert [member["row"] for member in result["groups"][0]["members"]] == [2, 3]
-    assert result["policy"] == "epc-default@2"
+    assert result["policy"] == "records@1"
     with pytest.raises(ValueError, match="choose the name column"):
         find_in_text(text, False)
 

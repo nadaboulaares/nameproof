@@ -19,6 +19,8 @@ const REASON = {
   initial: "an initial stands for a full name (J. = John)",
   initials_only: "only initials agree, which is never enough to reveal a name",
   abbreviation: "an abbreviation stands for a word (Corp. = Corporation)",
+  known_variant: "a known spelling of the same Arabic name (Hussein = Hocine = حسين)",
+  different_given_name: "different given names that look alike without vowels (محمد is Mohamed, محمود is Mahmoud)",
   fuzzy_token: "a word is spelled slightly differently",
   mismatched_token: "a word does not match",
   missing_tokens: "a word appears on one side only",
