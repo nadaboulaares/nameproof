@@ -7,6 +7,8 @@ All notable changes to nameproof are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-12
+
 nameproof is now positioned as general explainable name matching across scripts (charities
 and aid organisations, health records, HR, travel, payments); Verification of Payee is one
 use case.
@@ -83,5 +85,6 @@ First public release.
   name leaks through generic words, and slow crafted inputs; all are fixed and kept as
   regression tests (`tests/test_review_regressions.py`).
 
-[Unreleased]: https://github.com/nadaboulaares/nameproof/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/nadaboulaares/nameproof/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/nadaboulaares/nameproof/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/nadaboulaares/nameproof/releases/tag/v0.1.0

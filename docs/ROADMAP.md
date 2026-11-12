@@ -31,7 +31,7 @@ explainable implementation of that matching.
 - **Security review**: adversarial cases (false matches, name leaks, crafted input)
   are part of the test suite (`tests/test_review_regressions.py`).
 
-## Done (0.2.0, unreleased)
+## Done (0.2.0)
 
 - **Duplicate finding**: `nameproof dedupe` and `find_duplicates()`, with cross-script
   blocking keys and parallel comparison.

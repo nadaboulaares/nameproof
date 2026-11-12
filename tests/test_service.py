@@ -416,7 +416,7 @@ def test_oversized_body_is_rejected(client: TestClient) -> None:
 def test_health(client: TestClient) -> None:
     assert client.get("/health").json() == {
         "status": "ok",
-        "version": "0.1.0",
+        "version": "0.2.0",
         "policy": "epc-default@2",
         "verification_of_payee": True,
         "match_endpoint": False,
