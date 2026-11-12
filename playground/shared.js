@@ -1,0 +1,31 @@
+"use strict";
+// Shared by the playground pages: verdict labels and what each reason code means.
+const LABEL = { MATCH: "Match", CLOSE_MATCH: "Close match", NO_MATCH: "No match", NOT_POSSIBLE: "Not possible" };
+const REASON = {
+  diacritics_folded: "accents and special letters ignored (é → e, ł → l)",
+  letter_expansion: "letter written as two (ü → ue, ø → oe, đ → dj)",
+  transliterated: "compared after converting to Latin letters (ELOT 743, ICAO 9303, Arabic consonants, …)",
+  approximate_transliteration: "informal romanisation or Arabic consonants: at most a close match",
+  title_removed: "titles ignored (Dr, Herr, Mme, …)",
+  legal_form_matched: "same company legal form (GmbH = Gesellschaft mit beschränkter Haftung)",
+  legal_form_missing: "legal form given on one side only",
+  legal_form_conflict: "different legal forms (e.g. GmbH vs AG): different companies",
+  particle_dropped: "surname particle ignored (van, de, al, bin, …)",
+  particle_joined: "particle written together (van der Berg = Vanderberg)",
+  compound_joined: "compound name written as one word (Jean-Pierre = Jeanpierre)",
+  joint_account_holder: "matched one holder of a joint account",
+  shared_surname: "joint holder shares the other holder's surname",
+  token_reorder: "words in a different order (surname first)",
+  initial: "an initial stands for a full name (J. = John)",
+  initials_only: "only initials agree, which is never enough to reveal a name",
+  abbreviation: "an abbreviation stands for a word (Corp. = Corporation)",
+  fuzzy_token: "a word is spelled slightly differently",
+  mismatched_token: "a word does not match",
+  missing_tokens: "a word appears on one side only",
+  missing_name_part: "a word that can't be skipped is missing (first name, surname, part of a compound, or a company word)",
+  single_token: "only one word to go on",
+  suffix_conflict: "different generational suffixes (Jr vs Sr)",
+  unsupported_script: "this script can't be romanised yet",
+  empty_name: "nothing to compare",
+  name_too_long: "longer than the 140-character SEPA limit",
+};

@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import json
 import os
 import sys
@@ -11,6 +10,7 @@ from collections.abc import Sequence
 from pathlib import Path
 
 from nameproof import __version__
+from nameproof._table import Table, groups_csv, read_table
 from nameproof.dedupe import MAX_GROUP, DedupeReport, find_duplicates
 from nameproof.matcher import match
 from nameproof.policy import DEFAULT_POLICY
@@ -128,64 +128,18 @@ def _run_match(provided: str, accounts: list[str], *, policy: str, as_json: bool
     return 0
 
 
-class _Table:
-    """Names read from a file, with the file row of each and the original columns."""
-
-    def __init__(self, header: list[str], rows: list[list[str]], numbers: list[int], column: int):
-        self.header = header
-        self.rows = rows
-        self.numbers = numbers
-        self.names = [row[column] if column < len(row) else "" for row in rows]
-
-
-def _read_names(path: Path, column: str | None) -> _Table:
-    text = path.read_text(encoding="utf-8-sig")  # Excel writes a byte-order mark
-    if path.suffix.lower() == ".txt":
-        lines = text.splitlines()
-        return _Table(
-            ["name"], [[line.strip()] for line in lines], list(range(1, len(lines) + 1)), 0
-        )
-    try:
-        dialect: type[csv.Dialect] | csv.Dialect = csv.Sniffer().sniff(text[:4096], ",;\t")
-    except csv.Error:
-        dialect = csv.excel
-    reader = csv.reader(text.splitlines(), dialect)
-    header = next(reader, None)
-    if header is None:
-        msg = f"{path} is empty"
-        raise ValueError(msg)
-    rows: list[list[str]] = []
-    numbers: list[int] = []
-    for row in reader:
-        if any(cell.strip() for cell in row):
-            rows.append(row)
-            numbers.append(reader.line_num)
-    return _Table(header, rows, numbers, _pick_column(header, column))
-
-
-def _pick_column(header: list[str], column: str | None) -> int:
-    folded = [name.strip().casefold() for name in header]
-    if column is not None:
-        if column.strip().casefold() in folded:
-            return folded.index(column.strip().casefold())
-        msg = f"no column {column!r}; columns are: {', '.join(header)}"
-        raise ValueError(msg)
-    if len(header) == 1:
-        return 0
-    if "name" in folded:
-        return folded.index("name")
-    msg = f"choose the name column with --column; columns are: {', '.join(header)}"
-    raise ValueError(msg)
-
-
 def _run_dedupe(args: argparse.Namespace) -> int:
     try:
-        table = _read_names(args.file, args.column)
+        table = read_table(
+            args.file.read_text(encoding="utf-8-sig"),
+            plain=args.file.suffix.lower() == ".txt",
+            column=args.column,
+        )
         report = find_duplicates(
             table.names, policy=args.policy, max_group=args.max_group, jobs=max(args.jobs, 1)
         )
         if args.output is not None:
-            _write_groups(args.output, table, report)
+            args.output.write_text(groups_csv(table, report), encoding="utf-8")
     except (OSError, UnicodeDecodeError, ValueError) as exc:
         print(f"nameproof: error: {exc}", file=sys.stderr)
         return 2
@@ -197,7 +151,7 @@ def _run_dedupe(args: argparse.Namespace) -> int:
     return 0
 
 
-def _print_dedupe(table: _Table, report: DedupeReport) -> None:
+def _print_dedupe(table: Table, report: DedupeReport) -> None:
     review = sum(group.needs_review for group in report.groups)
     print(
         f"{len(report.groups)} groups of likely duplicates in {len(table.names)} names "
@@ -227,16 +181,6 @@ def _print_dedupe(table: _Table, report: DedupeReport) -> None:
         for index in group.members:
             for line in links.get(index, []):
                 print(line)
-
-
-def _write_groups(path: Path, table: _Table, report: DedupeReport) -> None:
-    with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.writer(handle)
-        writer.writerow(["group", "review", "row", *table.header])
-        for number, group in enumerate(report.groups, 1):
-            for index in group.members:
-                review = "yes" if group.needs_review else "no"
-                writer.writerow([number, review, table.numbers[index], *table.rows[index]])
 
 
 def _run_bench(dataset: Path, systems: list[str], *, as_json: bool) -> int:

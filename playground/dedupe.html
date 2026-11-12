@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>nameproof: find duplicates in a list of names</title>
+  <meta name="description" content="Find people registered twice in a list, across Arabic, Latin, Greek and Cyrillic spellings, with a reason for every link. Runs in your browser: your list never leaves this computer.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <nav class="tools" aria-label="Tools">
+    <a href="./">Compare names</a>
+    <a href="dedupe.html" aria-current="page">Find duplicates in a list</a>
+  </nav>
+  <header>
+    <h1>Find duplicates in a list</h1>
+    <p>Paste names or open a file. nameproof groups the names that look like the same person or
+       organisation, across Arabic, Latin, Greek and Cyrillic spellings, and explains every link.</p>
+    <span class="privacy">🔒 Runs entirely in your browser. Your list never leaves this computer.</span>
+  </header>
+
+  <section class="panel" aria-labelledby="list-title">
+    <h2 id="list-title" hidden>Your list</h2>
+    <div class="field">
+      <label for="names">Names <span class="hint">: one per line, any script</span></label>
+      <textarea id="names" dir="auto" spellcheck="false" rows="8" placeholder="محمد بن علي&#10;Mohamed Ben Ali&#10;…"></textarea>
+    </div>
+    <div class="field">
+      <label for="file">Or open a file <span class="hint">: CSV with a header row, or a text file. From Excel: Save As → CSV UTF-8</span></label>
+      <input id="file" type="file" accept=".csv,.txt,text/csv,text/plain">
+      <p id="file-info" class="note" hidden></p>
+    </div>
+    <div class="field" id="column-field" hidden>
+      <label for="column">Column with the names</label>
+      <select id="column"></select>
+    </div>
+    <div class="actions">
+      <button id="run" class="primary" disabled>Find duplicates</button>
+      <button id="example" class="secondary">Try an example</button>
+    </div>
+    <p id="status" class="note" role="status">Loading Python in your browser (about 10 MB, only the first time)…</p>
+    <progress id="progress" hidden></progress>
+  </section>
+
+  <section id="results" class="panel" aria-live="polite" aria-labelledby="results-title" hidden>
+    <h2 id="results-title" class="summary"></h2>
+    <div id="notes"></div>
+    <div class="actions"><button id="download" class="secondary">Download groups (CSV)</button></div>
+    <div id="groups"></div>
+  </section>
+
+  <footer>
+    nameproof compares names only: before merging records, check other details too (date of birth,
+    phone, ID). <a href="https://github.com/nadaboulaares/nameproof">nameproof on GitHub</a> ·
+    Apache-2.0.
+  </footer>
+</main>
+
+<script src="shared.js"></script>
+<script>
+"use strict";
+const $ = (id) => document.getElementById(id);
+const SHOWN_GROUPS = 200;
+const EXAMPLE = [
+  "محمد بن علي", "Mohamed Ben Ali", "Ahmed Salah", "Fatma Trabelsi", "فاطمة الطرابلسي",
+  "MOHAMED BEN ALI", "Mahmoud Trabelsi", "Γιώργος Παπαδόπουλος", "Giorgos Papadopoulos",
+  "J. Smith", "John Smith", "Peter Brown",
+].join("\n");
+
+let worker = null;
+let wheel = null;
+let file = null;          // {name, text, plain} when a file is open; null means the text box
+let running = false;
+let resultCsv = "";
+
+function status(text) { $("status").textContent = text; }
+
+function startWorker() {
+  worker = new Worker("dedupe-worker.js", { type: "module" });
+  worker.onmessage = ({ data }) => handlers[data.type](data);
+  worker.onerror = (event) => fail(event.message || "the background worker stopped");
+  worker.postMessage({ type: "boot", wheel });
+}
+
+const handlers = {
+  ready() { $("run").disabled = false; status("Ready."); },
+  columns(data) { showColumns(data); },
+  progress({ done, total }) {
+    const bar = $("progress");
+    bar.max = Math.max(total, 1);
+    bar.value = done;
+    status(`Comparing similar names: ${done.toLocaleString()} of ${total.toLocaleString()}…`);
+  },
+  result(data) { finish(); render(data); },
+  error({ message }) { fail(message); },
+};
+
+function fail(message) {
+  finish();
+  status("Error: " + message);
+}
+
+function finish() {
+  running = false;
+  $("progress").hidden = true;
+  $("run").textContent = "Find duplicates";
+  $("run").disabled = false;
+}
+
+function showColumns({ header, column, rows }) {
+  const select = $("column");
+  select.replaceChildren(...header.map((name, index) => {
+    const option = document.createElement("option");
+    option.value = name;
+    option.textContent = name || `(column ${index + 1})`;
+    return option;
+  }));
+  select.selectedIndex = column ?? -1;
+  $("column-field").hidden = header.length < 2;
+  $("file-info").hidden = false;
+  $("file-info").textContent = `${file.name}: ${rows.toLocaleString()} rows.` +
+    (column === null && header.length > 1 ? " Choose the column with the names." : "");
+}
+
+$("file").addEventListener("change", async () => {
+  const chosen = $("file").files[0];
+  if (!chosen) return;
+  const text = await chosen.text();
+  file = { name: chosen.name, text, plain: chosen.name.toLowerCase().endsWith(".txt") };
+  $("names").value = "";
+  $("column-field").hidden = true;
+  if (file.plain) {
+    $("file-info").hidden = false;
+    $("file-info").textContent = `${file.name}: one name per line.`;
+  } else {
+    worker.postMessage({ type: "inspect", text });
+  }
+});
+
+$("names").addEventListener("input", () => {
+  if (!file) return;
+  file = null;
+  $("file").value = "";
+  $("file-info").hidden = true;
+  $("column-field").hidden = true;
+});
+
+$("example").addEventListener("click", () => {
+  $("names").value = EXAMPLE;
+  $("names").dispatchEvent(new Event("input"));
+  if (!$("run").disabled && !running) run();
+});
+
+$("run").addEventListener("click", () => (running ? stop() : run()));
+
+function run() {
+  const source = file || { text: $("names").value, plain: true };
+  if (!source.text.trim()) { status("Paste some names or open a file first."); return; }
+  const column = file && !file.plain ? $("column").value : undefined;
+  if (column === "") { status("Choose the column with the names first."); return; }
+  running = true;
+  $("results").hidden = true;
+  $("progress").hidden = false;
+  $("progress").removeAttribute("value");
+  $("run").textContent = "Stop";
+  status("Preparing names…");
+  worker.postMessage({ type: "find", text: source.text, plain: source.plain, column });
+}
+
+function stop() {
+  worker.terminate();
+  finish();
+  $("run").disabled = true;
+  status("Stopped. Restarting…");
+  startWorker();
+}
+
+function render(data) {
+  resultCsv = data.csv;
+  const unit = file && !file.plain ? "row" : "line";
+  const review = data.groups.filter((group) => group.review).length;
+  $("results-title").textContent =
+    `${data.groups.length.toLocaleString()} groups of likely duplicates in ` +
+    `${data.names.toLocaleString()} names (${review.toLocaleString()} to review)`;
+  const notes = [`${data.compared.toLocaleString()} pairs of similar names compared, policy ${data.policy}.`];
+  if (data.unchecked.length) {
+    const shown = data.unchecked.slice(0, 20).join(", ") + (data.unchecked.length > 20 ? " …" : "");
+    notes.push(`Not checked (empty, too long or a script nameproof can't read yet): ${unit}s ${shown}.`);
+  }
+  if (data.crowded) notes.push("Some very common names were not all compared with each other.");
+  if (data.groups.length > SHOWN_GROUPS) {
+    notes.push(`Showing the first ${SHOWN_GROUPS} groups; the CSV has all of them.`);
+  }
+  $("notes").replaceChildren(...notes.map((text) => {
+    const p = document.createElement("p");
+    p.className = "note";
+    p.textContent = text;
+    return p;
+  }));
+  $("download").hidden = !data.groups.length;
+  $("groups").replaceChildren(...data.groups.slice(0, SHOWN_GROUPS).map((group, index) => {
+    const box = document.createElement("div");
+    box.className = "group";
+    const title = document.createElement("h3");
+    const tag = document.createElement("span");
+    tag.className = "tag " + (group.review ? "CLOSE_MATCH" : "MATCH");
+    tag.textContent = group.review ? "Review" : "Same";
+    title.append(`Group ${index + 1}`, tag);
+    const members = document.createElement("ol");
+    members.append(...group.members.map(({ row, name }) => {
+      const item = document.createElement("li");
+      const number = document.createElement("span");
+      number.className = "row-number";
+      number.textContent = `${unit} ${row}`;
+      const text = document.createElement("bdi");  // keeps right-to-left names intact
+      text.textContent = name;
+      item.append(number, text);
+      return item;
+    }));
+    const links = document.createElement("ul");
+    links.className = "links";
+    links.append(...group.links.map(({ rows, result, explanation }) => {
+      const item = document.createElement("li");
+      const why = explanation.length ? explanation.map((code) => REASON[code] || code).join("; ") : "identical";
+      item.textContent = `${unit}s ${rows[0]} & ${rows[1]}: ${LABEL[result]}: ${why}`;
+      return item;
+    }));
+    box.append(title, members, links);
+    return box;
+  }));
+  $("results").hidden = false;
+  status(data.groups.length ? "Done." : "Done: no likely duplicates found.");
+}
+
+$("download").addEventListener("click", () => {
+  // The byte-order mark makes Excel read Arabic, Greek and Cyrillic correctly.
+  const blob = new Blob(["\uFEFF" + resultCsv], { type: "text/csv;charset=utf-8" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "nameproof-duplicates.csv";
+  link.click();
+  URL.revokeObjectURL(link.href);
+});
+
+(async () => {
+  try {
+    wheel = new URL((await (await fetch("wheel.json")).json()).wheel, location.href).href;
+    startWorker();
+  } catch (error) {
+    status("Could not load: " + error.message);
+  }
+})();
+</script>
+</body>
+</html>

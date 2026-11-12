@@ -23,14 +23,23 @@ def _load_builder() -> ModuleType:
 def test_playground_build(tmp_path: Path) -> None:
     builder = _load_builder()
     (tmp_path / "playground").mkdir()
-    (tmp_path / "playground" / "index.html").write_text("<html></html>")
+    for page in ("index.html", "dedupe.html", "style.css", "shared.js", "build.py"):
+        (tmp_path / "playground" / page).write_text("x")
     (tmp_path / "dist").mkdir()
     (tmp_path / "dist" / "nameproof-0.1.0-py3-none-any.whl").write_bytes(b"wheel")
     site = tmp_path / "_site"
     wheel = builder.assemble(tmp_path, site)
     assert wheel.name == "nameproof-0.1.0-py3-none-any.whl"
     assert json.loads((site / "wheel.json").read_text()) == {"wheel": wheel.name}
-    assert (site / "index.html").exists()
+    assert {page.name for page in site.iterdir()} == {
+        "index.html",
+        "dedupe.html",
+        "style.css",
+        "shared.js",
+        "wheel.json",
+        ".nojekyll",
+        wheel.name,
+    }
     assert (site / ".nojekyll").exists()
 
 
@@ -44,6 +53,19 @@ def test_playground_page_pins_pyodide_and_installs_without_deps() -> None:
     page = (ROOT / "playground" / "index.html").read_text()
     assert re.search(r"cdn\.jsdelivr\.net/pyodide/v[\d.]+/full/pyodide\.js", page)
     assert "deps=False" in page  # rapidfuzz has no browser build; nameproof falls back
+
+
+def test_dedupe_worker_uses_the_same_pinned_pyodide() -> None:
+    page = (ROOT / "playground" / "index.html").read_text()
+    worker = (ROOT / "playground" / "dedupe-worker.js").read_text()
+    dedupe = (ROOT / "playground" / "dedupe.html").read_text()
+    pinned = re.search(r"pyodide/(v[\d.]+)/full/pyodide\.js", page)
+    assert pinned is not None
+    assert f"pyodide/{pinned.group(1)}/full/" in worker
+    assert re.search(r'PYODIDE_MJS_SRI = "sha384-[A-Za-z0-9+/]{64}"', worker)
+    assert "integrity: PYODIDE_MJS_SRI" in worker
+    assert "deps=False" in worker
+    assert 'new Worker("dedupe-worker.js", { type: "module" })' in dedupe
 
 
 def test_chart_render() -> None:

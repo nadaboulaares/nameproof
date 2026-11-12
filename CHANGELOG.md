@@ -7,6 +7,16 @@ All notable changes to nameproof are documented here. The format follows
 
 ## [Unreleased]
 
+### Playground
+- Find duplicates in the browser (`dedupe.html`): paste names or open a CSV or text file,
+  see the groups with a reason for every link, download them as a CSV that Excel opens
+  with Arabic, Greek and Cyrillic intact. Runs in a background worker with a progress
+  bar; the list never leaves the computer (3,000 names take about 20 seconds).
+- The name column is guessed from titles such as "Full name", "Nom" or "الاسم".
+
+### Changed
+- `find_duplicates(..., progress=callback)` reports `(done, total)` comparisons.
+
 ## [0.2.0] - 2026-11-12
 
 nameproof is now positioned as general explainable name matching across scripts (charities

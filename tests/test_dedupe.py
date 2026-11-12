@@ -100,7 +100,10 @@ def test_parallel_and_serial_agree(monkeypatch: pytest.MonkeyPatch) -> None:
     ]
     serial = find_duplicates(names)
     monkeypatch.setattr(dedupe_module, "_PARALLEL_MIN", 0)
-    assert find_duplicates(names, jobs=2) == serial
+    seen: list[tuple[int, int]] = []
+    assert find_duplicates(names, jobs=2, progress=lambda *step: seen.append(step)) == serial
+    assert seen[0] == (0, serial.compared)
+    assert seen[-1] == (serial.compared, serial.compared)
 
 
 def test_worker_helpers_run_in_process() -> None:
@@ -269,7 +272,7 @@ def test_cli_dedupe_rejects_empty_files(
     path = tmp_path / "empty.csv"
     path.write_text(content, encoding="utf-8")
     assert main(["dedupe", str(path)]) == 2
-    assert "is empty" in capsys.readouterr().err
+    assert "the file is empty" in capsys.readouterr().err
 
 
 def test_cli_dedupe_missing_file(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:

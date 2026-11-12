@@ -19,7 +19,7 @@ SITE = ROOT / "_site"
 
 
 def assemble(root: Path, site: Path) -> Path:
-    """Copy the page and the newest wheel from ``root`` into ``site``; return the wheel."""
+    """Copy the pages and the newest wheel from ``root`` into ``site``; return the wheel."""
     wheels = sorted((root / "dist").glob("nameproof-*-py3-none-any.whl"))
     if not wheels:
         msg = "no wheel in dist/: run `uv build --wheel --out-dir dist` first"
@@ -27,7 +27,9 @@ def assemble(root: Path, site: Path) -> Path:
     wheel = wheels[-1]
     shutil.rmtree(site, ignore_errors=True)
     site.mkdir(parents=True)
-    shutil.copy2(root / "playground" / "index.html", site / "index.html")
+    for page in sorted((root / "playground").iterdir()):
+        if page.suffix in {".html", ".css", ".js"}:
+            shutil.copy2(page, site / page.name)
     shutil.copy2(wheel, site / wheel.name)
     (site / "wheel.json").write_text(json.dumps({"wheel": wheel.name}) + "\n")
     (site / ".nojekyll").touch()

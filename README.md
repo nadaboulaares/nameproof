@@ -29,7 +29,8 @@ pip install nameproof
   GLEIF ISO 20275 list
 - **Careful by design**: a spelling difference is never a full match; *Mohamed* vs *Mahmoud*
   and *Ahmed* vs *حامد* (Hamid) are no match; every answer comes with reason codes
-- **Find duplicates in a list** of thousands of names: `nameproof dedupe people.csv`
+- **Find duplicates in a list** of thousands of names: [in your browser](https://nadaboulaares.github.io/nameproof/dedupe.html)
+  (paste names or open a CSV; nothing is uploaded) or `nameproof dedupe people.csv`
 - **Private and fast**: pure Python, runs offline or in the browser, about a millisecond per
   check, bounded work for crafted input
 
@@ -50,6 +51,10 @@ phone numbers or ID numbers; nameproof is the name part of that decision.
 design and the lessons from the pre-release review.
 
 ## Find duplicates in a list
+
+**[▶ Find duplicates in your browser](https://nadaboulaares.github.io/nameproof/dedupe.html)**:
+paste names or open a CSV file, then download the groups as a CSV. Your list never leaves
+your computer. Or from the command line:
 
 ```console
 $ nameproof dedupe examples/beneficiaries.csv

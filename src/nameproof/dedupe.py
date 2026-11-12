@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import re
 from collections import defaultdict
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass
 from itertools import combinations
@@ -122,6 +122,7 @@ def find_duplicates(
     policy: str | Policy = DEFAULT_POLICY,
     max_group: int = MAX_GROUP,
     jobs: int = 1,
+    progress: Callable[[int, int], object] | None = None,
 ) -> DedupeReport:
     """Find names in ``names`` that likely belong to the same person or organisation.
 
@@ -131,6 +132,7 @@ def find_duplicates(
     before records are merged. ``jobs`` spreads the comparisons over that many
     processes (worth it from a few thousand names); like any multiprocessing
     code, call it under ``if __name__ == "__main__":`` in a script.
+    ``progress``, if given, is called with ``(done, total)`` comparisons as they finish.
 
     Raises:
         TypeError: if ``names`` is a single string instead of a sequence.
@@ -167,7 +169,7 @@ def find_duplicates(
         for copy in copies[1:]
     ]
     candidates, crowded = _candidates(prepared, max_group)
-    pairs.extend(_compare_all(prepared, sorted(candidates), active, jobs))
+    pairs.extend(_compare_all(prepared, sorted(candidates), active, jobs, progress))
     pairs.sort(key=lambda pair: (pair.first, pair.second))
     return DedupeReport(
         pairs=tuple(pairs),
@@ -306,18 +308,42 @@ def _narrowing_keys(entry: _Prepared, key: str) -> set[str]:
 
 
 _PARALLEL_MIN = 2_000  # fewer comparisons than this are faster in one process
+_PROGRESS_STEP = 500  # comparisons between progress reports in one process
 _worker: tuple[list[_Prepared], Policy] | None = None
 
 
 def _compare_all(
-    prepared: list[_Prepared], candidates: list[tuple[int, int]], policy: Policy, jobs: int
+    prepared: list[_Prepared],
+    candidates: list[tuple[int, int]],
+    policy: Policy,
+    jobs: int,
+    progress: Callable[[int, int], object] | None,
 ) -> list[DuplicatePair]:
-    if jobs == 1 or len(candidates) < _PARALLEL_MIN:
-        return _compare_chunk(candidates, prepared, policy)
-    size = -(-len(candidates) // (jobs * 4))
-    chunks = [candidates[start : start + size] for start in range(0, len(candidates), size)]
-    with ProcessPoolExecutor(jobs, initializer=_start_worker, initargs=(prepared, policy)) as pool:
-        return [pair for found in pool.map(_worker_chunk, chunks) for pair in found]
+    total = len(candidates)
+    parallel = jobs > 1 and total >= _PARALLEL_MIN
+    size = -(-total // (jobs * 4)) if parallel else _PROGRESS_STEP
+    chunks = [candidates[start : start + size] for start in range(0, total, size)]
+    found: list[DuplicatePair] = []
+    done = 0
+    if progress is not None:
+        progress(0, total)
+    if parallel:
+        with ProcessPoolExecutor(
+            jobs, initializer=_start_worker, initargs=(prepared, policy)
+        ) as pool:
+            results = pool.map(_worker_chunk, chunks)
+            for chunk, chunk_found in zip(chunks, results, strict=True):
+                found.extend(chunk_found)
+                done += len(chunk)
+                if progress is not None:
+                    progress(done, total)
+        return found
+    for chunk in chunks:
+        found.extend(_compare_chunk(chunk, prepared, policy))
+        done += len(chunk)
+        if progress is not None:
+            progress(done, total)
+    return found
 
 
 def _start_worker(prepared: list[_Prepared], policy: Policy) -> None:
