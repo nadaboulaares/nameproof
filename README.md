@@ -32,6 +32,9 @@ pip install nameproof
 **Bank or payment institution?** See [nameproof for banks](docs/FOR-BANKS.md): what it
 does, how it fits your stack, and the design-partner pilot.
 
+**Background:** [Why fuzzy matching fails EU Verification of Payee](https://dev.to/nadaboulaares/why-fuzzy-matching-fails-eu-verification-of-payee-and-what-to-do-about-greek-cyrillic-and-arabic-29aa), the
+design and the lessons from the pre-release review.
+
 ## Benchmark
 
 <picture>
