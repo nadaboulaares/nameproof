@@ -197,6 +197,29 @@ each nameproof version, so pin both for audit (every verdict records its policy)
 Every verdict lists stable explanation codes (`Reason`) that never contain name fragments,
 and the account holder's name is only ever exposed on `CLOSE_MATCH`.
 
+## What a matcher can't fix
+
+nameproof decides whether two names are the same, and explains why. For Verification of
+Payee, that's necessary but not enough:
+
+- **Verdicts differ between banks.** Each responding bank chooses its own matching and
+  romanisation, so the same payer and payee can get different answers at different banks,
+  and payers learn to route around the strict one. A better matcher at one bank doesn't
+  make the scheme consistent; published, versioned rules can help banks converge, but
+  that's coordination, not code.
+- **A close match is only as good as the warning.** It hands the decision to the payer,
+  who may be the one being manipulated on the phone. nameproof returns the real name and
+  nothing else on a close match; how the bank presents it, and whether a No Match can be
+  clicked through, decides whether it stops fraud.
+- **Liability moves fraud numbers, matching doesn't.** People who ran Confirmation of Payee
+  in the UK (live since 2019) report that reimbursement liability changed bank behaviour
+  more than the matching did. A rule-based match matters because a bank can defend
+  "identical after clean-up" to an ombudsman, and can't defend "scored 87, threshold 85".
+- **Names alone can't separate namesakes.** Two different people can share a name; for
+  records, confirm duplicates with a date of birth, phone or ID number.
+
+Thanks to a reader on DEV whose review prompted this section.
+
 ## Data sources
 
 - Company legal forms: the [ISO 20275 Entity Legal Forms code list](https://www.gleif.org/en/lei-data/code-lists/iso-20275-entity-legal-forms-code-list)

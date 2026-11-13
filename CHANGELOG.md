@@ -13,6 +13,10 @@ All notable changes to nameproof are documented here. The format follows
   put 4,750 different people into one group on a held-out set (precision 0.1%); now 76.5%
   precision at 79.5% recall. Only links inside a group are listed with it.
 
+### Docs
+- README: "What a matcher can't fix" (verdicts differ between banks, close-match warnings,
+  liability, namesakes).
+
 ### Benchmark
 - `arabic-dedupe-v1`: 13,417 real Arabic, English and French Wikidata spellings of 6,235
   people from ten Arab countries, held out from nameproof-bench
