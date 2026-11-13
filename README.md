@@ -95,12 +95,22 @@ report.groups  # (DuplicateGroup(members=(0, 2), needs_review=True),)
 
 Comparing every pair of a 10,000-name list would take 50 million checks, so names are
 first grouped by a coarse, cross-script consonant key per word, and only names sharing a
-key are compared, with exactly the rules of `match`. On the 9,624 distinct names of
-nameproof-bench this compares 147,000 pairs instead of 46 million and keeps 98% of the
-same-person pairs `match` finds (the rest are mostly heavy typos); it takes about 30
-seconds on 8 cores. A group needs review whenever one of its links is a close match. Duplicate finding uses the
-`records@1` policy by default: known spellings of one name (*Mohamed* / *Mohammed* /
-*Muhammad*) count as the same name.
+key are compared, with exactly the rules of `match`. A group holds names that are all
+linked to each other, and needs review whenever one of its links is a close match.
+Duplicate finding uses the `records@1` policy by default: known spellings of one name
+(*Mohamed* / *Mohammed* / *Muhammad*) count as the same name.
+
+**Compared with fuzzy matching and Splink** on 13,417 real Arabic, English and French
+spellings of 6,235 people (held out from nameproof's own benchmark; the baselines' thresholds
+tuned on the answers, nameproof on defaults):
+
+| | precision | recall | F1 | Arabic ↔ Latin found |
+|---|---|---|---|---|
+| **nameproof** | **76.5%** | **79.5%** | **78.0%** | **79.3%** |
+| fuzzy matching | 16.9% | 8.3% | 11.2% | 1.1% |
+| Splink | 27.6% | 5.2% | 8.8% | 0.0% |
+
+Details, limits and how to reproduce: [docs/COMPARISON.md](docs/COMPARISON.md).
 
 ## Benchmark
 
@@ -186,6 +196,29 @@ each nameproof version, so pin both for audit (every verdict records its policy)
 
 Every verdict lists stable explanation codes (`Reason`) that never contain name fragments,
 and the account holder's name is only ever exposed on `CLOSE_MATCH`.
+
+## What a matcher can't fix
+
+nameproof decides whether two names are the same, and explains why. For Verification of
+Payee, that's necessary but not enough:
+
+- **Verdicts differ between banks.** Each responding bank chooses its own matching and
+  romanisation, so the same payer and payee can get different answers at different banks,
+  and payers learn to route around the strict one. A better matcher at one bank doesn't
+  make the scheme consistent; published, versioned rules can help banks converge, but
+  that's coordination, not code.
+- **A close match is only as good as the warning.** It hands the decision to the payer,
+  who may be the one being manipulated on the phone. nameproof returns the real name and
+  nothing else on a close match; how the bank presents it, and whether a No Match can be
+  clicked through, decides whether it stops fraud.
+- **Liability moves fraud numbers, matching doesn't.** People who ran Confirmation of Payee
+  in the UK (live since 2019) report that reimbursement liability changed bank behaviour
+  more than the matching did. A rule-based match matters because a bank can defend
+  "identical after clean-up" to an ombudsman, and can't defend "scored 87, threshold 85".
+- **Names alone can't separate namesakes.** Two different people can share a name; for
+  records, confirm duplicates with a date of birth, phone or ID number.
+
+Thanks to a reader on DEV whose review prompted this section.
 
 ## Data sources
 

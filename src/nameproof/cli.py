@@ -166,21 +166,23 @@ def _print_dedupe(table: Table, report: DedupeReport) -> None:
             f"Some very common names were not all compared ({report.crowded_keys}); "
             "a larger --max-group compares more."
         )
-    links: dict[int, list[str]] = {}
+    links: dict[int, list[tuple[int, str]]] = {}
     for pair in report.pairs:
         why = ", ".join(pair.explanation) or "identical"
         line = (
             f"    rows {table.numbers[pair.first]} & {table.numbers[pair.second]}: "
             f"{pair.result.value} ({why})"
         )
-        links.setdefault(pair.first, []).append(line)
+        links.setdefault(pair.first, []).append((pair.second, line))
     for number, group in enumerate(report.groups, 1):
         print(f"\nGroup {number}" + (" (review)" if group.needs_review else ""))
+        inside = set(group.members)
         for index in group.members:
             print(f"  row {table.numbers[index]:>5}  {table.names[index]}")
         for index in group.members:
-            for line in links.get(index, []):
-                print(line)
+            for second, line in links.get(index, []):
+                if second in inside:
+                    print(line)
 
 
 def _run_bench(dataset: Path, systems: list[str], *, as_json: bool) -> int:

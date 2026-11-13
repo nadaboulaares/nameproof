@@ -68,7 +68,7 @@ class DuplicatePair:
 
 @dataclass(frozen=True, slots=True)
 class DuplicateGroup:
-    """Names linked by duplicate pairs; ``needs_review`` unless every link is a MATCH."""
+    """Names that are all linked to each other; ``needs_review`` unless every link is a MATCH."""
 
     members: tuple[int, ...]
     needs_review: bool
@@ -176,7 +176,7 @@ def find_duplicates(
     pairs.sort(key=lambda pair: (pair.first, pair.second))
     return DedupeReport(
         pairs=tuple(pairs),
-        groups=_groups(pairs),
+        groups=_groups(pairs, {copies[0]: copies for copies in identical.values()}),
         compared=len(candidates),
         unchecked=tuple(unchecked),
         crowded_keys=crowded,
@@ -376,26 +376,49 @@ def _compare_chunk(
     return found
 
 
-def _groups(pairs: list[DuplicatePair]) -> tuple[DuplicateGroup, ...]:
-    """Join linked names into groups; a group needs review if any link is a CLOSE_MATCH."""
-    parent: dict[int, int] = {}
+def _groups(pairs: list[DuplicatePair], copies: dict[int, list[int]]) -> tuple[DuplicateGroup, ...]:
+    """Group linked names so that every two members of a group are linked.
 
-    def root(item: int) -> int:
-        parent.setdefault(item, item)
-        while parent[item] != item:
-            parent[item] = parent[parent[item]]
-            item = parent[item]
-        return item
-
+    Joining every chain of links (A~B, B~C, C~D...) would put thousands of different
+    people with similar names into one group, so groups grow by complete linkage:
+    two groups merge only if every name in one is linked to every name in the
+    other, strongest links first. Identical names (``copies``, keyed by the copy
+    that was compared) count as one name. A group needs review if any of its links
+    is a CLOSE_MATCH.
+    """
+    representative = {member: head for head, members in copies.items() for member in members}
+    links: dict[tuple[int, int], DuplicatePair] = {}
     for pair in pairs:
-        first, second = root(pair.first), root(pair.second)
+        first = representative.get(pair.first, pair.first)
+        second = representative.get(pair.second, pair.second)
         if first != second:
-            parent[max(first, second)] = min(first, second)
-    members: dict[int, list[int]] = defaultdict(list)
-    for item in sorted(parent):
-        members[root(item)].append(item)
-    review = {root(pair.first) for pair in pairs if pair.result is not MatchResult.MATCH}
-    return tuple(
-        DuplicateGroup(tuple(items), needs_review=head in review)
-        for head, items in sorted(members.items())
+            links[min(first, second), max(first, second)] = pair
+    strongest = sorted(
+        links.items(), key=lambda item: (item[1].result is not MatchResult.MATCH, -item[1].score)
     )
+    group_of: dict[int, int] = {}
+    members: dict[int, list[int]] = {}
+    for (first, second), _ in strongest:
+        left_head, right_head = group_of.get(first, first), group_of.get(second, second)
+        if left_head == right_head:
+            continue
+        left, right = members.get(left_head, [first]), members.get(right_head, [second])
+        if all((min(a, b), max(a, b)) in links for a in left for b in right):
+            head = min(left_head, right_head)
+            members.pop(max(left_head, right_head), None)
+            members[head] = sorted(left + right)
+            for item in members[head]:
+                group_of[item] = head
+    for head, copy_group in copies.items():
+        if len(copy_group) > 1 and head not in group_of:
+            members[head] = [head]
+    groups = [
+        DuplicateGroup(
+            tuple(sorted(name for item in heads for name in copies.get(item, [item]))),
+            needs_review=any(
+                links[pair].result is not MatchResult.MATCH for pair in combinations(heads, 2)
+            ),
+        )
+        for heads in members.values()
+    ]
+    return tuple(sorted(groups, key=lambda group: group.members))
